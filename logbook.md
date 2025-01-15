@@ -52,3 +52,45 @@ The final schematic is as follows:
 
 ## Exercise 2: Visualisation of CLT
 
+Brief overview: to generate a vector of i.i.d random numbers, evaluate their sample mean, and keep on repeating this in a while loop. On each iteration, update the histogram of sample means so that we can see the distribution of sample means.
+
+We implement the block diagram as follows:
+
+![Task 2 block diagram](images/[task2]block-diagram-1.png)
+
+Explanation of block diagram: 
+
+1. We have a while loop. We include a stop flag so that when executing the code, we can click on the flag to terminate execution of the while loop.
+2. We have a `Wait` module which basically pauses execution for a fixed number of milliseconds between each iteration of the while loop
+3. Inside the while loop, we create two nested for loops which are set to run 10 times each, hence 100 times in total.
+4. Within the inner for loop, we insert a `Random Number` unit, and we connect the output of the random number generator to the `Add Array Elements` unit. The tunnels going through the frames of the for loops are set to `auto-index`. Essentially, this means that on each iteration of the loop, the newly-generated random number will be appended to an accumulating array of numbers.
+5. We then insert a `Divide` unit, where we divide the running sum by the total number of iterations of the for loops, in this case 100. This is thus the sample mean.
+6. We pass this sample mean into the `Insert Into Array` unit, and we pass in the `index` of the while loop as the insertion index. So on iteration 0, we will insert into index 0, then on iteration 1, we will insert into index 1 and so on.
+7. We then connect the output array to the right frame of the `while` loop and change it to a `Shift Register`. The `Shift Register` tunnel on the left is then connected as the input array to insert into. Basically, the tunnel on the left carries data from the previous iteration, and the tunnel on the right carries data to the next iteration. This shift register is initialised to an array of zeros.
+8. Finally, we add in a histogram unit so that the histogram can be viewed on each iteration.
+
+Running this code, we get the following output. We see that the distribution of sample means looks approximately Gaussian.
+
+![Task 2 output 1](images/[task2]output-1.png)
+
+Next, we want to modify the program such that it terminates automatically after 1000 iterations of the while loop. We can do this simply by using a `Greater or Equal` block to compare the index of the while loop with 1000. Once the index reaches 1000 (i.e. the while loop has run 1000 times), the `Greater or Equal` unit outputs true, and hence the while loop terminates.
+
+![Task 2 block diagram 2](images/[task2]block-diagram-terminate-1000.png)
+
+We also reduce the number of bins, hence increasing the width of each bin. This gives the following result:
+
+![Task 2 output with 10 bins](images/[task2]output-2-bins10.png)
+
+Finally, we want to standardize the distribution, i.e. make it have zero mean and unity standard deviation. We do this as follows:
+
+![Task 2 standardization block](images/[task2]standardize-block.png)
+
+Basically, we take the output of the `Insert into Array` block, which is the array of sample means. We pass this array of sample means into the `Statistics` module, which outputs the mean of the array, and the standard deviation of the array. We then take the array of sample means, subtract the calculated mean from the array (element-wise), and then divide the array by the calculated standard deviation (element-wise). Now that we have the processed array, we then plot this processed array using the `Histogram` function. Note that we still pass the raw array of sample means to the right `Shift Register` tunnel, so that the raw sample means can be carried over to the next iteration.
+
+Hence, the final block diagram is as follows:
+
+![Task 2 final block diagram](images/[task2]final-block.png)
+
+This gives the following output histogram after 1000 iterations. We can see that the distribution has 0 mean and unit variance, as required.
+
+![Task 2 final output](images/[task2]final-out.png)

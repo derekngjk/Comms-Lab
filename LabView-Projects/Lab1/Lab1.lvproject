@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="9B790AC30A149CD63CCD6A81F18F05769053C6805F7C7D70FB78680655DE08D113D735CD740BCA2BC418FA0EB361E4BD9369A4D729377E95C4EB34B54DEB49EE" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="7B1FEE8180A113D0FDDADBDC2429C5167A756143083154B158220DE5855E9A6870D4EABF646926F30A95EE6B0EDF66633B589ED3416AA3494EE262182209A02E" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="GComponentFeatureSet" Name="http://www.ni.com/GComponent.xsd" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -257,6 +257,7 @@
 							</ComponentConfiguration>
 						</ComponentDefinition>
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="7a022bdd824a41c8bcfbcb3cdfb70853" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="DataTypes.gvi" StoragePath="DataTypes.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="4aab20ec37284695996ea8c16800dbc4" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="CLT.gvi" StoragePath="CLT.gvi" />
 					</EmbeddedDefinitionReference>
 				</NameScopingEnvoy>
 			</NameScopingEnvoy>
