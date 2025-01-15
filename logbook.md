@@ -50,3 +50,5 @@ The final schematic is as follows:
 
 ![Final block diagram](images/[task1]schematic-final.png)
 
+## Exercise 2: Visualisation of CLT
+
