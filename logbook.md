@@ -4,51 +4,51 @@
 
 First, we create a `string to byte array` unit, which can take in a string as input, and output a byte array, where each element in the array is the ASCII value of each character in the input string.
 
-![string to byte array unit](images/[task1]string-to-byte-array-unit.png)
+![string to byte array unit](images/lab1/[task1]string-to-byte-array-unit.png)
 
 In the `Panel` tab, we can input whatever value we want into the `string` input, and we can see the ASCII values in the corresponding unsigned byte array:
 
-![string to byte array usage](images/[task1]string-to-byte-array-usage.png)
+![string to byte array usage](images/lab1/[task1]string-to-byte-array-usage.png)
 
 Next, we want to treat each ASCII value as a Fahrenheit temperature, and we want to convert them into Celsius values. We can perform this using the following block:
 
-![F to C block](images/[task1]f-to-c.png)
+![F to C block](images/lab1/[task1]f-to-c.png)
 
 Because `C = (F - 32) * 5/9`, in order to multiply the array by a floating point number, we need to cast it to an array of doubles first. This is done using the `DBL` block, then the array is passed through operators which subtract 32 from the values and scale them by 5/9. **Note: it is important that the constants connected to the subtract / multiply blocks are of type `numerical constant`, to ensure that they are scalars, so that the simulator will perform the operation element-wise. Otherwise, if they are accidentally declared as 1d arrays, it will cause undesired behaviour.**
 
 We can verify its functionality as follows:
 
-![F to C output](images/[task1]f-to-c-outut.png)
+![F to C output](images/lab1/[task1]f-to-c-outut.png)
 
 Next, we use the `Add Array Elements` unit and the `Array Size` unit to get the sum and length of the output array respectively, and divide them to obtain the mean.
 
-![F to C average](images/[task1]avg.png)
+![F to C average](images/lab1/[task1]avg.png)
 
 This gives the output as expected:
 
-![Average output](images/[task1]avg-out.png)
+![Average output](images/lab1/[task1]avg-out.png)
 
 The last step is to compare the value of the mean against a constant threshold, set at 50. It then outputs 1 if the mean is greater than or equal to 50, else 0.
 
-![Greater than or equal to unit](images/[task1]ge.png)
+![Greater than or equal to unit](images/lab1/[task1]ge.png)
 
 This gives the following outputs:
 
-![Input abcde](images/[task1]ge-out-abcde.png)
+![Input abcde](images/lab1/[task1]ge-out-abcde.png)
 
 String `abcde` has mean 37.222, hence `is_hot` is false.
 
-![Input zzz](images/[task1]ge-out-zzz.png)
+![Input zzz](images/lab1/[task1]ge-out-zzz.png)
 
 String `zzz` has mean 50. This is becaue `z` has ASCII value 122, hence in Fahrenheit, it is equivalent to `(122-32) * 5/9 = 50`. Hence, `is_hot` is true.
 
 Using surname and first initial as input gives the ASCII values of the characters as follows:
 
-![Input name](images/[task1]name.png)
+![Input name](images/lab1/[task1]name.png)
 
 The final schematic is as follows:
 
-![Final block diagram](images/[task1]schematic-final.png)
+![Final block diagram](images/lab1/[task1]schematic-final.png)
 
 ## Exercise 2: Visualisation of CLT
 
@@ -56,7 +56,7 @@ Brief overview: to generate a vector of i.i.d random numbers, evaluate their sam
 
 We implement the block diagram as follows:
 
-![Task 2 block diagram](images/[task2]block-diagram-1.png)
+![Task 2 block diagram](images/lab1/[task2]block-diagram-1.png)
 
 Explanation of block diagram: 
 
@@ -71,29 +71,29 @@ Explanation of block diagram:
 
 Running this code, we get the following output. We see that the distribution of sample means looks approximately Gaussian.
 
-![Task 2 output 1](images/[task2]output-1.png)
+![Task 2 output 1](images/lab1/[task2]output-1.png)
 
 Next, we want to modify the program such that it terminates automatically after 1000 iterations of the while loop. We can do this simply by using a `Greater or Equal` block to compare the index of the while loop with 1000. Once the index reaches 1000 (i.e. the while loop has run 1000 times), the `Greater or Equal` unit outputs true, and hence the while loop terminates.
 
-![Task 2 block diagram 2](images/[task2]block-diagram-terminate-1000.png)
+![Task 2 block diagram 2](images/lab1/[task2]block-diagram-terminate-1000.png)
 
 We also reduce the number of bins, hence increasing the width of each bin. This gives the following result:
 
-![Task 2 output with 10 bins](images/[task2]output-2-bins10.png)
+![Task 2 output with 10 bins](images/lab1/[task2]output-2-bins10.png)
 
 Finally, we want to standardize the distribution, i.e. make it have zero mean and unity standard deviation. We do this as follows:
 
-![Task 2 standardization block](images/[task2]standardize-block.png)
+![Task 2 standardization block](images/lab1/[task2]standardize-block.png)
 
 Basically, we take the output of the `Insert into Array` block, which is the array of sample means. We pass this array of sample means into the `Statistics` module, which outputs the mean of the array, and the standard deviation of the array. We then take the array of sample means, subtract the calculated mean from the array (element-wise), and then divide the array by the calculated standard deviation (element-wise). Now that we have the processed array, we then plot this processed array using the `Histogram` function. Note that we still pass the raw array of sample means to the right `Shift Register` tunnel, so that the raw sample means can be carried over to the next iteration.
 
 Hence, the final block diagram is as follows:
 
-![Task 2 final block diagram](images/[task2]final-block.png)
+![Task 2 final block diagram](images/lab1/[task2]final-block.png)
 
 This gives the following output histogram after 1000 iterations. We can see that the distribution has 0 mean and unit variance, as required.
 
-![Task 2 final output](images/[task2]final-out.png)
+![Task 2 final output](images/lab1/[task2]final-out.png)
 
 ## Exercise 3: AM
 
@@ -110,25 +110,25 @@ We then insert the `FFT Power Spectrum and PSD` module to generate the PSD of th
 
 We then insert graph modules to view the PSD graph, and the carrier and message signals, as follows:
 
-![Block diagram for graphs](images/[task3]block-1.png)
-![Output graph](images/[task3]out-1.png)
+![Block diagram for graphs](images/lab1/[task3]block-1.png)
+![Output graph](images/lab1/[task3]out-1.png)
 
 Now we need to generate the full-AM signal. The full-AM signal is given by `s(t) = [A + m(t)]cos(wt)`, where `w` and `A` are the carrier angular frequency and carrier amplitude respectively. Hence, expanding, we have `s(t) = Acos(wt) + m(t)cos(wt) = c(t) + m(t)cos(wt)`, where `c(t)` is the carrier signal. Hence, to obtain the full-AM waveform, we first need to generate a new sinusoidal waveform with the carrier frequency and amplitude 1, i.e. `cos(wt)`, then multiply that with `m(t)`, and add the result together with `c(t)`.
 
 We perform the above operations using the following block diagram:
 
-![Block diagram for full AM modulation](images/[task3]block-2.png)
-![Full AM signal and PSD](images/[task3]out-2.png)
+![Block diagram for full AM modulation](images/lab1/[task3]block-2.png)
+![Full AM signal and PSD](images/lab1/[task3]out-2.png)
 
 We can see that the PSD of the full-AM waveform has peaks at 10Khz, as well as 9Khz and 11kHz. This is because the message signal `m(t)` has frequency 1kHz, and hence has peaks at `+-1kHz`. Since the carrier signal has frequency 10kHz, when multiplying by a cosine, the spectrum gets shifted by 10kHz, and hence peaks appear at 9kHz and 11kHz. Finally, we also add in the original carrier signal, since `s(t) = c(t) + m(t)cos(wt)`, and the addition of `c(t)` causes another peak at 10kHz.
 
 We can then experiment with `mu = Am / Ac`, i.e. the ratio of the message amplitude to the carrier amplitude. In order to have a valid AM wave, we require mu to be between 0 and 1. This is because `s(t) = [A + m(t)]cos(wt)`, in other words, `[A + m(t)]` is acting as the envelope for `cos(wt)`, hence we must have `[A + m(t)] >= 0` for all t. When `mu < 1`, e.g. if Am = 0.5 and Ac = 1, then we can see that the envelope, `A + m(t)`, will be between 0.5 and 1.5, as follows:
 
-![AM Signal with mu 0.5](images/[task3]mu-half.png)
+![AM Signal with mu 0.5](images/lab1/[task3]mu-half.png)
 
 If instead `mu > 1`, e.g. if Am = 1.5 and Ac = 1, we get the following:
 
-![AM signal with mu 1.5](images/[task3]mu-3half.png)
+![AM signal with mu 1.5](images/lab1/[task3]mu-3half.png)
 
 This causes a reflection since the envelope becomes negative.
 
@@ -138,15 +138,15 @@ Recall `mu = Am / Ac`. In this section, `Ac` is set to be constant at 2.
 
 First, we want mu = 0.5, hence Am = 1. Recall `s(t) = [A + m(t)]cos(wt)`. Hence, with Ac = 2 and Am = 1, we expect the envelope to vary between 1 and 3, as follows:
 
-![Graphs with Ac = 2 and Am = 1](images/[task3]ac2_am1.png)
+![Graphs with Ac = 2 and Am = 1](images/lab1/[task3]ac2_am1.png)
 
 Next, to achieve a mu value of 1, we need Ac = Am = 2. This means that the envelope will vary between 0 and 4, as follows:
 
-![Graphs with Ac = 2 and Am = 2](images/[task3]ac2_am2.png)
+![Graphs with Ac = 2 and Am = 2](images/lab1/[task3]ac2_am2.png)
 
 Finally, we want a mu value of 1.5 (which is invalid for actual AM modulation). This means we need Am = 3. From `s(t) = [A + m(t)]cos(wt)`, this means that the envelope will vary between -1 and 5. This causes a problem because when the envelope `[A + m(t)]` is multiplied by the `cos(wt)`, multiplication by a negative value will cause inversion, hence the envelope will be reflected in the horizontal axis, as shown:
 
-![Graphs with Ac = 2 and Am = 3](images/[task3]ac2_am3.png)
+![Graphs with Ac = 2 and Am = 3](images/lab1/[task3]ac2_am3.png)
 
 Hence, the impact of the modulation index of the modulated signal is that, when 0 < mu < 1, the envelope is always >= 0. If mu is exactly 1, then the envelope reaches 0, otherwise the envelope is always positive. However if mu is greater than 1, then there are instances where the envelope becomes negative, and multiplying the cosine carrier by a negative term will cause inversion, which is not valid. 
 
@@ -160,13 +160,13 @@ Now we set Ac = 1 and Am = 1, giving mu = 1. We want to vary the message frequen
 
 First, with fm = 1kHz, we get the following output:
 
-![Graphs with fm = 1kHz](images/[task3]fm_1000.png)
+![Graphs with fm = 1kHz](images/lab1/[task3]fm_1000.png)
 
 The PSD has peaks at 10kHz, 9kHz and 11kHz, as explained above. Note that although Am and Ac are both 1, i.e. same amplitude, the reason why the peaks are smaller at 9kHz and 11kHz, compared to 10kHz, is because when multiplying by a cos(wt), the frequency spectrum gets shifted by `+w` and `-w`, and another effect is that the peaks are **scaled by a factor of 0.5**.
 
 Next, we set fm = 2kHz:
 
-![Graphs with fm = 2kHz](images/[task3]fm_2000.png)
+![Graphs with fm = 2kHz](images/lab1/[task3]fm_2000.png)
 
 We see two key differences:
 
@@ -175,7 +175,7 @@ We see two key differences:
 
 Finally, when changing fm to 5kHz, we see the above differences again:
 
-![Graphs with fm = 5kHz](images/[task3]fm_5000.png)
+![Graphs with fm = 5kHz](images/lab1/[task3]fm_5000.png)
 
 1. Now, the envelope frequency is much higher. The same scale is used so that we can see the difference with fm = 2000 and fm = 1000.
 2. Additionally, `m(t)` has peaks at 5kHz and -5kHz, hence when multiplied by a cosine of frequency 10kHz, these peaks get shifted to 5kHz and 15kHz respectively.
