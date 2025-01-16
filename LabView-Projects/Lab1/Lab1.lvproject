@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="7B1FEE8180A113D0FDDADBDC2429C5167A756143083154B158220DE5855E9A6870D4EABF646926F30A95EE6B0EDF66633B589ED3416AA3494EE262182209A02E" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="F93C31B337527FAC547B20FB3F15C158E035E64EAADE7581DC76F7671608F04C1D1C9F6E804426F971B070C446301E852EE5A8D8797A2CCF6E66F18FE7BD6BC7" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="GComponentFeatureSet" Name="http://www.ni.com/GComponent.xsd" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -258,6 +258,7 @@
 						</ComponentDefinition>
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="7a022bdd824a41c8bcfbcb3cdfb70853" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="DataTypes.gvi" StoragePath="DataTypes.gvi" />
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="4aab20ec37284695996ea8c16800dbc4" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="CLT.gvi" StoragePath="CLT.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="d521dbd548e94816b63e00a07b20561f" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="AM.gvi" StoragePath="AM.gvi" />
 					</EmbeddedDefinitionReference>
 				</NameScopingEnvoy>
 			</NameScopingEnvoy>
@@ -380,6 +381,7 @@
 			</EmbeddedDefinitionReference>
 		</NameScopingEnvoy>
 		<SourceFileReference Id="8ca31378378d4313a09ecce4b9434077" ModelDefinitionType="SystemManagementDefinition" Name="SystemDesigner" StoragePath="SystemDesigner" />
+		<NameScopingEnvoy Id="14544f95a28f4f6eb4882432f9cf7354" ModelDefinitionType="TestPanelScope" Name="TestPanelScope" />
 	</Project>
 	<ProjectInformation xmlns="http://www.ni.com/PlatformFramework" />
 </SourceFile>

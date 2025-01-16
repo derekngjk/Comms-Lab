@@ -94,3 +94,34 @@ Hence, the final block diagram is as follows:
 This gives the following output histogram after 1000 iterations. We can see that the distribution has 0 mean and unit variance, as required.
 
 ![Task 2 final output](images/[task2]final-out.png)
+
+## Exercise 3: AM
+
+First, we create two sine wave generators with the following parameters. Note that the phase angles are 90 degrees to that they become cosine waves.
+
+| Characteristic | Message Signal | Carrier Signal |
+|----------------|----------------|----------------|
+| Frequency / Hz | 1k | 10k |
+| Phase / deg | 90 | 90 |
+| Sample rate | 200k | 200k |
+| Samples | 1000 | 1000 |
+
+We then insert the `FFT Power Spectrum and PSD` module to generate the PSD of the message signal. The PSD **measures the distribution of power of a random process over its spectrum.**
+
+We then insert graph modules to view the PSD graph, and the carrier and message signals, as follows:
+
+![Block diagram for graphs](images/[task3]block-1.png)
+![Output graph](images/[task3]out-1.png)
+
+Now we need to generate the full-AM signal. The full-AM signal is given by `s(t) = [A + m(t)]cos(wt)`, where `w` and `A` are the carrier angular frequency and carrier amplitude respectively. Hence, expanding, we have `s(t) = Acos(wt) + m(t)cos(wt) = c(t) + m(t)cos(wt)`, where `c(t)` is the carrier signal. Hence, to obtain the full-AM waveform, we first need to generate a new sinusoidal waveform with the carrier frequency and amplitude 1, i.e. `cos(wt)`, then multiply that with `m(t)`, and add the result together with `c(t)`.
+
+We perform the above operations using the following block diagram:
+
+![Block diagram for full AM modulation](images/[task3]block-2.png)
+![Full AM signal and PSD](images/[task3]out-2.png)
+
+We can see that the PSD of the full-AM waveform has peaks at 10Khz, as well as 9Khz and 11kHz. This is because the message signal `m(t)` has frequency 1kHz, and hence has peaks at `+-1kHz`. Since the carrier signal has frequency 10kHz, when multiplying by a cosine, the spectrum gets shifted by 10kHz, and hence peaks appear at 9kHz and 11kHz. Finally, we also add in the original carrier signal, since `s(t) = c(t) + m(t)cos(wt)`, and the addition of `c(t)` causes another peak at 10kHz.
+
+We can then experiment with `mu = Am / Ac`, i.e. the ratio of the message amplitude to the carrier amplitude. In order to have a valid AM wave, we require mu to be between 0 and 1. This is because `s(t) = [A + m(t)]cos(wt)`, in other words, `[A + m(t)]` is acting as the envelope for `cos(wt)`, hence we must have `[A + m(t)] >= 0` for all t. When `mu < 1`, e.g. if Am = 0.5 and Ac = 1, then we can see that the envelope, `A + m(t)`, will be between 0.5 and 1.5, as follows:
+
+![AM Signal with mu 0.5](images/[task3]mu-half.png)
