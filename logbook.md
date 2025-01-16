@@ -125,3 +125,27 @@ We can see that the PSD of the full-AM waveform has peaks at 10Khz, as well as 9
 We can then experiment with `mu = Am / Ac`, i.e. the ratio of the message amplitude to the carrier amplitude. In order to have a valid AM wave, we require mu to be between 0 and 1. This is because `s(t) = [A + m(t)]cos(wt)`, in other words, `[A + m(t)]` is acting as the envelope for `cos(wt)`, hence we must have `[A + m(t)] >= 0` for all t. When `mu < 1`, e.g. if Am = 0.5 and Ac = 1, then we can see that the envelope, `A + m(t)`, will be between 0.5 and 1.5, as follows:
 
 ![AM Signal with mu 0.5](images/[task3]mu-half.png)
+
+If instead `mu > 1`, e.g. if Am = 1.5 and Ac = 1, we get the following:
+
+![AM signal with mu 1.5](images/[task3]mu-3half.png)
+
+This causes a reflection since the envelope becomes negative.
+
+### Experimenting with Ac and Am
+
+Recall `mu = Am / Ac`. In this section, `Ac` is set to be constant at 2. 
+
+First, we want mu = 0.5, hence Am = 1. Recall `s(t) = [A + m(t)]cos(wt)`. Hence, with Ac = 2 and Am = 1, we expect the envelope to vary between 1 and 3, as follows:
+
+![Graphs with Ac = 2 and Am = 1](images/[task3]ac2_am1.png)
+
+Next, to achieve a mu value of 1, we need Ac = Am = 2. This means that the envelope will vary between 0 and 4, as follows:
+
+![Graphs with Ac = 2 and Am = 2](images/[task3]ac2_am2.png)
+
+Finally, we want a mu value of 1.5 (which is invalid for actual AM modulation). This means we need Am = 3. From `s(t) = [A + m(t)]cos(wt)`, this means that the envelope will vary between -1 and 5. This causes a problem because when the envelope `[A + m(t)]` is multiplied by the `cos(wt)`, multiplication by a negative value will cause inversion, hence the envelope will be reflected in the horizontal axis, as shown:
+
+![Graphs with Ac = 2 and Am = 3](images/[task3]ac2_am3.png)
+
+Hence, the impact of the modulation index of the modulated signal is that, when 0 < mu < 1, the envelope is always >= 0. If mu is exactly 1, then the envelope reaches 0, otherwise the envelope is always positive. However if mu is greater than 1, then there are instances where the envelope becomes negative, and multiplying the cosine carrier by a negative term will cause inversion, which is not valid. 
