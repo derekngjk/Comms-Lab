@@ -911,4 +911,60 @@
 			<string>AAL Linear Algebra Base.slicache</string>
 		</value>
 	</item>
+	<item>
+		<key>
+			<string>NI.G Core.Sound_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gcompcache</string>
+		</key>
+		<value>
+			<string>NI.G Core.Sound.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Sound Output Reference_109_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>Sound Output Reference.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>lvsound2_103_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.slicache</string>
+		</key>
+		<value>
+			<string>lvsound2.slicache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Sampling Mode_104_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>Sampling Mode.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Sound Data Format_105_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>Sound Data Format.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>JSON (call chain)_f77d9d0b415c44a9914b0bbd84aa0d89_5410850e559a427b9db7aaa900d640c7_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>JSON (call chain).gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>error protocol_69e533219fcf4d3aaa9022ebe114363d_5410850e559a427b9db7aaa900d640c7_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>error protocol.gtypecache</string>
+		</value>
+	</item>
 </SerializableDictionary>

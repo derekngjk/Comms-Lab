@@ -229,4 +229,36 @@ To answer the 3 questions in the specified task, refer to the handwritten notes.
 2. Why get rid of the DC component? Because after lowpass filtering, we have `0.5A + 0.5m(t)`
 3. Why scale the message amplitude? Because after subtracting DC component, we are left with `0.5m(t)`, hence scale by factor 2.
 
-Finally, we transform this into a subVI and test it together with the AM subVI from lab 1. TODO
+## Exercise 1b: AM Demodulation (Envelope Detection)
+
+This method involves a half-wave rectifier followed by an RC filter. In practice, the half-wave rectifier is typically implemented using a diode, which conducts during the positive cycles and is zero during the negative cycles:
+
+![Example envelope detector circuit](images/lab2/[task1]envelope_detector_circuit.jpeg)
+
+The half-wave rectification using a diode scales the input signal by a factor of 1/pi. The reason for this is as follows:
+
+![Envelope detection theory explanation](images/lab2/[task1]half-wave-rect-loss-explain.jpeg)
+
+The above explains why half-wave rectification introduces a scaling of 1/pi. Hence, before we do anything, we need to first multiply the signal by pi to account for this loss.
+
+![Block to amplify by factor pi](images/lab2/[task1]multiply_pi_block.png)
+
+Again, the `am_signal` input is of type `Waveform Array Terminal`. As explained in `Exercise 1a`, the waveform array terminal has 3 attributes: `Y`, `dt` and `t0`. See section `Exercise 1a` for details. To implement the rectifier, we simply need to process the values in the `Y` array by leaving the positive values unchanged and setting the negative values to 0. Hence we use the `Waveform Properties` block to extract the 3 attributes of the amplified wave, `Y`, `dt` and `t0`, so that we can work on the `Y` array. Afterwards, we simply need to combine the modified `Y` array with the `t0` and `dt` to construct back the rectified waveform.
+
+We perform the half-wave rectification using the following block:
+
+![Half-wave rectification block](images/lab2/[task1]halfwave-rectifier-block.png)
+
+- We create a `For loop`. The number of iterations of the for loop is the length of the array.
+- We connect the array `Y` directly to the left-hand side of the `For loop`, and we set this boundary to `Auto Index`. This simply means that on each iteration of the for loop, we will access the next element in the array. So on iteration 0, we access Y[0], on iteration 1, we access Y[1] and so on. This allows us to easily access each element of the array in each iteration of the loop.
+- We then use a `SELECT` block which basically acts as a 2-input multiplexer. We give it a condition, which is the boolean expression `Y[i] >= 0`. Hence, if the current element in the array is >= 0, the `SELECT` block will output the element, unchanged. Whereas if the current element is negative, the `SELECT` block will output 0.
+- Once we have the output of the `SELECT` block, we pass it into the `INSERT INTO ARRAY` block, so that we can construct the updated array. This `INSERT INTO ARRAY` block works with a shift register (see Lab 1 Exercise 2 for details). Basically, the shift register is connected to the left and right-hand sides of the `For loop`. This passes the accumulating array into the next iteration. Note that on the left-hand side, we connect a constant array of 0s which simply means that we initialise it to 0.
+- Once the `For loop` terminates, we can access the final output.
+
+Refer to the below to show that the half-wave rectifier is working as expected. We initialise the `Y` array in the waveform to some random values `[1, 2, -3, -4]` for example purposes. We then pass this waveform through amplification by pi, and then the half-wave rectifier. As such, the output becomes `[pi, 2pi, 0, 0]` as expected.
+
+![Half-wave rectification output](images/lab2/[task1]half-wave-rect-output.png)
+
+Finally, we use the `Build Waveform` function to combine the modified `Y` array back together with the original `t0` and `dt` values. Then, with reference to the handwritten notes above, we need to use a lowpass filter to remove the terms of higher frequencies, and we need to subtract the DC component to get back the original `m(t)`. We do this using the same blocks as in `Exercise 1a`. Thus, the final block diagram is as follows:
+
+![Envelope Detection Block Diagram](images/lab2/[task1]am_env_det_full_block.png)
