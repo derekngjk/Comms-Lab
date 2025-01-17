@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="0AA33BF385820F3176798574150F911FFAFAA103C7AEEE8C7A59B38531550314579ADB7D66DDC7BD981372768CD5FD86B0B562391E74B4B29517B54B20790675" Timestamp="1DB6901012F1C51" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="85767BA468497C6817294E3257889A2307F0E4335481CDAD19F26CF4CE270F6373F80B940E427CE99F256FC6E1F120FE2C84078DA202DB9B59D777285FA7996F" Timestamp="1DB6901B9E08B8F" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -9,30 +9,46 @@
 		<ApplicationVersionInfo Build="8.1.0.50414" Name="LabVIEW NXG" Version="5.0.0" />
 	</SourceModelFeatureSet>
 	<VirtualInstrument Id="78626465ed3d4fc897b8647e6904130f" xmlns="http://www.ni.com/LabVIEW.VI">
-		<Icon Id="13c72056deec4df481df86a945fd370a" ListViewIconCrop="0 0 40 40" xmlns="http://www.ni.com/PlatformFramework">
-			<IconPanel Height="[float]40" Id="49b56b3ea1454c3e850dc517cff49916" Left="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
-				<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Id="37e7cd01b52c4c47aecc0a2c9df4ae01" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]40">
+		<Icon Id="13c72056deec4df481df86a945fd370a" ListViewIconCrop="0 0 90 70" xmlns="http://www.ni.com/PlatformFramework">
+			<IconPanel Height="[float]70" Id="49b56b3ea1454c3e850dc517cff49916" Left="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]90">
+				<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]70" Id="37e7cd01b52c4c47aecc0a2c9df4ae01" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]90">
 					<Rectangle Fill="[SMSolidColorBrush]#ff727272" Id="d3cdc237e442453293c7243b617abf6c" IsHitTestVisible="[bool]False" Left="[float]0" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
 					<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" Id="f2d64c1eec474ce08c3dc867bcbc2166" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
-					<FileNameText Attached="[bool]True" Id="65b0aff45e19425ba835f0d1e7c6df8c" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]AMEnvelopeDetection" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden">
+					<FileNameText Attached="[bool]True" Height="[float]66" Id="65b0aff45e19425ba835f0d1e7c6df8c" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]AMEnvelopeDetection" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]86">
 						<FontSetting FontFamily="Segoe UI" FontSize="6" Id="ec093c78040f41d1a44d719ae0be70e7" />
 					</FileNameText>
 				</IconTemplate>
 			</IconPanel>
 		</Icon>
-		<ConnectorPane Height="40" Id="f55689b5990846e8b27c5534149f6bf7" ListViewHeight="115" ListViewWidth="150" Width="40" xmlns="http://www.ni.com/PlatformFramework">
+		<ConnectorPane Height="70" Id="f55689b5990846e8b27c5534149f6bf7" ListViewHeight="115" ListViewWidth="150" Width="90" xmlns="http://www.ni.com/PlatformFramework">
 			<ConnectorPaneTerminal ListViewHotspot="0 35" Parameter="7e522637544f4f8ead953020d0d4e0f2" />
 			<ConnectorPaneTerminal Hotspot="0 15" ListViewHotspot="0 50" Parameter="1ef08c721dcb4f148399fce1344507eb" />
 			<ConnectorPaneTerminal Hotspot="0 25" ListViewHotspot="0 65" Parameter="8cde44070bb4840a2fb7f310aefa72d" />
 			<ConnectorPaneTerminal Hotspot="0 35" />
 			<ConnectorPaneTerminal Hotspot="15 0" />
 			<ConnectorPaneTerminal Hotspot="25 0" />
-			<ConnectorPaneTerminal Hotspot="40 5" ListViewHotspot="150 80" Parameter="15d6bcea01b6407290d2b5e468df9c7e" />
-			<ConnectorPaneTerminal Hotspot="40 15" />
-			<ConnectorPaneTerminal Hotspot="40 25" />
-			<ConnectorPaneTerminal Hotspot="40 35" ListViewHotspot="150 95" Parameter="b355794473db46588ee6184c6a97d65f" />
-			<ConnectorPaneTerminal Hotspot="15 40" />
-			<ConnectorPaneTerminal Hotspot="25 40" />
+			<ConnectorPaneTerminal Hotspot="90 5" ListViewHotspot="150 80" Parameter="15d6bcea01b6407290d2b5e468df9c7e" />
+			<ConnectorPaneTerminal Hotspot="90 15" />
+			<ConnectorPaneTerminal Hotspot="90 25" />
+			<ConnectorPaneTerminal Hotspot="90 35" ListViewHotspot="150 95" Parameter="b355794473db46588ee6184c6a97d65f" />
+			<ConnectorPaneTerminal Hotspot="15 70" />
+			<ConnectorPaneTerminal Hotspot="25 70" />
+			<ConnectorPaneTerminal Hotspot="90 45" />
+			<ConnectorPaneTerminal Hotspot="0 45" />
+			<ConnectorPaneTerminal Hotspot="90 55" />
+			<ConnectorPaneTerminal Hotspot="0 55" />
+			<ConnectorPaneTerminal Hotspot="90 65" />
+			<ConnectorPaneTerminal Hotspot="0 65" />
+			<ConnectorPaneTerminal Hotspot="35 0" />
+			<ConnectorPaneTerminal Hotspot="35 70" />
+			<ConnectorPaneTerminal Hotspot="45 0" />
+			<ConnectorPaneTerminal Hotspot="45 70" />
+			<ConnectorPaneTerminal Hotspot="55 0" />
+			<ConnectorPaneTerminal Hotspot="55 70" />
+			<ConnectorPaneTerminal Hotspot="65 0" />
+			<ConnectorPaneTerminal Hotspot="65 70" />
+			<ConnectorPaneTerminal Hotspot="75 0" />
+			<ConnectorPaneTerminal Hotspot="75 70" />
 		</ConnectorPane>
 		<DiagramUnplacedItems Id="97a208233cd848b790e94d83f2852b5a" xmlns="http://www.ni.com/MocCommon" />
 		<FrontPanelUnplacedItems Id="c8bbbb1da8e041228e64a9d6b00ab02c" Left="[float]0" PanelSizeMode="Fixed" Top="[float]0" />

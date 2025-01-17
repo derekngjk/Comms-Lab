@@ -209,6 +209,8 @@ The inputs `am_signal` and `carrier_signal` are of type `Waveform Array Terminal
 
 The function `Change to Scalar` just means that each input stores a single waveform, whereas the default behaviour is that each input can store an array of waveforms.
 
+Additionally, instead of multiplying the `am_signal` and `carrier_signal` directly, we first use the `Amplitude Measurement` tool to get the amplitude of the `carrier_signal`. Then, we divide the `carrier_signal` by its amplitude first, before we multiply it with `am_signal`. The reason for doing so is because we want to multiply the modulated signal `s(t)` by `cos(wt)`, however the `carrier_signal` is `Acos(wt)`. Hence, we need to normalize its amplitude to make it 1 before we multiply by `am_signal`.
+
 The next step is to pass the multiplied signal, `e(t)`, through a low-pass filter. We use a **lowpass Butterworth filter**, as follows:
 
 ![Butterworth filter block](images/lab2/[task1]butter_block.png)
@@ -262,3 +264,56 @@ Refer to the below to show that the half-wave rectifier is working as expected. 
 Finally, we use the `Build Waveform` function to combine the modified `Y` array back together with the original `t0` and `dt` values. Then, with reference to the handwritten notes above, we need to use a lowpass filter to remove the terms of higher frequencies, and we need to subtract the DC component to get back the original `m(t)`. We do this using the same blocks as in `Exercise 1a`. Thus, the final block diagram is as follows:
 
 ![Envelope Detection Block Diagram](images/lab2/[task1]am_env_det_full_block.png)
+
+## Exercise 2: AM Simulation
+
+Objective: to observe the entire process of AM modulation and demodulation
+
+We integrate the previous modules, `AM.gvi`, `AMCoherent.gvi` and `AMEnvelopeDet.gvi` into the top-level module `AMTopLevel.gvi`. We connect them as follows:
+
+![AM Top Level Block](images/lab2/[task2]am_top_level_block.png)
+
+We set the inputs to the following:
+
+| Parameter | Value |
+|-----------|-------|
+| Carrier Amplitude | 2 |
+| Message Amplitude | 1, 2, 3, 4 |
+| Sample Frequency | 200kHz |
+| Num Samples | 1000 |
+| Butterworth Order | 5 |
+| Butterworth Cut-off Frequency | 3kHz |
+| Carrier Frequency | 10kHz |
+| Message Frequency | 1kHz | 
+
+> TODO: do some calculation to explain why a cutoff frequency of 3kHz is used
+
+With message amplitude 1, we observe the following output:
+
+![Output with message amplitude 1](images/lab2/[task2]m_amp_1.png)
+
+As expected, the demodulated signals both have amplitude 1, and their frequency spectra both show a peak at 1kHz, as expected since `m(t)` is a sinusoid of 1kHz frequency. Note that the reason why there is a phase shift for the demodulated signals (i.e. they are not purely cosine waves where they start at the peak) is simply because the frequency response of the Butterworth filters introduces a phase shift.
+
+With message amplitude 2, we observe the following output:
+
+![Output with message amplitude 2](images/lab2/[task2]m_amp_2.png)
+
+Again, there is no noticeable difference. We see an amplitude of 2 in the time domain, and a peak at 1kHz in the frequency domain, as expected.
+
+With message amplitude 3, we observe the following output:
+
+![Output with message amplitude 3](images/lab2/[task2]m_amp_3.png)
+
+We see there is a distortion with the envelope detector method. Similarly, with message amplitude 4:
+
+![Output with message amplitude 4](images/lab2/[task2]m_amp_4.png)
+
+In both cases, we see a distortion in the time domain, as well as additional undesired peaks in the frequency domain. The reason for this is simply because, as explained in `Lab 1 Exercise 3`, the modulation index, `mu = Am / Ac`, has exceeded 1, because in both cases, Am = 3 and Am = 4, the values of mu are 1.5 and 2 respectively. 
+
+Recall `s(t) = [A + m(t)]cos(wt)`. In order for envelope detection to work correctly, the envelope, `A + m(t)`, must always be >= 0. In the last 2 cases where Am > Ac, this rule is violated. For example when Am = 3 and Ac = 2, `A + m(t)` varies between -1 to 5. This causes a problem because when `A + m(t)` is multiplied by `cos(wt)`, if `A + m(t)` is negative, it will cause the modulated signal to be inverted, causing envelope inversion. As such, rectification no longer works correctly, because the negative parts have been inverted to become positive. The rectifier assumes that the positive cycles represent the envelope. However, due to the inversion, the envelope alternates between positive and negative, leading to distortion. Additionally, because now the envelope is inverted, the non-smooth transitions in the envelope introduce additional high frequency components.
+
+The envelope inversion can be visualised and explained using the following diagram:
+
+![Diagram showing envelope inversion when mu > 1](images/lab2/[task2]envelope_inversion_diagram.jpeg)
+
+Note that, as can be seen in the graph outputs, overmodulation does not affect coherent detection. Going back to `Lab 2 Exercise 1a`, with reference to the handwritten notes, coherent detection directly extracts `m(t)` even when overmodulation occurs, and there is no dependence on the envelope.
