@@ -286,7 +286,7 @@ We set the inputs to the following:
 | Carrier Frequency | 10kHz |
 | Message Frequency | 1kHz | 
 
-> TODO: do some calculation to explain why a cutoff frequency of 3kHz is used
+Note that a cutoff frequency of 3kHz is used because `m(t)` has frequency 1kHz, and we want the message signal to be within the passband. Since the carrier frequency is 10kHz, having a cutoff frequency of 3kHz will be able to effectively attenuate the higher-order components.
 
 With message amplitude 1, we observe the following output:
 
@@ -310,7 +310,11 @@ We see there is a distortion with the envelope detector method. Similarly, with 
 
 In both cases, we see a distortion in the time domain, as well as additional undesired peaks in the frequency domain. The reason for this is simply because, as explained in `Lab 1 Exercise 3`, the modulation index, `mu = Am / Ac`, has exceeded 1, because in both cases, Am = 3 and Am = 4, the values of mu are 1.5 and 2 respectively. 
 
-Recall `s(t) = [A + m(t)]cos(wt)`. In order for envelope detection to work correctly, the envelope, `A + m(t)`, must always be >= 0. In the last 2 cases where Am > Ac, this rule is violated. For example when Am = 3 and Ac = 2, `A + m(t)` varies between -1 to 5. This causes a problem because when `A + m(t)` is multiplied by `cos(wt)`, if `A + m(t)` is negative, it will cause the modulated signal to be inverted, causing envelope inversion. As such, rectification no longer works correctly, because the negative parts have been inverted to become positive. The rectifier assumes that the positive cycles represent the envelope. However, due to the inversion, the envelope alternates between positive and negative, leading to distortion. Additionally, because now the envelope is inverted, the non-smooth transitions in the envelope introduce additional high frequency components.
+Recall `s(t) = [A + m(t)]cos(wt)`. In order for envelope detection to work correctly, the envelope, `A + m(t)`, must always be >= 0. In the last 2 cases where Am > Ac, this rule is violated. For example when Am = 3 and Ac = 2, `A + m(t)` varies between -1 to 5. This causes a problem because when `A + m(t)` is multiplied by `cos(wt)`, if `A + m(t)` is negative, it will cause the modulated signal to be inverted, causing envelope inversion. As such, rectification no longer works correctly, because the negative parts have been inverted to become positive. The rectifier assumes that the positive cycles represent the envelope. However, due to the inversion, the envelope alternates between positive and negative, so this is no longer true, leading to distortion.
+
+Additionally, we also see that in the case of overmodulation, there are additional spectral peaks at 2kHz and 3kHz. These arise because the envelope inversion causes abrupt changes in the demodulated signal, and these abrupt changes introduce additional higher-frequency components. We see in the time-domain, the demodulated signal is no longer a pure sinusoid, but rather the envelope inversion has introduced some additional higher-frequency oscillations. Hence when we do the Fourier series expansion of the demodulated signal, we not only see the peak at 1kHz, because it is no longer a pure sinusoid. We also see the additional peaks at the harmonics 2kHz and 3kHz.
+
+> Aside: slightly longer explanation. Recall that by Fourier theory, any periodic signal can be expressed as a sum of sinusoids of the fundamental frequency, and the harmonics. For a pure sinusoidal waveform, only the fundamental frequency exists. However, in the last two cases above, because the distorted waveforms are no longer purely sinusoid (although they are still periodic), their Fourier series expansions now include the fundamental, as well as the harmonics. Note that harmonics above 3kHz do not exist because the cutoff frequency of the Butterworth filter has attenuated frequencies above 3kHz.
 
 The envelope inversion can be visualised and explained using the following diagram:
 
