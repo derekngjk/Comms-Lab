@@ -181,3 +181,52 @@ Finally, when changing fm to 5kHz, we see the above differences again:
 2. Additionally, `m(t)` has peaks at 5kHz and -5kHz, hence when multiplied by a cosine of frequency 10kHz, these peaks get shifted to 5kHz and 15kHz respectively.
 
 Also, one final note is that in the screenshots for the graphs, the graphs for the PSDs are plotted with amplitude against time, instead of amplitude against frequency. This is a trivial matter, because internally, LabView is actually plotting the amplitude against frequency, but when plotting out on the graph, by default it labels the horizontal axis as time instead of frequency. This is just a trivial matter of renaming the axis label from time to frequency.
+
+# Lab 2
+
+Overview: to build AM and FM communication simulators
+
+## Exercise 1a: AM Demodulation (Coherent Demodulation)
+
+Method: the transmitted signal is `s(t) = [A + m(t)]cos(wt)`. We multiply this signal by the carrier signal, `cos(wt)`, and then perform a lowpass filter. How this works is as follows:
+
+![Coherent AM demodulation theory](images/lab2/[task1]coherent-am-theory.jpeg)
+
+Some things to note about this method:
+
+1. In practice, this method is not very feasible because when we multiply `s(t)` by the carrier, the carrier `cos(wt)` at the receiver must be perfectly synchronized in frequency and phase as the transmitted carrier, which is difficult to achieve in practice.
+2. The low-pass filter must have a cutoff frequency high enough to pass the bandwidth of `m(t)`, but low enough to block the components at `2wc`.
+
+We first create the block to perform multiplication of the AM signal and the carrier signal:
+
+![Block diagram to perform AM-carrier multiplication](images/lab2/[task1]am_carrier_mul.png)
+
+The inputs `am_signal` and `carrier_signal` are of type `Waveform Array Terminal`, which we set `Change to Scalar`. Basically, these inputs store a single waveform, and each waveform contains three attributes
+
+1. t0: the starting time of the waveform
+2. dt: the sampling interval
+3. Y: the array of sampled data points
+
+The function `Change to Scalar` just means that each input stores a single waveform, whereas the default behaviour is that each input can store an array of waveforms.
+
+The next step is to pass the multiplied signal, `e(t)`, through a low-pass filter. We use a **lowpass Butterworth filter**, as follows:
+
+![Butterworth filter block](images/lab2/[task1]butter_block.png)
+
+With reference to the screenshot of handwritten notes above, after LPF, the next step is to remove the DC component, then the final step is to scale the signal by factor 2. To remove the DC component, we use the `Amplitude Measurement` block and configure it to `AC DC and RMS` and `Single Shot` mode. Basically, this configuration instructs the module to calculate 3 values:
+
+1. DC component: the mean value of the signal over the measurement window
+2. AC component: the RMS value of the AC portion of the signal after subtracting the DC component
+3. RMS: the overall RMS value which includes both the AC and DC components
+
+Single Shot mode means that the module performs these calculations only once, i.e. no continuous updating, which is appropriate for our case. Again with reference to the screenshot of handwritten notes above, after removing the DC component, we just need to scale the wave by factor 2. Hence, the final block diagram is as follows:
+
+![AM Coherent Detecton Full Block Diagram](images/lab2/[task1]am_coherent_full_block.png)
+
+To answer the 3 questions in the specified task, refer to the handwritten notes. In brief:
+
+1. Why use a lowpass filter? To get rid of the high-frequency components at `2wc`
+2. Why get rid of the DC component? Because after lowpass filtering, we have `0.5A + 0.5m(t)`
+3. Why scale the message amplitude? Because after subtracting DC component, we are left with `0.5m(t)`, hence scale by factor 2.
+
+Finally, we transform this into a subVI and test it together with the AM subVI from lab 1. TODO
