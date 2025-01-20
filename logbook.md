@@ -321,3 +321,84 @@ The envelope inversion can be visualised and explained using the following diagr
 ![Diagram showing envelope inversion when mu > 1](images/lab2/[task2]envelope_inversion_diagram.jpeg)
 
 Note that, as can be seen in the graph outputs, overmodulation does not affect coherent detection. Going back to `Lab 2 Exercise 1a`, with reference to the handwritten notes, coherent detection directly extracts `m(t)` even when overmodulation occurs, and there is no dependence on the envelope.
+
+## Exercise 3: USRP
+
+Overview: to use the built-in USRP modules to transmit and receive AM signals.
+
+First we look at the block diagram for the `USRP_AM_TX` module.
+
+![USRP AM TX block diagram 1](images/lab2/[task3]tx_block_1.png)
+
+We first pass in the device name into the `niUSRP Open TX Session` unit. This basically creates a session handle, and tells the module the name of the device we are using, in this case `NI2900`.
+
+Then, we then use the `niUSRP Configure Signal` unit. This is used to set the parameters. We pass in `IQ Rate`, `carrier frequency`, `gain`, and `active antenna`. 
+- `IQ Rate`: the sample rate, i.e. tells the USRP how many samples per second to process. This basically needs to match the sampling rate of the sine generator. So e.g. if the sine generator generates 500k samples per second, then similarly the USRP needs to process 500k samples per second. If there is a mismatch, it may lead to distortion or aliasing.
+- `Carrier Frequency`: the center frequency of the RF signal being transmitted or received. The baseband IQ signal will be modulated on this carrier frequency before transmission.
+- `Gain`: amplification applied to the signal
+- `Active Antenna`: the USRP port being used
+
+The coerced values are the actual values being used by the USRP device, in the event that the values we want to set exceed the capabilities of the USRP device.
+
+Next, we observe the generator block of the transmitter:
+
+![USRP AM TX block diagram 2](images/lab2/[task3]tx_block_2.png)
+
+The first component is a sine generator. We pass in the `modulation_index` as the amplitude, which we set to 1. Then we pass in the `message_frequency`, and a constant phase of 90 so that the wave is a cosine wave instead of sine wave. We also pass in the number of `samples` to generate, as well as the `sampling_rate`. To reiterate, the `sampling_rate` must match the `IQ Rate` of the USRP device.
+
+We then take the generated waveform, and display it in the time-domain as `message_waveform`, and display its power spectrum in the frequency domain as `Message Power`. The component `Power Spectrum for 1 Channel` is used which basically applies the FFT and outputs the power at each frequency. This is similar to the `Power Spectral Density`. The difference is that `Message Power` plots the total power in each frequency bin, whereas `Power Spectral Density` plots the power in each bin, divided by the frequency resolution. Hence, the unit for PSD is `V^2 per Hz` whereas message power just plots `V^2`.
+
+Then, with reference to the block diagram, the transmitter takes the generated cosine signal, and adds 1 to it. Recall that in full-AM, `s(t) = [A + m(t)]cos(wt)`. Adding 1 is used to generate `A + m(t)`. Since we want `modulation_index = 1`, and we pass in `modulation_index` as the signal's amplitude, this means that in `A + m(t)`, we need `A = 1` in order to achieve `modulation_index = 1`, thus we add 1 to the signal.
+
+We then decompose the waveform to get the `Y` values, and perform normalization by dividing each element by the maximum element of the array, so that the waveform varies between 0 and 1 instead of 0 and 2. We then reconstruct the waveform back using the `dt` and `t0` attributes, so that we can view the `output_waveform`.
+
+Then, we see in the block diagram that we generate a complex number, passing in the signal values as the real components, and a constant 0 for the imaginary component. This complex array is then passed into the `niUSRP Write TX Data` module. The reason why we need to pass the signal as a complex array is because the USRP device expects the input to be presented in the form of the `In-Phase (I)` component and the `Quadrature (Q)` component, which corresponds to the real and imaginary parts of the baseband signal. In our case, since we are just transmitting a real cosine signal, we set the Q components to be 0, as shown in the block diagram.
+
+How the `niUSRP Write TX Data` module works is that, it takes in the array of complex numbers as a discrete array, and then generates a continuous-time signal which it transmits. It does this using the following process:
+
+1. It takes in a complex array, where each element in the array contains the real part of the signal, and the imaginary part. In this lab exercise, the imaginary part is set to 0.
+2. The complex samples are sent to the USRP device over a host-to-device ethernet connection.
+3. Using the `IQ Rate` which was configured earlier, the USRP device will perform Digital-to-Analog conversion to output a continuous-time signal, which is just the cosine wave with frequency equal to the `message_frequency`. Note: it technically outputs two separate signals, one corresponding to the cosine (I) component and one corresponding to the sine (Q) component, just that here, the Q component is 0 since the imaginary parts are 0. 
+4. Using the `Carrier Frequency` which was configured earlier, the USRP device will up-convert the continuous-time signal so that it is centred at the carrier frequency instead of 0.
+5. Using the `Gain` which was configured earlier, the USRP device will amplify the signal. 
+
+Next, we observe how the `USRP_AM_RX` works:
+
+![RX block diagram](images/lab2/[task3]rx_block.png)
+
+The `niUSRP Initiate` function sends the parameter values to the receiver and gets it running. Then, `niUSRP Fetch Rx Data` fetches the data from the receiver. Internally, the USRP receiver will multiply the received signal together with the sinusoidal carrier, applies a lowpass filter, followed by an ADC, and outputs the digital waveform. This is shown as per the diagram below:
+
+![USRP internal circuit](images/lab2/[task3]usrp_internal.png)
+
+Then, from the digital waveform, the `Y` values are extracted. Only the real parts are of concern, since the imaginary parts are set to 0. Then, the circuit removes the DC component, and applies a lowpass filter to get rid of the high-frequency components. See `Lab 2 Exercise 1a: coherent detection` for the mathematical details. Finally, the `demodulated_signal` and the `demodulated_psd` is shown.
+
+Hence, running the module with `message_frequency = 5kHz` and `modulation_index = 1`, we observe the following output from the transmitter:
+
+![TX Settings with 5kHz](images/lab2/[task3]tx_fm5000_settings.png)
+![TX Output with 5kHz](images/lab2/[task3]tx_fm5000_graphs.png)
+
+Similarly, the following output on the receiver:
+
+![RX Output with 5kHz](images/lab2/[task3]rx_fm5000.png)
+
+We observe that the demodulated signal on the receiver side has a peak at 5kHz, as expected.
+
+### Effect of Noise
+
+To observe the effect of noise, we first increase the receiver gain to `20dB`, which means that weaker noise signals will be amplified and detected in addition to the transmitted signal. Then, we gradually reduce the value of `modulation_index` and observe the effect on the output:
+
+For `mu = 1`, we see that the receiver demodulates the signal correctly, as expected:
+
+![RX Output with mu = 1](images/lab2/[task3]rx_mu_1.png)
+
+Similarly with `mu = 0.9`:
+
+![RX Output with mu = 0.9](images/lab2/[task3]rx_mu_09.png)
+
+However, with `mu = 0.8`, we start to observe the effect of noise on the demodulated signal:
+
+
+
+TODO: 
+- check purpose of lowpass filter in the USRP internal circuit
+- check why the demodulated signal amplitude is much much lower than the transmitted signal amplitude
