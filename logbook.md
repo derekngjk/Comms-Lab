@@ -385,17 +385,36 @@ We observe that the demodulated signal on the receiver side has a peak at 5kHz, 
 
 ### Effect of Noise
 
-To observe the effect of noise, we first increase the receiver gain to `20dB`, which means that weaker noise signals will be amplified and detected in addition to the transmitted signal. Then, we gradually reduce the value of `modulation_index` and observe the effect on the output:
+To observe the effect of noise, we first increase the receiver gain to `20dB`, which means that weaker noise signals will be amplified and detected in addition to the transmitted signal. Then, we gradually reduce the value of `modulation_index` and observe the effect on the output. The table of parameters is as follows:
 
-For `mu = 1`, we see that the receiver demodulates the signal correctly, as expected:
+| Param | Transmitter | Receiver |
+|-------|-------------|----------|
+| IQ Rate | 500k | 500k |
+| Carrier Frequency | 400M | 400M |
+| Gain | 0dB | 20dB |
+| Sample Rate | 500k | N/A |
+| Samples | 200k | 200k |
+| LPF Cutoff Frequency | N/A | 1400Hz |
+| Modulation Index | Varying | N/A |
+| Message Frequency | 1000Hz | N/A |
+
+For `mu = 1`, the transmitter output is as follows:
+
+![TX Output with mu = 1](images/lab2/[task3]tx_mu_1.png)
+
+And the receiver demodulates the signal correctly, as follows:
 
 ![RX Output with mu = 1](images/lab2/[task3]rx_mu_1.png)
 
-Similarly with `mu = 0.9`:
+Similarly with `mu = 0.9`, the receiver demodulates the signal correctly as follows:
 
 ![RX Output with mu = 0.9](images/lab2/[task3]rx_mu_09.png)
 
-However, with `mu = 0.8`, we start to observe the effect of noise on the demodulated signal:
+Similarly with `mu = 0.8`:
+
+![RX Output with mu = 0.8](images/lab2/[task3]rx_mu_08.png)
+
+
 
 
 
