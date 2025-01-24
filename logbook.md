@@ -432,7 +432,51 @@ Note: recall how the `USRP_TX_AM` circuit is constructed. It passes in the `modu
 
 Generally speaking, with a smaller peak-peak amplitude of the signal, the greater the effect of noise. This is because the power of the message signal is smaller relative to the noise, thus the signal-noise ratio decreases.
 
+## Exercise 4: Listening to AM Music
 
+We want to detect a piece of AM-modulated music using the `USRP_AM_Rx_Music.gvi`.  TODO: check how to connect earphones to the PC because there is no sound coming out.
 
 TODO: 
 - check purpose of lowpass filter in the USRP internal circuit
+
+# Lab 3
+
+## Exercise 1: FM Modulator
+
+First see the below for some theory on FM:
+
+![FM theory](images/lab3/[task1]fm-theory.jpeg)
+
+We construct the FM circuit as follows:
+
+![FM circuit](images/lab3/[task1]fm-mod-circuit.png)
+
+First, we use the wave generator to generate the message signal `m(t)`. Then, the next step is to perform integration to obtain `theta(t)`. The `Integral x(t)` function takes in the values in the array, as well as the `dt` argument. The `dt` argument is important because internally, the `Integral x(t)` function performs numerical integration by multiplying each value in the Y array by `dt` in order to approximate the area under the graph.
+
+The output of the integral is then multiplied by `kf`, and then `2pi`, giving `theta(t)`. We then pass this through the `sine and cosine` function to obtain `sin(theta(t))` and `cos(theta(t))` and construct the waveforms back. We then use another wave generator to generate `Acos(wt)` and `Asin(wt)` where `A = carrier amplitude` and `w = carrier angular frequency`, and multiply them by `cos(theta(t))` and `sin(theta(t))` respectively. Finally we subtract them to obtain the FM output signal as derived above.
+
+We then vary `kf` between 500, 2000, 5000 and observe how the output changes. For `kf = 500`:
+
+![Output with kf = 500](images/lab3/[task1]kf-500.png)
+
+The message frequency is 1kHz, hence the `message_psd` has a peak in the frequency spectrum at 1kHz, as expected. To understand the frequency spectrum of the modulated signal, we need to consider `Bessel functions of the first kind, c.f. Topics in EE - Signals and Communications, Prof Kin K. Leung`. Consider the following:
+
+![Theory of FM bandwidth](images/lab3/[task1]fm-bandwidth-theory.jpeg)
+
+Basically, in FM, the modulated signal has an infinite bandwidth made up of one component at the carrier frequency `fc`, and an infinite number of sidebands at frequencies `fc + fm`, `fc - fm`, `fc + 2fm`, `fc - 2fm`, ... `fc + kfm` where `k` is an integer. The amplitudes of the sidebands are weighted by `J_n(beta)`, where `beta` is the modulation index a.k.a. the frequency deviation ratio. For `kf = 500` and `mp = 1`, we have `delta_f = kf * mp = 500`, and the bandwidth `B = 1000`, since the message frequency is 1. Hence, this gives `beta = delta_f / B = 0.5`. 
+
+For FM, the number of significant sidebands is `beta + 1` because for `n > beta + 1` the amplitude of the Bessel function becomes negligible. Thus, only `n = 1` sideband is significant in this case. This agrees with the PSD screenshot above, where we have 2 significant sidebands at 9kHz and 11kHz, together with the center frequency at 10kHz.
+
+Changing `kf = 2000`, we get the following:
+
+![Output with kf = 2000](images/lab3/[task1]kf-2000.png)
+
+Now, with `kf = 2000`, we have `delta_f = kf * mp = 2000 * 1 = 2000`. Hence, we have `beta = delta_f / B = 2`. Thus, the number of significant sidebands is `beta + 1 = 3`. As expected, we see that there are peaks at the center frequency 10kHz, as well as 3 significant sidebands at 11kHz, 12kHz, 13kHz, and another 3 sidebands mirrored at 9kHz, 8kHz, and 7kHz.
+
+Finally with `kf = 5000`:
+
+![Output with kf = 5000](images/lab3/[task1]kf-5000.png)
+
+Now, with `kf = 5000`, we have `delta_f = kf * mp = 5000 * 1 = 5000`. Hence, we have `beta = delta_f / B = 5`. Thus, the number of significant sidebands is `beta + 1 = 6`. Hence, we see on the PSD that there are peaks at 10kHz, as well as 6 sidebands on each side separated at intervals of 1kHz. We see an additional 7th sideband, however the amplitude is very small. 
+
+> Key takeaway: in FM, the modulated signal has theoretically an infinite bandwidth made up of one component at the carrier frequency fc, and an infinite number of sidebands at frequencies `fc +- n * fm`. However, for a fixed frequency deviation ratio beta, the amplitude of the bessel functions `J_n(beta)` decreases as n increases. As `n > beta + 1` the amplitude of the Bessel function becomes negligible. Thus the number of significant sidebands is `beta + 1`. Hence the bandwidth of FM signal is approximated using Carson's rule, where `B_fm = 2n * fm = 2(beta + 1) * fm = 2 * (delta_f + B)`.
