@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="0F24BE06538157EA067BFFAC286B16FA5136F9D509C8C3AFB8510B9A641F3EB412D441D4406378AF9618B50B1620DAD69AACA72A07FECBCB7472667674F857D4" Timestamp="1DB6C017FFAB0A6" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="F5E16A201993454CCBB00EAD3803EB74337F45E5F99D6E1272B729329A3AE9F4ED7C5DC047D9F8ABEF0EE42BAD0D765AEBC2619BE6E7F3D0EC60DD88806066A6" Timestamp="1DB6E5E431BC345" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -410,7 +410,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="215" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]8dc7f0fb37144a2684f2966b2209e9e4" Orientation="[SMOrientation]Vertical" Range="[IRange]0.1, 1, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="215" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]8dc7f0fb37144a2684f2966b2209e9e4" Orientation="[SMOrientation]Vertical" Range="[IRange]0.81, 1, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="8dc7f0fb37144a2684f2966b2209e9e4">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -440,7 +440,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="628" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]639" Orientation="[SMOrientation]Vertical" Range="[IRange]-0.8, 0.8, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="628" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]639" Orientation="[SMOrientation]Vertical" Range="[IRange]-0.1, 0.1, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="639">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -460,16 +460,16 @@
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="645" LabelOwner="[UIModel]626" Left="[float]84" Text="[string]message waveform" Top="[float]430" Width="[float]102" xmlns="http://www.ni.com/PanelCommon" />
 			<PlotLegend Enabled="[bool]True" Graph="[UIModel]626" Height="[float]28" Id="640" Left="[float]691" Top="[float]450" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<CursorLegend DefaultCursorForeground="[SMSolidColorBrush]#ff000000" Enabled="[bool]True" Graph="[UIModel]626" Height="[float]102" Id="641" Left="[float]89" MinHeight="[float]80" NameColumnWidth="[double]80" Top="[float]879" Visible="[bool]False" Width="[float]251" XColumnWidth="[double]30" YColumnWidth="[double]30" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
-			<ScaleLegend Enabled="[bool]True" Graph="[UIModel]626" Height="[float]50" Id="642" Left="[float]691" MinHeight="[float]50" Top="[float]748" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<ScaleLegend Enabled="[bool]True" Graph="[UIModel]626" Height="[float]50" Id="642" Left="[float]516" MinHeight="[float]50" Top="[float]836" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<GraphTools Enabled="[bool]True" Graph="[UIModel]626" Height="[float]22" Id="643" Left="[float]89" Top="[float]857" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<PanelExecutionWindow Id="646" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=7f5a4502d08a43fa9ba9d0fe86c65b76}" DataSourceType="[Type]@a8106957b9c74a119f0e3cfccf03e781" Enabled="[bool]True" Height="[float]424" Id="fe7d427b400143a4a2cb8cda7a4f17cd" Label="[UIModel]5eb3c522c3fd47469915a0a781bba395" Left="[float]100" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]16" Top="[float]916" Width="[float]568" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]None" DisableMappingChanges="[bool]False" Id="331d93b78f484513af5390a655da5eb9" IsInverted="[bool]False" Label="[string]Frequency" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]b358e8e88f4f44368eaaef98fae55131" Orientation="[SMOrientation]Horizontal" Range="[IRange]514.39226696958576, 1500.3107786612932, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]None" DisableMappingChanges="[bool]False" Id="331d93b78f484513af5390a655da5eb9" IsInverted="[bool]False" Label="[string]Frequency" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]b358e8e88f4f44368eaaef98fae55131" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 4807.6923076923076, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="b358e8e88f4f44368eaaef98fae55131">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="fc3402de346f4cdc9c7ae3c5939b9fed" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]34bf66bf6ff74b13806f7ec0915a5f92" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.4, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="fc3402de346f4cdc9c7ae3c5939b9fed" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]34bf66bf6ff74b13806f7ec0915a5f92" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.005, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="34bf66bf6ff74b13806f7ec0915a5f92">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>

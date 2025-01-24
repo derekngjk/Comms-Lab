@@ -381,7 +381,7 @@ Similarly, the following output on the receiver:
 
 ![RX Output with 5kHz](images/lab2/[task3]rx_fm5000.png)
 
-We observe that the demodulated signal on the receiver side has a peak at 5kHz, as expected.
+We observe that the demodulated signal on the receiver side has a peak at 5kHz, as expected. Note that the reason why the demodulated signal amplitude is lower than the message amplitude, and the reason why the demodulated signal amplitude is seen to fluctuate slightly, is simply because of factors like attenuation in the channel. For instance, if you cover the antenna with your hand, the amplitude will be changed accordingly.
 
 ### Effect of Noise
 
@@ -406,18 +406,33 @@ And the receiver demodulates the signal correctly, as follows:
 
 ![RX Output with mu = 1](images/lab2/[task3]rx_mu_1.png)
 
-Similarly with `mu = 0.9`, the receiver demodulates the signal correctly as follows:
+Similarly with `mu = 0.9`:
 
 ![RX Output with mu = 0.9](images/lab2/[task3]rx_mu_09.png)
 
-Similarly with `mu = 0.8`:
+However at `mu = 0.8`, the effects of noise become apparent:
 
 ![RX Output with mu = 0.8](images/lab2/[task3]rx_mu_08.png)
 
+![RX Output with mu = 0.8](images/lab2/[task3]rx_mu_08_zoomed.png)
 
+We see the effects of additive noise because the 20dB gain not only amplifies the signal but also amplifies the noise. Hence, we see that the PSD contains a peak at 1kHz, but now it also contains other peaks due to the effects of noise distorting the sinusoidal signal.
+
+Similarly with `mu = 0.7`:
+
+![RX Output with mu = 0.7](images/lab2/[task3]rx_mu_07.png)
+
+And with `mu = 0.2`:
+
+![RX Output with mu = 0.2](images/lab2/[task3]rx_mu_02.png)
+
+Note: recall how the `USRP_TX_AM` circuit is constructed. It passes in the `modulation_index` as the ampitude of the message signal, adds 1 to it, and divides it by the maximum value. So e.g. for `mu = 1`, after we add 1 to the signal, the range of the signal is `[0, 2]`, and we divide each value by the maximum, hence scaling the waveform to the range `[0, 1]`. Whereas now consider `mu = 0.1`. After we add 1 to the signal, the range of the signal is `[0.9, 1.1]`, and thus when we divide by the maximum value of the array, we end up scaling the waveform to the range `[0.818, 1]`. This can be seen in the following transmitter output with `mu = 0.1`:
+
+![TX Output with mu = 0.1](images/lab2/[task3]tx_mu_01.png)
+
+Generally speaking, with a smaller peak-peak amplitude of the signal, the greater the effect of noise. This is because the power of the message signal is smaller relative to the noise, thus the signal-noise ratio decreases.
 
 
 
 TODO: 
 - check purpose of lowpass filter in the USRP internal circuit
-- check why the demodulated signal amplitude is much much lower than the transmitted signal amplitude
