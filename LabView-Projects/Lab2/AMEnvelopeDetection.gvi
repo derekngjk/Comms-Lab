@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <SourceFile Checksum="85767BA468497C6817294E3257889A2307F0E4335481CDAD19F26CF4CE270F6373F80B940E427CE99F256FC6E1F120FE2C84078DA202DB9B59D777285FA7996F" Timestamp="1DB6901B9E08B8F" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
