@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="9F1B7EE8EA4AC71B765AFF4278732DA7A7F313701F1D7E41C37A2EF844591002DC0565628D58518C219A902C56A945B3B3C97A4A13F57747602EF74FF3893047" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="297D0E665B39CEEF1EEEE9265CEF76FF5BFD1E9526C81489D1479F2C7FEE4EA1AF13255E486755DF1CAC10AE490696876B95249A4E1E9C110B09A4F8FCFE6DD0" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="GComponentFeatureSet" Name="http://www.ni.com/GComponent.xsd" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -257,6 +257,9 @@
 							</ComponentConfiguration>
 						</ComponentDefinition>
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="c54a870de524416e8d4f5c4da7654c20" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="FM_Modulator.gvi" StoragePath="FM_Modulator.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="c447b6613c6746e5bbce5190da5179f5" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="FMDemodulator.gvi" StoragePath="FMDemodulator.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="9ec4feda094c4bd38be481dd6e25c20b" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="FMTopLevel.gvi" StoragePath="FMTopLevel.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="3b1f96e35f43478fa467cdfe7c4e6915" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="FMDemodulator_2.gvi" StoragePath="FMDemodulator_2.gvi" />
 					</EmbeddedDefinitionReference>
 				</NameScopingEnvoy>
 			</NameScopingEnvoy>
