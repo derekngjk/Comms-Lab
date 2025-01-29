@@ -607,4 +607,68 @@
 			<string>Error.gtypecache</string>
 		</value>
 	</item>
+	<item>
+		<key>
+			<string>NI.G Core.Sound_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gcompcache</string>
+		</key>
+		<value>
+			<string>NI.G Core.Sound.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>USRP_61fdf042db79482db5e73a3abd6cd090_461342194d0e42a5a12239d1d65f8993.gcompcache</string>
+		</key>
+		<value>
+			<string>USRP.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Sound Data Format_105_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>Sound Data Format.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>lvsound2_103_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.slicache</string>
+		</key>
+		<value>
+			<string>lvsound2.slicache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>NI.G Core.File IO (General)_2d919e82ac344e4e83bef2a2dbd10f36_6a82dacb537c49cf937c401adcbd81f4.gcompcache</string>
+		</key>
+		<value>
+			<string>NI.G Core.File IO (General).gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>NI.G Core.Strings_688caedaa56640bbac9a9dfe2d171d8a_6a82dacb537c49cf937c401adcbd81f4.gcompcache</string>
+		</key>
+		<value>
+			<string>NI.G Core.Strings.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>niusrp2_a1cd95f2333a4204b79b112b24620ecb_61fdf042db79482db5e73a3abd6cd090_461342194d0e42a5a12239d1d65f8993.slicache</string>
+		</key>
+		<value>
+			<string>niusrp2.slicache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>niUSRP_bc410d8647649dba43787a1f3847ace_61fdf042db79482db5e73a3abd6cd090_461342194d0e42a5a12239d1d65f8993.udrcache</string>
+		</key>
+		<value>
+			<string>niUSRP.udrcache</string>
+		</value>
+	</item>
 </SerializableDictionary>
