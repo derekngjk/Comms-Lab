@@ -434,10 +434,9 @@ Generally speaking, with a smaller peak-peak amplitude of the signal, the greate
 
 ## Exercise 4: Listening to AM Music
 
-We want to detect a piece of AM-modulated music using the `USRP_AM_Rx_Music.gvi`.  TODO: check how to connect earphones to the PC because there is no sound coming out.
+We want to detect a piece of AM-modulated music using the `USRP_AM_Rx_Music.gvi`. There are two parameters, `gain` and `digital signal gain`. `gain` is the amplifying factor applied to the raw signal, including both the message and the noise. Whereas for the `digital signal gain`, it is the multiplicative factor applied after the lowpass filter, hence after the high frequency noise is removed.
 
-TODO: 
-- check purpose of lowpass filter in the USRP internal circuit
+> As of 31/01/2025, the instructions from the GTAs is that they have problems setting up the music transmitter hence this task cannot be completed because there is no music.
 
 # Lab 3
 
@@ -480,3 +479,4 @@ Finally with `kf = 5000`:
 Now, with `kf = 5000`, we have `delta_f = kf * mp = 5000 * 1 = 5000`. Hence, we have `beta = delta_f / B = 5`. Thus, the number of significant sidebands is `beta + 1 = 6`. Hence, we see on the PSD that there are peaks at 10kHz, as well as 6 sidebands on each side separated at intervals of 1kHz. We see an additional 7th sideband, however the amplitude is very small. 
 
 > Key takeaway: in FM, the modulated signal has theoretically an infinite bandwidth made up of one component at the carrier frequency fc, and an infinite number of sidebands at frequencies `fc +- n * fm`. However, for a fixed frequency deviation ratio beta, the amplitude of the bessel functions `J_n(beta)` decreases as n increases. As `n > beta + 1` the amplitude of the Bessel function becomes negligible. Thus the number of significant sidebands is `beta + 1`. Hence the bandwidth of FM signal is approximated using Carson's rule, where `B_fm = 2n * fm = 2(beta + 1) * fm = 2 * (delta_f + B)`.
+
