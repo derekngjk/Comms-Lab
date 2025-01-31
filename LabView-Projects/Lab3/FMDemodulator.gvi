@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Checksum="72C35004A559BF01CA0D56F44B84D47AA7E8FB2E61B6203D9CA5A1F1015BEF97A6D1724B90EA13F88D560B5AF8CE6249380ED4FB4C81219E7753276220DBD639" Timestamp="1DB727F99B40753" xmlns="http://www.ni.com/PlatformFramework">
+	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Editor" Name="http://www.ni.com/PanelCommon" OldestCompatibleVersion="6.1.0.0" Version="6.1.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Editor" Name="http://www.ni.com/PlatformFramework" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
+		<ApplicationVersionInfo Build="8.1.0.50414" Name="LabVIEW NXG" Version="5.0.0" />
+	</SourceModelFeatureSet>
+	<VirtualInstrument Id="9e508bc0dec14498bf105aac07ae697a" xmlns="http://www.ni.com/LabVIEW.VI">
+		<Icon Id="875881fe20584b91a72e93459a5f2595" ListViewIconCrop="0 0 40 40" xmlns="http://www.ni.com/PlatformFramework">
+			<IconPanel Height="[float]40" Id="dcf8120fa103465db3cca8dbd2fb96e9" Left="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+				<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Id="1ec67dd3481944b89da0790b480d365e" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]40">
+					<Rectangle Fill="[SMSolidColorBrush]#ff727272" Id="48cc59a172ea4c2fb4ad422547f884ff" IsHitTestVisible="[bool]False" Left="[float]0" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+					<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" Id="8912d15fcefd411cadc6495be6967f26" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+					<FileNameText Attached="[bool]True" Id="28a854a9c5754b21acf3aa37344b4bf9" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]FMDemodulator" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden">
+						<FontSetting FontFamily="Segoe UI" FontSize="6" Id="15508425794143a4a28b7cfa6ef2d4e1" />
+					</FileNameText>
+				</IconTemplate>
+			</IconPanel>
+		</Icon>
+		<ConnectorPane Height="40" Id="13f96a64e38944228500cd0e5bce732f" ListViewHeight="175" ListViewWidth="150" Width="40" xmlns="http://www.ni.com/PlatformFramework">
+			<ConnectorPaneTerminal ListViewHotspot="0 35" Parameter="c6f30bb7d40842a3976b4dd9fe238bbd" />
+			<ConnectorPaneTerminal Hotspot="0 15" ListViewHotspot="0 50" Parameter="3158ee2fe4d84e7f853a7fa4924c87bc" />
+			<ConnectorPaneTerminal Hotspot="0 25" ListViewHotspot="0 65" Parameter="375cea1d76a424193b12a178161c142" />
+			<ConnectorPaneTerminal Hotspot="0 35" />
+			<ConnectorPaneTerminal Hotspot="15 0" />
+			<ConnectorPaneTerminal Hotspot="25 0" />
+			<ConnectorPaneTerminal Hotspot="40 5" ListViewHotspot="150 110" Parameter="7e39dd61117e4ea0aba520171692cbfc" />
+			<ConnectorPaneTerminal Hotspot="40 15" ListViewHotspot="150 125" Parameter="d1669a4b45294ecbb5c605569204d735" />
+			<ConnectorPaneTerminal Hotspot="40 25" ListViewHotspot="150 140" Parameter="adeef5b4d47c4215899a77124cd56692" />
+			<ConnectorPaneTerminal Hotspot="40 35" ListViewHotspot="150 155" Parameter="8e661373e5364882a4db45ead2159682" />
+			<ConnectorPaneTerminal Hotspot="15 40" ListViewHotspot="0 80" Parameter="4f885c9275ba479aa4ce9af6be9bc281" />
+			<ConnectorPaneTerminal Hotspot="25 40" ListViewHotspot="0 95" Parameter="961d8ebe1d7b4d30a47091bd29453877" />
+		</ConnectorPane>
+		<DiagramUnplacedItems Id="3ac922b6d6094036a20e3618b412661e" xmlns="http://www.ni.com/MocCommon" />
+		<FrontPanelUnplacedItems Id="48669fd766e6442392ef786d3c6d94b4" Left="[float]0" PanelSizeMode="Fixed" Top="[float]0" />
+		<BlockDiagram Id="7e410501a1e845039382cdd425094bb4">
+			<NodeLabel AttachedTo="3fc0876f47fe4d6f9509d72d4a836417" Bounds="-334 170 54 14" Id="c039dd74f4045c7a4d1d43c59fa6152" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>fm_signal</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="-275 170 40 15" DataItem="c6f30bb7d40842a3976b4dd9fe238bbd" Id="3fc0876f47fe4d6f9509d72d4a836417" Label="c039dd74f4045c7a4d1d43c59fa6152" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Wfm(Double)" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<DataAccessor Bounds="375 110 40 15" DataItem="3158ee2fe4d84e7f853a7fa4924c87bc" Id="c1aa5bf1da524a8081d56b6e234e388d" Label="6fabdb264c4e46bf8b5733ce879fc3ec" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Double" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="c1aa5bf1da524a8081d56b6e234e388d" Bounds="283 110 87 14" Id="6fabdb264c4e46bf8b5733ce879fc3ec" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>low_cutoff_freq</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="395 360 40 15" DataItem="375cea1d76a424193b12a178161c142" Id="4f05c7315e324d54bda97ef5b67b86b6" Label="3d6e87afb41842e5b3018259ab25f8c4" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Int32" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="4f05c7315e324d54bda97ef5b67b86b6" Bounds="360 360 30 14" Id="3d6e87afb41842e5b3018259ab25f8c4" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>order</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="480 335 40 15" DataItem="4f885c9275ba479aa4ce9af6be9bc281" Id="ddaee218b9db4dbb99ca23b802c3dc38" Label="251580db30143eb9e534b7152e25f45" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Double" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="ddaee218b9db4dbb99ca23b802c3dc38" Bounds="464 335 11 14" Id="251580db30143eb9e534b7152e25f45" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>kf</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="480 360 40 15" DataItem="961d8ebe1d7b4d30a47091bd29453877" Id="e58721932e3946188a47acbce4d22ea7" Label="149998fc05a841ecb33b3b66d213f84c" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Double" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="e58721932e3946188a47acbce4d22ea7" Bounds="461 360 14 14" Id="149998fc05a841ecb33b3b66d213f84c" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>Ac</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="725 305 40 15" DataItem="7e39dd61117e4ea0aba520171692cbfc" Id="9515e47106384c6d96fd6a6866c247ff" Label="5ba8101f418c43dba82d2f7e3d5aa710" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Wfm(Double)" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="9515e47106384c6d96fd6a6866c247ff" Bounds="770 305 77 14" Id="5ba8101f418c43dba82d2f7e3d5aa710" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>demod_signal</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="795 215 40 15" DataItem="d1669a4b45294ecbb5c605569204d735" Id="378bec3ad0cd4cba8d2fecef26ac477e" Label="53b5834d038f4ee4a7ac2e2c33f84832" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="@a8106957b9c74a119f0e3cfccf03e781" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="378bec3ad0cd4cba8d2fecef26ac477e" Bounds="840 215 65 14" Id="53b5834d038f4ee4a7ac2e2c33f84832" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>demod_psd</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="540 225 40 15" DataItem="adeef5b4d47c4215899a77124cd56692" Id="282850b741a74f9e99750a9f38d3b1cb" Label="bb61b50855b74d72b38240703556464a" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Wfm(Double)" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="282850b741a74f9e99750a9f38d3b1cb" Bounds="585 225 79 14" Id="bb61b50855b74d72b38240703556464a" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>filtered_signal</p.Text>
+			</NodeLabel>
+			<DataAccessor Bounds="480 195 40 15" DataItem="8e661373e5364882a4db45ead2159682" Id="7429d2391a744f3ebddcc342e6ae290e" Label="e868af4194084c1399ca0d301ddf1ef3" xmlns="http://www.ni.com/MocCommon">
+				<Terminal DataType="Wfm(Double)" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+			</DataAccessor>
+			<NodeLabel AttachedTo="7429d2391a744f3ebddcc342e6ae290e" Bounds="525 195 21 14" Id="e868af4194084c1399ca0d301ddf1ef3" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>test</p.Text>
+			</NodeLabel>
+			<MethodCall Bounds="205 220 40 50" Id="24ac747e95224e15b0188d19a3c72a1a" ResolveFailedHint="&quot;C:\\Users\\sm5423\\OneDrive - Imperial College London\\Communications Labs\\Comms-Lab\\LabView-Projects\\Lab3\\Function.gvi&quot;" Signature="@0d1a4b4212d44c5d938d88556924f036" Target="Function.gvi" xmlns="http://www.ni.com/MocCommon">
+				<p.MethodDeclaration>
+					<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+						<Parameter Id="L0" Desc="fm_signal" />
+						<Parameter Id="L1" Desc="low_cutoff_freq" />
+						<Parameter Id="L2" Desc="kf" />
+						<Parameter Id="L3" Desc="Ac" />
+						<Parameter Id="L4" Desc="order" />
+						<Parameter Id="R0" Desc="test" />
+						<Parameter Id="R1" Desc="filtered_signal" />
+						<Parameter Id="R2" Desc="demod_signal" />
+						<Parameter Id="R3" Desc="demod_psd" />
+					</MethodDeclaration>
+				</p.MethodDeclaration>
+				<Terminal DataType="Wfm(Double)" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Input" Hotspot="0 15" Id="L1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Input" Hotspot="0 25" Id="L2" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Double" Direction="Input" Hotspot="0 35" Id="L3" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Int32" Direction="Input" Hotspot="0 45" Id="L4" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Wfm(Double)" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Wfm(Double)" Direction="Output" Hotspot="40 15" Id="R1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Wfm(Double)" Direction="Output" Hotspot="40 25" Id="R2" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="@a8106957b9c74a119f0e3cfccf03e781" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
+			</MethodCall>
+			<Wire Id="c92e3fa3051241c080b451cd9cfe52b6" Joints="N(3fc0876f47fe4d6f9509d72d4a836417:Value)|(-235,175) h(429) v(50) N(24ac747e95224e15b0188d19a3c72a1a:L0)|(205,225)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="7ceff1af59804025ad1950652ddc6e1b" Joints="N(c1aa5bf1da524a8081d56b6e234e388d:Value)|(415,115) h(5) v(159) h(-226) v(-39) N(24ac747e95224e15b0188d19a3c72a1a:L1)|(205,235)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="4a0a0e953f8b4bd392645fa4c5d84b79" Joints="N(ddaee218b9db4dbb99ca23b802c3dc38:Value)|(520,340) h(5) v(-9) h(-335) v(-86) N(24ac747e95224e15b0188d19a3c72a1a:L2)|(205,245)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="bbe04b1f7dc4b3c8cd7b234e4366827" Joints="N(e58721932e3946188a47acbce4d22ea7:Value)|(520,365) h(5) v(-9) h(-339) v(-101) N(24ac747e95224e15b0188d19a3c72a1a:L3)|(205,255)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="8b8abe0e0ed8414cb9fd4a8aa46d9294" Joints="N(4f05c7315e324d54bda97ef5b67b86b6:Value)|(435,365) h(5) v(-13) h(-241) v(-87) N(24ac747e95224e15b0188d19a3c72a1a:L4)|(205,265)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="c37bbfe0227a40d2a9a5be65d85c9ab6" Joints="N(24ac747e95224e15b0188d19a3c72a1a:R0)|(245,225) h(11) v(-25) N(7429d2391a744f3ebddcc342e6ae290e:Value)|(483,200)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="a6c96f38cbb14a8393c0b7018d7cf16b" Joints="N(24ac747e95224e15b0188d19a3c72a1a:R1)|(245,235) h(11) v(-5) N(282850b741a74f9e99750a9f38d3b1cb:Value)|(543,230)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="75ef12fe008b4b039be393b47a22e156" Joints="N(24ac747e95224e15b0188d19a3c72a1a:R2)|(245,245) h(11) v(65) N(9515e47106384c6d96fd6a6866c247ff:Value)|(728,310)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="4a8837d0415f4ae6a46af108a3de4635" Joints="N(24ac747e95224e15b0188d19a3c72a1a:R3)|(245,255) h(544) v(-35) N(378bec3ad0cd4cba8d2fecef26ac477e:Value)|(798,220)" xmlns="http://www.ni.com/PlatformFramework" />
+		</BlockDiagram>
+		<NativeFrontPanel Height="[float]1600" HtmlPanel="[bool]False" Id="fc10af7fa37a4f70aa08e0d33a811de6" Left="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000">
+			<PanelExecutionWindow Id="77d319dd05eb405fbbdab0fbda99d91b" />
+			<Waveform BaseName="[string]Waveform" Height="[float]136" Id="90c6557a492842258e8dce115728d82b" IsReadOnly="[bool]False" IsTabStop="[bool]True" Label="[UIModel]d161347fc8ed463a9cf4b4cb9da504be" LabelLinked="[bool]True" Left="[float]164" TabIndex="[int]0" Top="[float]84" WaveformData="{DataItemBinding Id=c6f30bb7d40842a3976b4dd9fe238bbd}" WaveformDataType="[Type]Double" Width="[float]280" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="d161347fc8ed463a9cf4b4cb9da504be" LabelOwner="[UIModel]90c6557a492842258e8dce115728d82b" Left="[float]164" Text="[string]fm_signal" Top="[float]64" Width="[float]50" xmlns="http://www.ni.com/PanelCommon" />
+			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=7e39dd61117e4ea0aba520171692cbfc}" DataSourceType="[Type]Wfm(Double)" Height="[float]296" Id="614d0f992ccb4d90af79b0b7db29adf0" Label="[UIModel]167ab2eb68e14c0a90353006209c72ae" Left="[float]564" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]1" Top="[float]84" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" Id="483fa53cda8942f4a372dcf8bde3ad10" Label="[string]Time" MajorDivisions="[UIModel]c1d81896707d4d5b809f407e8bedcd8a" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 1.2000000000000002, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="c1d81896707d4d5b809f407e8bedcd8a">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" Id="193bff8577af4fcca395b2c9582ac226" Label="[string]Amplitude" MajorDivisions="[UIModel]4c0c127db4ce4c78adea985458c1d695" Orientation="[SMOrientation]Vertical" Range="[IRange]-10, 3, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="4c0c127db4ce4c78adea985458c1d695">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Plot HorizontalScale="[UIModel]483fa53cda8942f4a372dcf8bde3ad10" Id="467a47a61f9a426fa2f2e626a3a7dc05" Label="[string]Plot" VerticalScale="[UIModel]193bff8577af4fcca395b2c9582ac226" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="6af2ecd68dc343279db0a547ef072edb" LineStroke="[SMSolidColorBrush]#ff962428" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="d96ef613da314d7b9caf08c725e98a23" LineStroke="[SMSolidColorBrush]#ff008ee4" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="2c335e7d036e4e8f8b77335e7d93c28d" LineStroke="[SMSolidColorBrush]#ffe2b683" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="d980bc98f2c84ff8a30733deeb7a5fc6" LineStroke="[SMSolidColorBrush]#ffb7ac1f" PointShape="[PointShape]Cross" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="a2e732e7394342648dc16d3697b49855" LineStroke="[SMSolidColorBrush]#ffaedcef" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="c318ad9a15b3496bad28e5bd445e09dc" LineStroke="[SMSolidColorBrush]#ffa08bb0" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="bac1b2cce4fa43109db09b846f23a5b5" LineStroke="[SMSolidColorBrush]#ff7f7f7f" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="96826df1e2a749d29accf937008464cc" LineStroke="[SMSolidColorBrush]#ff91685c" PointShape="[PointShape]Cross" />
+			</Graph>
+			<PlotLegend Graph="[UIModel]614d0f992ccb4d90af79b0b7db29adf0" Height="[float]28" Id="1c91eb88784842c4a291153d115f9b14" Left="[float]963" Top="[float]84" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<CursorLegend DefaultCursorForeground="[SMSolidColorBrush]#ff000000" Graph="[UIModel]614d0f992ccb4d90af79b0b7db29adf0" Height="[float]102" Id="6505dfce43914c4f8c7a759508cdca13" Left="[float]569" Top="[float]409" Visible="[bool]False" Width="[float]251" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<ScaleLegend Graph="[UIModel]614d0f992ccb4d90af79b0b7db29adf0" Height="[float]50" Id="e98785be3ff41559d7d8792bbe40cde" Left="[float]963" Top="[float]278" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<GraphTools Graph="[UIModel]614d0f992ccb4d90af79b0b7db29adf0" Id="adbeb44064d04a03aadc73e67bb06541" Left="[float]569" Top="[float]387" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="167ab2eb68e14c0a90353006209c72ae" LabelOwner="[UIModel]614d0f992ccb4d90af79b0b7db29adf0" Left="[float]564" Text="[string]demod_signal" Top="[float]64" Width="[float]74" xmlns="http://www.ni.com/PanelCommon" />
+			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=d1669a4b45294ecbb5c605569204d735}" DataSourceType="[Type]@a8106957b9c74a119f0e3cfccf03e781" Height="[float]296" Id="a70184ad8a05414288ee7dfefc35b2f9" Label="[UIModel]7bc8d47b39f348b493711e7d2204473f" Left="[float]564" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]2" Top="[float]452" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" Id="b1895c671d624813920a3e22e5d2ae59" Label="[string]Time" MajorDivisions="[UIModel]a0c9ab6986ff417e89dfdda0db6db375" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 100000, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="a0c9ab6986ff417e89dfdda0db6db375">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" Id="1653d4cee494c598d980448733a424f" Label="[string]Amplitude" MajorDivisions="[UIModel]3d7c15d9808d4f828d844612018d4d0b" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 1.4000000000000001, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="3d7c15d9808d4f828d844612018d4d0b">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Plot HorizontalScale="[UIModel]b1895c671d624813920a3e22e5d2ae59" Id="b9c0b5770d7b45ccbcfaceef442b29f8" Label="[string]Plot" VerticalScale="[UIModel]1653d4cee494c598d980448733a424f" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="2e542b2ed9fc42109084415ca5d6a348" LineStroke="[SMSolidColorBrush]#ff962428" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="e5dc8b673dc54e1ead2b43bc73973f06" LineStroke="[SMSolidColorBrush]#ff008ee4" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="7b8eb50ad103462da7554fe6115f4e34" LineStroke="[SMSolidColorBrush]#ffe2b683" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="5ed062bdbbbb417992037abd028d1423" LineStroke="[SMSolidColorBrush]#ffb7ac1f" PointShape="[PointShape]Cross" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="1fb001c0bf07490a94716703ab0c756d" LineStroke="[SMSolidColorBrush]#ffaedcef" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="43d583a757784ada987036e66cba91c2" LineStroke="[SMSolidColorBrush]#ffa08bb0" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="38d204f7125840a3b7321a3cd0a1ee38" LineStroke="[SMSolidColorBrush]#ff7f7f7f" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="de643710e43941109511ea9159016206" LineStroke="[SMSolidColorBrush]#ff91685c" PointShape="[PointShape]Cross" />
+			</Graph>
+			<PlotLegend Graph="[UIModel]a70184ad8a05414288ee7dfefc35b2f9" Height="[float]28" Id="6dea18613b2c4babac95652c4d26ba72" Left="[float]963" Top="[float]452" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<CursorLegend DefaultCursorForeground="[SMSolidColorBrush]#ff000000" Graph="[UIModel]a70184ad8a05414288ee7dfefc35b2f9" Height="[float]102" Id="8149dbd1bb6e436cb5fcb44b2ac35ed2" Left="[float]569" Top="[float]777" Visible="[bool]False" Width="[float]251" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<ScaleLegend Graph="[UIModel]a70184ad8a05414288ee7dfefc35b2f9" Height="[float]50" Id="a4c03a4fdbcc4e3a893257cfe5d94c70" Left="[float]963" Top="[float]646" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<GraphTools Graph="[UIModel]a70184ad8a05414288ee7dfefc35b2f9" Id="ab7f67b52c2d40d3bb7ddf25101e42b1" Left="[float]569" Top="[float]755" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="7bc8d47b39f348b493711e7d2204473f" LabelOwner="[UIModel]a70184ad8a05414288ee7dfefc35b2f9" Left="[float]564" Text="[string]demod_psd" Top="[float]432" Width="[float]62" xmlns="http://www.ni.com/PanelCommon" />
+			<NumericText BaseName="[string]Numeric" Height="[float]24" Id="bc61da0d26a0456fb86dccbaa84ce6d6" IsReadOnly="[bool]False" Label="[UIModel]5d0fb16e488b403caf9fb126a5f9d346" Left="[float]164" TabIndex="[int]3" Top="[float]308" Value="{DataItemBinding Id=961d8ebe1d7b4d30a47091bd29453877}" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<NumericText BaseName="[string]Numeric" Height="[float]24" Id="51f30c7d5af94e93952579e84093586d" IsReadOnly="[bool]False" Label="[UIModel]b2f9f31d0e79444fadc23c6d6f72a2f0" Left="[float]164" TabIndex="[int]4" Top="[float]372" Value="{DataItemBinding Id=4f885c9275ba479aa4ce9af6be9bc281}" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<NumericText Height="[float]24" Id="a222d4ef65314eb9abee8ba1440d244c" IsReadOnly="[bool]False" Label="[UIModel]fccbbb0b42c3442885d68e84462dcc1c" Left="[float]164" LeftPositionMode="[GuidelineItemPositionMode]PositionNormal" TabIndex="[int]5" Top="[float]436" TopPositionMode="[GuidelineItemPositionMode]PositionNormal" Value="{DataItemBinding Id=3158ee2fe4d84e7f853a7fa4924c87bc}" ValueFormatter="[string]LV:G6" ValueType="[Type]Double" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<NumericText Height="[float]24" Id="c2ca985bf96b4ad385a80d8bd2f5d476" IsReadOnly="[bool]False" Label="[UIModel]e64d4aafb79945ba84277dc7de6a40dc" Left="[float]164" LeftPositionMode="[GuidelineItemPositionMode]PositionNormal" TabIndex="[int]6" Top="[float]500" TopPositionMode="[GuidelineItemPositionMode]PositionNormal" Value="{DataItemBinding Id=375cea1d76a424193b12a178161c142}" ValueFormatter="[string]LV:0" ValueType="[Type]Int32" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="5d0fb16e488b403caf9fb126a5f9d346" LabelOwner="[UIModel]bc61da0d26a0456fb86dccbaa84ce6d6" Left="[float]164" Text="[string]Ac" Top="[float]288" Width="[float]14" xmlns="http://www.ni.com/PanelCommon" />
+			<Label Height="[float]16" Id="b2f9f31d0e79444fadc23c6d6f72a2f0" LabelOwner="[UIModel]51f30c7d5af94e93952579e84093586d" Left="[float]164" Text="[string]kf" Top="[float]352" xmlns="http://www.ni.com/PanelCommon" />
+			<Label Height="[float]16" Id="fccbbb0b42c3442885d68e84462dcc1c" LabelOwner="[UIModel]a222d4ef65314eb9abee8ba1440d244c" Left="[float]164" Text="[string]low_cutoff_freq" Top="[float]416" Width="[float]81" xmlns="http://www.ni.com/PanelCommon" />
+			<Label Height="[float]16" Id="e64d4aafb79945ba84277dc7de6a40dc" LabelOwner="[UIModel]c2ca985bf96b4ad385a80d8bd2f5d476" Left="[float]164" Text="[string]order" Top="[float]480" Width="[float]29" xmlns="http://www.ni.com/PanelCommon" />
+			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=adeef5b4d47c4215899a77124cd56692}" DataSourceType="[Type]Wfm(Double)" Height="[float]296" Id="30a1d8e22137427a994c14389dfad66a" Label="[UIModel]387ae17d3fc745b29c0c2f0cae7c37fa" Left="[float]564" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]7" Top="[float]804" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" Id="39d2c408382c453aa4497f91f67962ab" Label="[string]Time" MajorDivisions="[UIModel]ee85c00ac2794d72bd7519c4f7da3c1b" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 1.2000000000000002, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="ee85c00ac2794d72bd7519c4f7da3c1b">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" Id="d7ab184f97924bd7a85810317a2822ed" Label="[string]Amplitude" MajorDivisions="[UIModel]8a55acad1fb24d07a8c4bec7ad0064b9" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 50000, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="8a55acad1fb24d07a8c4bec7ad0064b9">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Plot HorizontalScale="[UIModel]39d2c408382c453aa4497f91f67962ab" Id="69ccff4f7fc14ca0b11d492204365524" Label="[string]Plot" VerticalScale="[UIModel]d7ab184f97924bd7a85810317a2822ed" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="2a7f8f116d8e473f983409fdd2dc1ff4" LineStroke="[SMSolidColorBrush]#ff962428" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="fc4d7c65419e4c2c9966cb8f7481a006" LineStroke="[SMSolidColorBrush]#ff008ee4" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="53b965f059da4019aa6dac1899bb8c33" LineStroke="[SMSolidColorBrush]#ffe2b683" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="81e368f47bf3472bb4b30a5592c596d9" LineStroke="[SMSolidColorBrush]#ffb7ac1f" PointShape="[PointShape]Cross" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="7a26d2d2545d4bba9d7f615e398ff46d" LineStroke="[SMSolidColorBrush]#ffaedcef" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="4da1208593b942b2aca3f740ffdaae70" LineStroke="[SMSolidColorBrush]#ffa08bb0" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="7d18a5625c524973b89e95a78863c9a7" LineStroke="[SMSolidColorBrush]#ff7f7f7f" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="29bdbeae603743f9a9b9029b0e892b02" LineStroke="[SMSolidColorBrush]#ff91685c" PointShape="[PointShape]Cross" />
+			</Graph>
+			<PlotLegend Graph="[UIModel]30a1d8e22137427a994c14389dfad66a" Height="[float]28" Id="f7c6c6107fa2446aaa1793c21fb41c3b" Left="[float]963" Top="[float]804" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<CursorLegend DefaultCursorForeground="[SMSolidColorBrush]#ff000000" Graph="[UIModel]30a1d8e22137427a994c14389dfad66a" Height="[float]102" Id="879ebbe5b65d4ab4b32371a3533cc32e" Left="[float]569" Top="[float]1129" Visible="[bool]False" Width="[float]251" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<ScaleLegend Graph="[UIModel]30a1d8e22137427a994c14389dfad66a" Height="[float]50" Id="b3f1ec26da4a4fd7aa2cfbf86a2ce0f9" Left="[float]963" Top="[float]998" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<GraphTools Graph="[UIModel]30a1d8e22137427a994c14389dfad66a" Id="99114efd926446cb8aeec1ca80edf247" Left="[float]569" Top="[float]1107" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="387ae17d3fc745b29c0c2f0cae7c37fa" LabelOwner="[UIModel]30a1d8e22137427a994c14389dfad66a" Left="[float]564" Text="[string]filtered_signal" Top="[float]784" Width="[float]74" xmlns="http://www.ni.com/PanelCommon" />
+			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=8e661373e5364882a4db45ead2159682}" DataSourceType="[Type]Wfm(Double)" Height="[float]296" Id="4cb14029ede947d482ef086300f97f0c" Label="[UIModel]4273f8e73c4d26bcdc95b34ee2d3f3" Left="[float]84" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]8" Top="[float]628" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" Id="d627bd96c2e941c88952f9b186612747" Label="[string]Time" MajorDivisions="[UIModel]8f0a0b71728649828b7bd2debbf216dc" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 1.2000000000000002, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="8f0a0b71728649828b7bd2debbf216dc">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" Id="4f5f67a1016c4c85adc478c6ad80b94c" Label="[string]Amplitude" MajorDivisions="[UIModel]8b7e1c6aa5ec4b7dac5c9722b36e57f8" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 190000, System.Double" ValueType="[Type]Double">
+					<RangeLabeledDivisions Id="8b7e1c6aa5ec4b7dac5c9722b36e57f8">
+						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
+					</RangeLabeledDivisions>
+				</Axis>
+				<Plot HorizontalScale="[UIModel]d627bd96c2e941c88952f9b186612747" Id="d74005bc87c24bf1bf8335075f0207f4" Label="[string]Plot" VerticalScale="[UIModel]4f5f67a1016c4c85adc478c6ad80b94c" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="feae3c7851a4678882a27f0bc402da8" LineStroke="[SMSolidColorBrush]#ff962428" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="98ff181fc485415b8cf0ede21966f479" LineStroke="[SMSolidColorBrush]#ff008ee4" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="24d780f8894f42d8af93dff82955b38b" LineStroke="[SMSolidColorBrush]#ffe2b683" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="cf9591897bc8431d94b8a5d8dcbbaecd" LineStroke="[SMSolidColorBrush]#ffb7ac1f" PointShape="[PointShape]Cross" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="70d63334fcf54eee8caa60cf1186d2e2" LineStroke="[SMSolidColorBrush]#ffaedcef" PointShape="[PointShape]Ellipse" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="77a746ddfc504f8098d13b7f3e8c1ba8" LineStroke="[SMSolidColorBrush]#ffa08bb0" PointShape="[PointShape]Rectangle" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="89e32afa399e4f7aae4a195af84bc2a8" LineStroke="[SMSolidColorBrush]#ff7f7f7f" PointShape="[PointShape]Diamond" />
+				<PlotRenderer AreaBaseline="[FillBaseline]Zero" BarBaseline="[FillBaseline]Zero" Id="e6e992243e134c6f84faa6b8d96e3c43" LineStroke="[SMSolidColorBrush]#ff91685c" PointShape="[PointShape]Cross" />
+			</Graph>
+			<PlotLegend Graph="[UIModel]4cb14029ede947d482ef086300f97f0c" Height="[float]28" Id="b955d86b74624e9d852fc3abd0ac3931" Left="[float]483" Top="[float]628" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<CursorLegend DefaultCursorForeground="[SMSolidColorBrush]#ff000000" Graph="[UIModel]4cb14029ede947d482ef086300f97f0c" Height="[float]102" Id="49beb1e5b7144cc8840445d0c912b09e" Left="[float]89" Top="[float]953" Visible="[bool]False" Width="[float]251" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<ScaleLegend Graph="[UIModel]4cb14029ede947d482ef086300f97f0c" Height="[float]50" Id="940b2bd4dd894274819bc5bc668389f0" Left="[float]483" Top="[float]822" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<GraphTools Graph="[UIModel]4cb14029ede947d482ef086300f97f0c" Id="c07ccf1251ed441da8ca644355b3e733" Left="[float]89" Top="[float]931" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Height="[float]16" Id="4273f8e73c4d26bcdc95b34ee2d3f3" LabelOwner="[UIModel]4cb14029ede947d482ef086300f97f0c" Left="[float]84" Text="[string]test" Top="[float]608" Width="[float]20" xmlns="http://www.ni.com/PanelCommon" />
+		</NativeFrontPanel>
+		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="0" DataType="Wfm(Double)" Id="c6f30bb7d40842a3976b4dd9fe238bbd" Name="fm_signal" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>
+				<Waveform>
+					<Timestamp>60052752000;0;Utc</Timestamp>
+					<Interval>0x3FF0000000000000</Interval>
+					<Data>
+						<Array Lengths="0" />
+					</Data>
+				</Waveform>
+			</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="1" DataType="Double" Id="3158ee2fe4d84e7f853a7fa4924c87bc" Name="low_cutoff_freq" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>0x3FC0000000000002</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="2" DataType="Int32" Id="375cea1d76a424193b12a178161c142" Name="order" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>2</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="3" DataType="Double" Id="4f885c9275ba479aa4ce9af6be9bc281" Name="kf" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>0x0</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="4" DataType="Double" Id="961d8ebe1d7b4d30a47091bd29453877" Name="Ac" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>0x0</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Output" CallIndex="0" DataType="Wfm(Double)" Id="7e39dd61117e4ea0aba520171692cbfc" Name="demod_signal" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>
+				<Waveform>
+					<Timestamp>60052752000;0;Utc</Timestamp>
+					<Interval>0x3FF0000000000000</Interval>
+					<Data>
+						<Array Lengths="0" />
+					</Data>
+				</Waveform>
+			</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Output" CallIndex="1" DataType="@a8106957b9c74a119f0e3cfccf03e781" Id="d1669a4b45294ecbb5c605569204d735" Name="demod_psd" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>
+				<Cluster>
+					<Field1>0x0</Field1>
+					<Field2>0x0</Field2>
+					<Field3>null</Field3>
+				</Cluster>
+			</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Output" CallIndex="2" DataType="Wfm(Double)" Id="adeef5b4d47c4215899a77124cd56692" Name="filtered_signal" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>
+				<Waveform>
+					<Timestamp>60052752000;0;Utc</Timestamp>
+					<Interval>0x3FF0000000000000</Interval>
+					<Data>
+						<Array Lengths="0" />
+					</Data>
+				</Waveform>
+			</p.DefaultValue>
+		</DataItem>
+		<DataItem AdaptToDiagramType="True" CallDirection="Output" CallIndex="3" DataType="Wfm(Double)" Id="8e661373e5364882a4db45ead2159682" Name="test" xmlns="http://www.ni.com/MocCommon">
+			<p.DefaultValue>
+				<Waveform>
+					<Timestamp>60052752000;0;Utc</Timestamp>
+					<Interval>0x3FF0000000000000</Interval>
+					<Data>
+						<Array Lengths="0" />
+					</Data>
+				</Waveform>
+			</p.DefaultValue>
+		</DataItem>
+	</VirtualInstrument>
+	<DataTypeReferenceTable xmlns="http://www.ni.com/PlatformFramework">
+		<p.TypeReference TypeId="a8106957b9c74a119f0e3cfccf03e781">
+			<Composite Id="1" Name="" Cluster="" GenericTypeDefinition="Void" BaseType="Void">
+				<Members>
+					<Field FieldAccessPolicy="ReadWrite" Name="f0" DataType="Double" />
+					<Field FieldAccessPolicy="ReadWrite" Name="df" DataType="Double" />
+					<Field FieldAccessPolicy="ReadWrite" Name="magnitude" DataType="Double[]" />
+				</Members>
+			</Composite>
+		</p.TypeReference>
+		<p.TypeReference TypeId="0d1a4b4212d44c5d938d88556924f036">
+			<Attributed AttributedType="@87e3028648814dde956f2bfff95e262e">
+				<AttributeValues>
+					<AttributeValue Name="NI.ConnectorPaneHeight" Value="[int]50" />
+					<AttributeValue Name="NI.ConnectorPaneWidth" Value="[int]40" />
+				</AttributeValues>
+			</Attributed>
+		</p.TypeReference>
+		<p.TypeReference TypeId="87e3028648814dde956f2bfff95e262e">
+			<Function Id="1" IsStatic="True" IsConstructor="False" Name="Function.gvi" ReturnType="Void" GenericTypeDefinition="Void">
+				<Parameters>
+					<Attributed AttributedType="@d5787a82cd51407ba826a80587353abe">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]fm_signal" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@a1d25787800b453198a56443b7b0bad9">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]low_cutoff_freq" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@739e5295a3f54276ba3ffac013cfacd2">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]kf" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@ce3da208104e439f943714e87817b5dd">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]Ac" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@74a4927b23a64869a2f5e5ca9007ed72">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]order" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@98887101e9344aca85630321f0312f4b">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]test" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@0fd73e64da91469590ece8c431361a8d">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]filtered_signal" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@ac0f515d90144a3c9a124a0ff9fd549d">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]demod_signal" />
+						</AttributeValues>
+					</Attributed>
+					<Attributed AttributedType="@3b27b3c676a64ddda5409b293fe2ba0a">
+						<AttributeValues>
+							<AttributeValue Name="NI.UserDefinedName" Value="[string]demod_psd" />
+						</AttributeValues>
+					</Attributed>
+				</Parameters>
+			</Function>
+		</p.TypeReference>
+		<p.TypeReference TypeId="d5787a82cd51407ba826a80587353abe">
+			<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="L0" DataType="Wfm(Double)" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="a1d25787800b453198a56443b7b0bad9">
+			<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="L1" DataType="Double" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="739e5295a3f54276ba3ffac013cfacd2">
+			<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="L2" DataType="Double" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="ce3da208104e439f943714e87817b5dd">
+			<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="L3" DataType="Double" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="74a4927b23a64869a2f5e5ca9007ed72">
+			<Parameter InputParameterPassingRule="Recommended" OutputParameterPassingRule="NotAllowed" Name="L4" DataType="Int32" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="98887101e9344aca85630321f0312f4b">
+			<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="R0" DataType="Wfm(Double)" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="0fd73e64da91469590ece8c431361a8d">
+			<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="R1" DataType="Wfm(Double)" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="ac0f515d90144a3c9a124a0ff9fd549d">
+			<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="R2" DataType="Wfm(Double)" />
+		</p.TypeReference>
+		<p.TypeReference TypeId="3b27b3c676a64ddda5409b293fe2ba0a">
+			<Parameter InputParameterPassingRule="NotAllowed" OutputParameterPassingRule="Recommended" Name="R3" DataType="@a8106957b9c74a119f0e3cfccf03e781" />
+		</p.TypeReference>
+	</DataTypeReferenceTable>
+</SourceFile>
