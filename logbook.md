@@ -527,3 +527,67 @@ As we can see from the image, the demodulated signal's PSD has a peak at 1kHz, a
 The reason for the transient is because at the very beginning when it receives the signal, the differentiator encounters a sudden change in signal values due to the initialization process, leading to an artificially high derivative. The amplitude also may not be exact since the derivative is computed using the finite difference method, i.e. `dt` is not infinitesimally small. We can tune the scaling parameter to obtain an amplitude of almost 2 for the demodulated signal:
 
 ![FM output with changed param](images/lab3/[task3]fm-out-2.png)
+
+## Exercise 4: FM Communication via USRP
+
+First we analyze the provided file `FM-TxRx.gvi`. The `while` loop used to transmit the modulated signal is as follows:
+
+![Tx circuit](images/lab3/[task4]tx-loop.png)
+
+The initial part of the circuit is largely the same as how we implemented it. It uses the `Wave Generator` to construct a sinusoidal wave with the desired characteristics, then it performs the integration, and multiplies it by `2 * pi * kf`, and then it passes through the `sin and cos` function. This is where it becomes different from our design. Going back to the handwritten notes on FM theory:
+
+![FM theory](images/lab3/[task1]fm-theory.jpeg)
+
+We see that `s(t)` can be written as `s(t) = A cos(w_c * t) * cos(theta(t)) - A sin(w_c * t) * sin(theta(t))`. Hence in our design, we perform the subtraction to output the real signal. However, `s(t)` can be interpreted in a different way. We can interpret `s(t) = s_I (t) cos(w_c * t) - s_Q(t) sin(w_c * t)`, in terms of its in-phase and quadrature components. Hence, comparing with the above equation, we see that the in phase and quadrature components are `A cos(theta(t))` and `A sin(theta(t))` respectively. Hence, the `FM-TxRx.gvi` design passes the cosine and sine outputs as the real and imaginary parts respectively, and then sends it to `niusrp write tx data` for transmission. It also takes the complex array, and uses the `build cluster` unit to merge the array back together with `dt` and `t0`, and plots the PSD.
+
+Then, the RX loop is implemented as follows:
+
+![RX circuit](images/lab3/[task4]rx-loop.png)
+
+The RX demodulation circuit is based upon the following mathematical theory:
+
+![RX Theory](images/lab3/[task4]rx-theory.jpeg)
+
+From the received complex array, it first extracts the real and imaginary parts corresponding to the I and Q components respectively. Note that these I and Q components have already been downconverted back to baseband (i.e. no longer centred at the carrier frequency) within the USRP. Then, we take the I component and we differentiate it, and multiply it with the Q component, giving expression (2) in the handwritten notes above. Hence, a lowpass filter extracts the DC term, and then it is scaled by `2pi * kf` to obtain the final demodulated signal.
+
+Running the VI, we obtain the following results:
+
+![TX-RX parameters](images/lab3/[task4]settings.png)
+
+![TX-RX output](images/lab3/[task4]tx-rx-output.png)
+
+As expected, the demodulated signal has a peak at 1kHz in the frequency spectrum, corresponding to a single-tone sinusoidal message signal with frequency 1kHz. The amplitude of the demodulated signal is varying simply because of attenuation factors during the transmission.
+
+## Exercise 4a: Carson's Rule
+
+Again, refer to `Lab 3 Exercise 1` for the detailed explanations. As a quick recap:
+
+1. FM modulated signal has a theoretically "infinite" bandwidth with a carrier at frequency `fc` and an infinite number of sidebands at `fc + fm`, `fc - fm`, `fc + 2fm`, `fc - 2fm` ... etc, i.e. at integer multiples of `fc +/- k * fm`.
+2. The magnitude of each sideband is weighted by a Bessel function of the first kind `J_n(beta)`.
+3. However for a fixed frequency deviation ratio beta, the amplitude of the Bessel function `J_n(beta)` decreases as n increases. 
+4. For n > beta + 1, the amplitude of the Bessel function becomes negligible, hence the number of significant sidebands is approximately beta + 1.
+5. Hence by Carson's rule, the approximate bandwidth of the FM signal is `2B(beta + 1)` where B is the bandwidth of the message signal. The alternative representation is `2(delta_f + B)`.
+
+In Labview, the `FM Spectrum` graph shows the spectrum of the FM signal, except centred at 0 instead of fc, hence the positive frequencies correspond to the upper sideband and the negative frequencies correspond to the lower sideband. To view Carson's rule empirically, we set the message frequency at 1kHz, and view the FM spectrum for `delta_f = 1kHz, 5kHz, 30kHz`. 
+
+Note that `delta_f = kf * mp` where `mp` is the maximum amplitude of the message signal. In this experiment, we set `mp` to be 1, such that `delta_f` is simply `kf`.
+
+First, we see the result for `kf = 1000`:
+
+![Tx-Rx with kf = 1000](images/lab3/[task4a]tx_rx_kf_1000.png)
+
+In this case, `beta = delta_f / B = 1000/1000 = 1`. Hence, the number of significant sidebands is `beta + 1 = 1 + 1 = 2`. As expected, we see the center carrier, followed by 2 sidebands on each side. Thus, the total bandwidth is `2B (beta + 1) = 2 * 1000 * 2 = 4000 = 4kHz`, as can be seen on the graph, where the spectrum goes from -2000 to 2000.
+
+Next, we see for `kf = 5000`. 
+
+![Tx-Rx with kf = 5000](images/lab3/[task4a]tx_rx_kf_5000.png)
+
+In this case, `beta = delta_f / B = 5000/1000 = 5`. Hence, the number of significant sidebands is `beta + 1 = 5 + 1 = 6`. As expected, we see the center carrier, followed by 6 sidebands on each side. Thus, the total bandwidth is `2B (beta + 1) = 2 * 1000 * 6 = 12000 = 12kHz`, as can be seen on the graph, where the spectrum goes from -6k to 6k. Additionally, we also see an additional 7th sideband, however the amplitude is very small and negligible. After all Carson's rule is just an approximation.
+
+Finally with `kf = 30000`.
+
+![Tx-Rx with kf = 30000](images/lab3/[task4a]tx_rx_kf_30000.png)
+
+In this case, `beta = delta_f / B = 30000/1000 = 30`. Hence, the number of significant sidebands is `beta + 1 = 30 + 1 = 31`. As expected, we see the center carrier, followed by 31 sidebands on each side. Thus, the total bandwidth is `2B (beta + 1) = 2 * 1000 * 31 = 62000 = 62kHz`, as can be seen on the graph, where the spectrum goes from -31k to 31k. Also, we see a few additional (32nd, 33rd, 34th) sideband, going up to around 34kHz, but again this is just an approximation since there are theoretically an infinite number of sidebands.
+
+TODO: go through Tx-Rx demodulation math again just to double confirm

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Checksum="DD908A9338BCFC43AEB1C1915B476ADEF0ACC1416E23265D8B2BA7E151831901F6D92B41B487F2DFC7AB94F3B738A2406C5242703C3922D7987D1929187C3649" Timestamp="1D7090D7B539933" xmlns="http://www.ni.com/PlatformFramework">
+	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="6.4.0.49504" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="6.2.0.49152" Version="6.2.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="6.4.0.49504" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="6.2.0.49153" Version="6.2.0.49153" />
+		<ParsableNamespace AssemblyFileVersion="6.4.0.49504" FeatureSetName="Editor" Name="http://www.ni.com/PanelCommon" OldestCompatibleVersion="6.1.0.0" Version="6.1.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="6.4.0.49504" FeatureSetName="Editor" Name="http://www.ni.com/PlatformFramework" OldestCompatibleVersion="6.2.0.49154" Version="6.2.0.49154" />
+		<ApplicationVersionInfo Build="6.4.0.49504" Name="LabVIEW NXG" Version="3.1.0" />
+	</SourceModelFeatureSet>
+	<TypeDefinition DataType="@a3ca89bae2aa451e8145feee66193c90" Id="a4c49ecb12f94da0aa5a183fcccda86a" xmlns="http://www.ni.com/MocCommon">
+		<Icon Id="cdb104f7c1dd4e9eb936e540835352b2" ListViewIconCrop="0 0 40 40" xmlns="http://www.ni.com/PlatformFramework">
+			<IconPanel Height="[float]40" Id="f321ec57644437593766e4635ba544e" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+				<IconTemplate Height="[float]40" Id="2e6a6004ab204ff4a366b3d71d2961b2" Left="[float]0" TemplateName="[string]Blank" Top="[float]0" Width="[float]40" />
+			</IconPanel>
+		</Icon>
+		<DataItem DataType="@a3ca89bae2aa451e8145feee66193c90" Id="d449d1b7863440cbbca2491555d7caa7" Name="sound format">
+			<p.DefaultValue>0x40E5888000000000_1_16_</p.DefaultValue>
+		</DataItem>
+	</TypeDefinition>
+	<EnvoyManagerFile Id="16adf1e977a040cdb3d6ef71995617cc" xmlns="http://www.ni.com/PlatformFramework">
+		<ProjectSettings Id="2974a71b8d6145b490f05c12b5d1d4ad" ModelDefinitionType="ProjectSettings" Name="ZProjectSettings" />
+		<NameScopingEnvoy AutomaticallyResolveUp="True" Id="b74dd78dbbb04095a63cdaf4590e1330" Name="sound format.gtype" NameTracksFileName="True">
+			<EmbeddedDefinitionReference Bindings="{http://www.ni.com/PlatformFramework}NeverLazy" Id="ac21f702f80b41ba852ea63f9e19db59" ModelDefinitionType="NationalInstruments.PanelCommon.SourceModel.ControlDefinition" Name="ControlDefinition">
+				<ControlDefinition DefaultDirection="Control" Id="68019524cf5b40dead53e37aed467adb" xmlns="http://www.ni.com/MocCommon">
+					<Cluster BaseName="[string]Cluster" BorderThickness="[SMThickness]1,1,1,1" ClusterType="[Type]@a3ca89bae2aa451e8145feee66193c90" Height="[float]138" Id="aecbf4629c7b4c73b3f9d70ed13e8e1b" Label="[UIModel]f7c136b4359247ceabd826238edb6901" Left="[float]100" TabIndex="[int]0" Top="[float]100" Value="{DataItemBinding Id=d449d1b7863440cbbca2491555d7caa7}" Width="[float]119" xmlns="http://www.ni.com/PanelCommon">
+						<NumericText BaseName="[string]Numeric" Height="[float]24" Id="516c0d4d1a7640f0b223a63d11fbabd3" InteractionMode="[NumericTextBoxInteractionModes]ArrowKeys, ScrollWheel, ButtonClicks, TextInput" Label="[UIModel]bab5514f0df44e919d556dd7651bad39" Left="[float]5" MinHeight="[float]24" RadixVisibility="[SMVisibility]Collapsed" TabIndex="[int]0" Top="[float]22" Value="{ClusterBinding FieldName=sample\ rate\ (S/s)}" ValueFormatter="[string]LV:G6" ValueType="[Type]Double" Width="[float]69" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+						<NumericText BaseName="[string]Numeric" Height="[float]24" Id="3fa1e31440624218ad02a12d7d333477" InteractionMode="[NumericTextBoxInteractionModes]ArrowKeys, ScrollWheel, ButtonClicks, TextInput" Label="[UIModel]45fa6af479674489a04d3bd935a2c76c" Left="[float]5" MinHeight="[float]24" TabIndex="[int]1" Top="[float]64" Value="{ClusterBinding FieldName=number\ of\ channels}" ValueType="[Type]Int32" Width="[float]69" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+						<NumericText BaseName="[string]Numeric" Height="[float]24" Id="9df5833b9f5247dda333c5bed69b6ee9" InteractionMode="[NumericTextBoxInteractionModes]ArrowKeys, ScrollWheel, ButtonClicks, TextInput" Label="[UIModel]2e005ff1e9a34abc9dd23db03410ec58" Left="[float]5" MinHeight="[float]24" TabIndex="[int]2" Top="[float]106" Value="{ClusterBinding FieldName=bits\ per\ sample}" ValueType="[Type]Int32" Width="[float]69" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+						<Label Height="[float]16" Id="bab5514f0df44e919d556dd7651bad39" LabelOwner="[UIModel]516c0d4d1a7640f0b223a63d11fbabd3" Left="[float]5" Text="[string]sample rate (S/s)" Top="[float]2" Width="[float]88" />
+						<Label Height="[float]16" Id="45fa6af479674489a04d3bd935a2c76c" LabelOwner="[UIModel]3fa1e31440624218ad02a12d7d333477" Left="[float]5" Text="[string]number of channels" Top="[float]44" Width="[float]105" />
+						<Label Height="[float]16" Id="2e005ff1e9a34abc9dd23db03410ec58" LabelOwner="[UIModel]9df5833b9f5247dda333c5bed69b6ee9" Left="[float]5" Text="[string]bits per sample" Top="[float]86" Width="[float]81" />
+					</Cluster>
+					<Label Height="[float]16" Id="f7c136b4359247ceabd826238edb6901" LabelOwner="[UIModel]aecbf4629c7b4c73b3f9d70ed13e8e1b" Left="[float]100" Text="[string]sound format" Top="[float]80" Width="[float]72" xmlns="http://www.ni.com/PanelCommon" />
+				</ControlDefinition>
+			</EmbeddedDefinitionReference>
+		</NameScopingEnvoy>
+	</EnvoyManagerFile>
+	<DataTypeReferenceTable xmlns="http://www.ni.com/PlatformFramework">
+		<p.TypeReference TypeId="a3ca89bae2aa451e8145feee66193c90">
+			<Composite Id="1" Name="" Cluster="" GenericTypeDefinition="Void" BaseType="Void">
+				<Members>
+					<Field FieldAccessPolicy="ReadWrite" Name="sample rate (S/s)" DataType="Double" />
+					<Field FieldAccessPolicy="ReadWrite" Name="number of channels" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="bits per sample" DataType="Int32" />
+				</Members>
+			</Composite>
+		</p.TypeReference>
+	</DataTypeReferenceTable>
+</SourceFile>
