@@ -520,7 +520,10 @@ We simply use an infinite loop with a stop button. On each iteration, we create 
 
 ![FM output](images/lab3/[task3]fm-out.png)
 
-As we can see from the image, the demodulated signal's PSD has a peak at 1kHz, as well as an amplitude of 2, as expected, showing successful demodulation.
+As we can see from the image, the demodulated signal's PSD has a peak at 1kHz, as well as an amplitude of 2, as expected, showing successful demodulation. However, when we zoom into the initial time, we can see an initial transient overshoot:
 
-1. TODO 1: explain why there is an intiial transient spike
-2. TODO 2: explain why the amplitude is not exact, e.g. slightly below 2
+![Transient](images/lab3/[task3]fm-transient.png)
+
+The reason for the transient is because at the very beginning when it receives the signal, the differentiator encounters a sudden change in signal values due to the initialization process, leading to an artificially high derivative. The amplitude also may not be exact since the derivative is computed using the finite difference method, i.e. `dt` is not infinitesimally small. We can tune the scaling parameter to obtain an amplitude of almost 2 for the demodulated signal:
+
+![FM output with changed param](images/lab3/[task3]fm-out-2.png)
