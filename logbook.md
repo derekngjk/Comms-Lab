@@ -493,3 +493,34 @@ Now, with `kf = 5000`, we have `delta_f = kf * mp = 5000 * 1 = 5000`. Hence, we 
 
 FM Demodulation can be implemented using a differentiator, followed by an envelope detector. The output of the differentiator is an AM + FM modulated signal. Below is the mathematical theory of demodulation:
 
+![FM Demodulation theory](images/lab3/[task2]fm-demod-theory.jpeg)
+
+With reference to the notes above, this method involves the following steps:
+
+1. Passing through a differentiator
+2. Passing through a half-wave rectifier. Recall half-wave rectifier introduces a scaling of `1/pi`.
+3. Passing through a low-pass filter
+4. Subtracting DC component and scaling by `1/2Akf`
+
+The demodulation circuit is implemented as follows:
+
+![FM demodulation circuit](images/lab3/[task2]fm-demod-circuit.png)
+
+First, we pass through FM signal through the `derivative x(t)` function. Internally, this computes the derivative using the equation `(x(t) - x(t - dt)) / dt`. Then, we use a `greater than or equal to 0` block to output a boolean array. For example, if the differentiator output is `[2, 3, -1, -3, 4]`, then the boolean array is `[true, true, false, false, true]`. Then, we convert the booleans into integers, so for this example `[1, 1, 0, 0, 1]`. Then, we multiply this integer array together with the differentiator output, so that the positive values are multiplied by 1 (hence stay unchanged), and the negative values are multiplied by 0, hence become 0.
+
+The rest proceeds as usual. We reconstruct the waveform, pass it through a lowpass filter, subtract the dc component, then scale it by `1 / 2Akf`. See the handwritten notes above for the derivation.
+
+## Exercise 3: FM Top Level Modulation and Demodulation
+
+Now the next step is to create the top-level module where we combine both the modulator and demodulator. We create the following circuit:
+
+![FM top levle circuit](images/lab3/[task3]fm-top-level.png)
+
+We simply use an infinite loop with a stop button. On each iteration, we create the modulated signal with the parameters, pass it through the demodulator and plot both the original message signal and the final demodulated signal. We obtain the following output:
+
+![FM output](images/lab3/[task3]fm-out.png)
+
+As we can see from the image, the demodulated signal's PSD has a peak at 1kHz, as well as an amplitude of 2, as expected, showing successful demodulation.
+
+1. TODO 1: explain why there is an intiial transient spike
+2. TODO 2: explain why the amplitude is not exact, e.g. slightly below 2
