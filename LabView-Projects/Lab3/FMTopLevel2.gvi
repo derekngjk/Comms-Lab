@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="68F8D193DFABB9C0FC38B2AB2A0E9F1FB8B8829173E7A0AA00EE3852E80D9B4254BB216B9BF686DA5974629909FE2A238095CE7BDE61048505D997FE901DA17C" Timestamp="1DB73D8476ACB8E" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="653BDFCDFCB0588A5103D15C7320289FE5FA819D1C3621B0F97D8BAB1006C6D2BFAD8822E0B5ADD21FF40420B83DA6FA6BE8FC76398539C12B709A49D48AD0D4" Timestamp="1DB73DBC1E87532" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -14,7 +14,7 @@
 				<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Id="62fbdfa28f744fa6a632f37b47d8b0be" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]40">
 					<Rectangle Fill="[SMSolidColorBrush]#ff727272" Id="3900a81cc4114eeb812b9ed55ebb8f88" IsHitTestVisible="[bool]False" Left="[float]0" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
 					<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" Id="7b8647b89fae4dc58aa34a2930215bfe" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
-					<FileNameText Attached="[bool]True" Id="20229bff43f4a9a96fde04258af8d62" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]FMTopLevel" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden">
+					<FileNameText Attached="[bool]True" Id="20229bff43f4a9a96fde04258af8d62" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]FMTopLevel2" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden">
 						<FontSetting FontFamily="Segoe UI" FontSize="6" Id="406f7f6384d44a6b809f97691c329d55" />
 					</FileNameText>
 				</IconTemplate>
@@ -117,7 +117,7 @@
 				<NodeLabel AttachedTo="8a66477024d24816bd42197c5a8449ea" Bounds="14 195 11 14" Id="d50d365423db43c5a29320f1529cf3e0" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>kf</p.Text>
 				</NodeLabel>
-				<Wire Id="bc8ab26eb47645488e013e0569bb45f7" Joints="N(8a66477024d24816bd42197c5a8449ea:Value)|(70,200) h(7) B(1) h(138) v(-40) N(c06afa3edfe242dfb39a0ddf926e6624:L4)|(230,160) B(1) v(145) h(563) N(76ebcbbc42e641769a08b889e9396fb2:B0)|(640,145)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="bc8ab26eb47645488e013e0569bb45f7" Joints="N(8a66477024d24816bd42197c5a8449ea:Value)|(70,200) h(7) B(1) h(138) v(-40) N(c06afa3edfe242dfb39a0ddf926e6624:L4)|(230,160) B(1) v(145) h(563) N(30475c19f384e058d70c4530151f194:B0)|(640,150)" xmlns="http://www.ni.com/PlatformFramework" />
 				<DataAccessor Bounds="165 215 40 15" DataItem="52454e8669a44e9abdfc602857eeda2b" Id="e8bd6f01a6ac4241ba01b75e0e447bbd" Label="38b7123ff33e49b489ceeb68b8d78eae" xmlns="http://www.ni.com/MocCommon">
 					<Terminal DataType="Timestamp" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 				</DataAccessor>
@@ -131,7 +131,7 @@
 				<NodeLabel AttachedTo="46d5996622fa4e979138b1e46b79edad" Bounds="92 235 68 14" Id="d559eceb44474b74beebca07bfdf69aa" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>carrier_amp</p.Text>
 				</NodeLabel>
-				<Wire Id="87b38fad36ca4e0987362cfc07d24dec" Joints="N(46d5996622fa4e979138b1e46b79edad:Value)|(205,240) h(40) B(1) h(405) N(76ebcbbc42e641769a08b889e9396fb2:B1)|(650,145) B(1) N(c06afa3edfe242dfb39a0ddf926e6624:B0)|(245,185)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="87b38fad36ca4e0987362cfc07d24dec" Joints="N(46d5996622fa4e979138b1e46b79edad:Value)|(205,240) h(40) B(1) h(405) N(30475c19f384e058d70c4530151f194:B1)|(650,150) B(1) N(c06afa3edfe242dfb39a0ddf926e6624:B0)|(245,185)" xmlns="http://www.ni.com/PlatformFramework" />
 				<DataAccessor Bounds="165 255 40 15" DataItem="e628fe7c36324ff29217d028baa4f232" Id="ca3a0fa73b4d4cce9e58f5c27a06e3d9" Label="be10b14751f64aa08198fb520c882503" xmlns="http://www.ni.com/MocCommon">
 					<Terminal DataType="Double" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 				</DataAccessor>
@@ -192,45 +192,45 @@
 				<NodeLabel AttachedTo="2ef30fc429694767b8c9345ba01492ac" Bounds="463 120 87 14" Id="9c5d60e2901e4a2788a14234e5d67eee" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>low_cutoff_freq</p.Text>
 				</NodeLabel>
-				<Wire Id="6c5de79466b84a61847f89ff0b900199" Joints="N(2ef30fc429694767b8c9345ba01492ac:Value)|(595,125) h(25) v(-5) N(76ebcbbc42e641769a08b889e9396fb2:L1)|(625,120)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="6c5de79466b84a61847f89ff0b900199" Joints="N(2ef30fc429694767b8c9345ba01492ac:Value)|(595,125) N(30475c19f384e058d70c4530151f194:L1)|(625,125)" xmlns="http://www.ni.com/PlatformFramework" />
 				<DataAccessor Bounds="555 140 40 15" DataItem="76919c16cfc949aab3ffa56cbb6e6f1d" Id="88f51536f828472da36bac3b17fcc639" Label="b3dd7a66f3614316817fa336b17dca66" xmlns="http://www.ni.com/MocCommon">
 					<Terminal DataType="Int32" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 				</DataAccessor>
 				<NodeLabel AttachedTo="88f51536f828472da36bac3b17fcc639" Bounds="520 140 30 14" Id="b3dd7a66f3614316817fa336b17dca66" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>order</p.Text>
 				</NodeLabel>
-				<Wire Id="c9c4fb55eac46f3bb089672f9f8e7c1" Joints="N(88f51536f828472da36bac3b17fcc639:Value)|(595,145) h(15) v(-10) h(15) N(76ebcbbc42e641769a08b889e9396fb2:L2)|(625,130)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="c9c4fb55eac46f3bb089672f9f8e7c1" Joints="N(88f51536f828472da36bac3b17fcc639:Value)|(595,145) h(15) v(-10) N(30475c19f384e058d70c4530151f194:L2)|(625,135)" xmlns="http://www.ni.com/PlatformFramework" />
 				<DataAccessor Bounds="715 120 40 15" DataItem="64f8e01192be4d9bb74d792efb6b65ef" Id="cbe7761ff5434a7cb718484eb3eb692c" Label="c6f8af48340746e09a872a1e9274c293" xmlns="http://www.ni.com/MocCommon">
 					<Terminal DataType="@a8106957b9c74a119f0e3cfccf03e781" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 				</DataAccessor>
 				<NodeLabel AttachedTo="cbe7761ff5434a7cb718484eb3eb692c" Bounds="760 120 65 14" Id="c6f8af48340746e09a872a1e9274c293" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>demod_psd</p.Text>
 				</NodeLabel>
-				<Wire Id="b0e52e5e49224184b6146072630fd72a" Joints="N(76ebcbbc42e641769a08b889e9396fb2:R1)|(665,120) h(10) v(5) N(cbe7761ff5434a7cb718484eb3eb692c:Value)|(718,125)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="b0e52e5e49224184b6146072630fd72a" Joints="N(30475c19f384e058d70c4530151f194:R1)|(665,125) N(cbe7761ff5434a7cb718484eb3eb692c:Value)|(718,125)" xmlns="http://www.ni.com/PlatformFramework" />
 				<DataAccessor Bounds="715 95 40 15" DataItem="9d9c7057757145798f510ba3924a2c87" Id="2480c8bc82cb4ae5b9bd810bee00b1a2" Label="22228722c9ea424084bb6532a40ee2be" xmlns="http://www.ni.com/MocCommon">
 					<Terminal DataType="Wfm(Double)" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 				</DataAccessor>
 				<NodeLabel AttachedTo="2480c8bc82cb4ae5b9bd810bee00b1a2" Bounds="760 95 77 14" Id="22228722c9ea424084bb6532a40ee2be" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>demod_signal</p.Text>
 				</NodeLabel>
-				<Wire Id="b815e67a47c341a382d3f0dd4fdbd21b" Joints="N(76ebcbbc42e641769a08b889e9396fb2:R0)|(665,110) h(5) v(5) h(39) v(-15) N(2480c8bc82cb4ae5b9bd810bee00b1a2:Value)|(718,100)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="b815e67a47c341a382d3f0dd4fdbd21b" Joints="N(30475c19f384e058d70c4530151f194:R0)|(665,115) h(44) v(-15) N(2480c8bc82cb4ae5b9bd810bee00b1a2:Value)|(718,100)" xmlns="http://www.ni.com/PlatformFramework" />
 				<DataAccessor Bounds="710 145 40 15" DataItem="fd4972a56bfc425795c358f62bc723d0" Id="cc17e7148dbc4231b5430d1696c8b928" Label="8b481bdf982a4ec6bad56b13f360027f" xmlns="http://www.ni.com/MocCommon">
 					<Terminal DataType="Wfm(Double)" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 				</DataAccessor>
 				<NodeLabel AttachedTo="cc17e7148dbc4231b5430d1696c8b928" Bounds="755 145 79 14" Id="8b481bdf982a4ec6bad56b13f360027f" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>filtered_signal</p.Text>
 				</NodeLabel>
-				<Wire Id="f5b89a67786a471e8e33ea26d8841c5c" Joints="N(76ebcbbc42e641769a08b889e9396fb2:R2)|(665,130) h(10) v(5) h(29) v(15) N(cc17e7148dbc4231b5430d1696c8b928:Value)|(713,150)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="f5b89a67786a471e8e33ea26d8841c5c" Joints="N(30475c19f384e058d70c4530151f194:R2)|(665,135) h(39) v(15) N(cc17e7148dbc4231b5430d1696c8b928:Value)|(713,150)" xmlns="http://www.ni.com/PlatformFramework" />
 				<Wire Id="4d4f6b798b5649a0ba8e835268855973" Joints="N(c06afa3edfe242dfb39a0ddf926e6624:R2)|(310,140) h(44) v(25) N(d1dc1a299c454377a2adb24ab2828fd6:Value)|(363,165)" xmlns="http://www.ni.com/PlatformFramework" />
-				<Wire Id="f465bfea5c394ab0a25deee558292e17" Joints="N(c06afa3edfe242dfb39a0ddf926e6624:R0)|(310,120) h(44) v(-15) B(2) h(266) v(5) N(76ebcbbc42e641769a08b889e9396fb2:L0)|(625,110) B(2) v(-45) N(264f0250c3cc41c2afd4fdec0ef73a68:Value)|(363,60)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="f465bfea5c394ab0a25deee558292e17" Joints="N(c06afa3edfe242dfb39a0ddf926e6624:R0)|(310,120) h(44) v(-5) B(2) N(30475c19f384e058d70c4530151f194:L0)|(625,115) B(2) v(-55) N(264f0250c3cc41c2afd4fdec0ef73a68:Value)|(363,60)" xmlns="http://www.ni.com/PlatformFramework" />
 				<DataAccessor Bounds="715 180 40 15" DataItem="d15e8df7264c48b68237927935f581a6" Id="68fb695ef63f46cb90f6690a25ed9bac" Label="eb235e62fbc04ef38b6f154480176b1c" xmlns="http://www.ni.com/MocCommon">
 					<Terminal DataType="Wfm(Double)" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 				</DataAccessor>
 				<NodeLabel AttachedTo="68fb695ef63f46cb90f6690a25ed9bac" Bounds="760 180 21 14" Id="eb235e62fbc04ef38b6f154480176b1c" xmlns="http://www.ni.com/PlatformFramework">
 					<p.Text>test</p.Text>
 				</NodeLabel>
-				<Wire Id="611784b126244d50bee04053430f30a6" Joints="N(76ebcbbc42e641769a08b889e9396fb2:R3)|(665,140) h(5) v(5) h(1) v(40) N(68fb695ef63f46cb90f6690a25ed9bac:Value)|(718,185)" xmlns="http://www.ni.com/PlatformFramework" />
-				<MethodCall Bounds="625 105 40 40" Id="76ebcbbc42e641769a08b889e9396fb2" ResolveFailedHint="&quot;C:\\Users\\djn123\\Comms-Lab\\LabView-Projects\\Lab3\\FMDemodulator.gvi&quot;" Signature="@cc6d9a97776e4b35b9ccec18395a4266" Target="FMDemodulator.gvi" xmlns="http://www.ni.com/MocCommon">
+				<Wire Id="611784b126244d50bee04053430f30a6" Joints="N(30475c19f384e058d70c4530151f194:R3)|(665,145) h(6) v(40) N(68fb695ef63f46cb90f6690a25ed9bac:Value)|(718,185)" xmlns="http://www.ni.com/PlatformFramework" />
+				<MethodCall Bounds="625 110 40 40" Id="30475c19f384e058d70c4530151f194" ResolveFailedHint="&quot;C:\\Users\\djn123\\Comms-Lab\\LabView-Projects\\Lab3\\FMDemodulator_2.gvi&quot;" Signature="@989e27d789654b57b355cbfe94a80a77" Target="FMDemodulator_2.gvi" xmlns="http://www.ni.com/MocCommon">
 					<p.MethodDeclaration>
 						<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
 							<Parameter Id="B0" Desc="kf" />
@@ -264,7 +264,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="9413f769809f481fa8dee974d7cae894" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]ba8fce319b7c41fb960a6331208b258e" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.007, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="9413f769809f481fa8dee974d7cae894" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]ba8fce319b7c41fb960a6331208b258e" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.70000000000000007, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="ba8fce319b7c41fb960a6331208b258e">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -287,7 +287,7 @@
 			<GraphTools Enabled="[bool]True" Graph="[UIModel]b1c536cc4bcf434f9ab0e578ba08796c" Height="[float]22" Id="59cd47b638484523b541f799922d950c" Left="[float]729" Top="[float]371" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="ed0d039a4bc842d792ba3e6fb2f16309" LabelOwner="[UIModel]b1c536cc4bcf434f9ab0e578ba08796c" Left="[float]724" Text="[string]message_psd" Top="[float]48" Width="[float]71" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=fef4436d30cd4ca7909840b44406785f}" DataSourceType="[Type]Wfm(Double)" Enabled="[bool]True" Height="[float]296" Id="b4a1294875d64981ae0463a6648de709" Label="[UIModel]9a184cfd133a4675a7b1a7309f527c52" Left="[float]260" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]1" Top="[float]68" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="fd1b6e593b774b78859477bd35dfb261" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]f845a0b958cf4c819bbc5415951d90f3" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 0.005, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]None" DisableMappingChanges="[bool]False" Id="fd1b6e593b774b78859477bd35dfb261" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]f845a0b958cf4c819bbc5415951d90f3" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 0.1, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="f845a0b958cf4c819bbc5415951d90f3">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
 					</RangeLabeledDivisions>
@@ -315,7 +315,7 @@
 			<GraphTools Enabled="[bool]True" Graph="[UIModel]b4a1294875d64981ae0463a6648de709" Height="[float]22" Id="40f6e8e7bebe42959ffa92020b1816f8" Left="[float]265" Top="[float]371" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="9a184cfd133a4675a7b1a7309f527c52" LabelOwner="[UIModel]b4a1294875d64981ae0463a6648de709" Left="[float]260" Text="[string]message_signal" Top="[float]48" Width="[float]83" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=3ca5b6d2643b40e3b69562f966d5b07c}" DataSourceType="[Type]Wfm(Double)" Enabled="[bool]True" Height="[float]296" Id="8c164cf1e6af459b9603b55735b4af3d" Label="[UIModel]f92c1b91195d413e8c13431eb7bec11b" Left="[float]260" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]2" Top="[float]420" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="f919782f448b405f82fa59841e91c524" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]2dd307a220144e949b419b03827b44f8" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 0.005, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="f919782f448b405f82fa59841e91c524" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]2dd307a220144e949b419b03827b44f8" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 0.5, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="2dd307a220144e949b419b03827b44f8">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
 					</RangeLabeledDivisions>
@@ -348,7 +348,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="31de73adb67b46d6ae114ed466cfa125" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]b0428327029146a9b9d024ff39e6ef02" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.0023, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="31de73adb67b46d6ae114ed466cfa125" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]b0428327029146a9b9d024ff39e6ef02" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.23, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="b0428327029146a9b9d024ff39e6ef02">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -371,12 +371,12 @@
 			<GraphTools Enabled="[bool]True" Graph="[UIModel]a7fc6fc4d2cd45f5b7d5b9b7ea505f72" Height="[float]22" Id="38d75d102e8845789c812d6129dfa929" Left="[float]729" Top="[float]723" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="935f7860fa45f58cefb25b322be17d" LabelOwner="[UIModel]a7fc6fc4d2cd45f5b7d5b9b7ea505f72" Left="[float]724" Text="[string]fm_psd" Top="[float]400" Width="[float]39" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=9d9c7057757145798f510ba3924a2c87}" DataSourceType="[Type]Wfm(Double)" Enabled="[bool]True" Height="[float]296" Id="e956f4bd0fc74dcf9e3be205057fb505" Label="[UIModel]aed833224bc3491fa169acc2c649459a" Left="[float]260" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]4" Top="[float]772" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="1b80f53797c14ca0bcae8ed4fe476f30" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]83cbc11f9c6949658e47ab50a61f4cca" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 2.7, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="1b80f53797c14ca0bcae8ed4fe476f30" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]83cbc11f9c6949658e47ab50a61f4cca" Orientation="[SMOrientation]Horizontal" Range="[IRange]0.46189024390243905, 0.47560975609756095, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="83cbc11f9c6949658e47ab50a61f4cca">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="481d9590dd1045849bde578392b63d58" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]f853f8dbcd344bd497c596b182e4d5e7" Orientation="[SMOrientation]Vertical" Range="[IRange]-3, 12, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="481d9590dd1045849bde578392b63d58" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]f853f8dbcd344bd497c596b182e4d5e7" Orientation="[SMOrientation]Vertical" Range="[IRange]-2, 2.0476190476190474, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="f853f8dbcd344bd497c596b182e4d5e7">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -399,12 +399,12 @@
 			<GraphTools Enabled="[bool]True" Graph="[UIModel]e956f4bd0fc74dcf9e3be205057fb505" Height="[float]22" Id="1167da62a7334341b5c38d518d2d4a75" Left="[float]265" Top="[float]1075" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="aed833224bc3491fa169acc2c649459a" LabelOwner="[UIModel]e956f4bd0fc74dcf9e3be205057fb505" Left="[float]260" Text="[string]demod_signal" Top="[float]752" Width="[float]74" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=64f8e01192be4d9bb74d792efb6b65ef}" DataSourceType="[Type]@a8106957b9c74a119f0e3cfccf03e781" Enabled="[bool]True" Height="[float]296" Id="a1759772a50648859f3a89ffd9b58881" Label="[UIModel]8eed8a2eb8594c2ca257975e4788ad9e" Left="[float]724" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]5" Top="[float]772" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="e8b74e6f27a14e0b928b30249f1f861a" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]df2d72859b1b48529c48d93987db9b11" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 16.885312619879127, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="e8b74e6f27a14e0b928b30249f1f861a" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]df2d72859b1b48529c48d93987db9b11" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 4501.6077170418012, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="df2d72859b1b48529c48d93987db9b11">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="d41a6b2b335e444c8e1063ff4e945aaf" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]821def2667cc470e9705c0dd2ebce235" Orientation="[SMOrientation]Vertical" Range="[IRange]0.15584415584415545, 3.3328324567993985, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="d41a6b2b335e444c8e1063ff4e945aaf" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]821def2667cc470e9705c0dd2ebce235" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.5818181818181819, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="821def2667cc470e9705c0dd2ebce235">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -455,12 +455,12 @@
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="d81a2a65b4142e5a4b3edcb272d4521" LabelOwner="[UIModel]d89f1d84b3147c59e8878c9b1d78453" Left="[float]36" Text="[string]order" Top="[float]864" Width="[float]29" xmlns="http://www.ni.com/PanelCommon" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="8d88fcbf7e404802b5e5775c6a12f42c" LabelOwner="[UIModel]f3544bc75c2a4a6892009e6d58501822" Left="[float]36" Text="[string]stop" Top="[float]928" Width="[float]24" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=fd4972a56bfc425795c358f62bc723d0}" DataSourceType="[Type]Wfm(Double)" Enabled="[bool]True" Height="[float]296" Id="386b8a59d3cf4dfeb7bca0f382172f9d" Label="[UIModel]b0e69032dc62480abbb126835d3ff5a6" Left="[float]260" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]20" Top="[float]1140" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="f2850c55f3504b23b1aa705ddc1b5844" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]1f895cf782c34aa49cfbdf2a8f98fbae" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 2.7, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="f2850c55f3504b23b1aa705ddc1b5844" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]1f895cf782c34aa49cfbdf2a8f98fbae" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 0.5, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="1f895cf782c34aa49cfbdf2a8f98fbae">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="3fdd4ca51a324045819148002e80ec13" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]806d607d0c564425a0076e6ff7c4d87d" Orientation="[SMOrientation]Vertical" Range="[IRange]-10000, 50000, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="3fdd4ca51a324045819148002e80ec13" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]806d607d0c564425a0076e6ff7c4d87d" Orientation="[SMOrientation]Vertical" Range="[IRange]31000, 49000, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="806d607d0c564425a0076e6ff7c4d87d">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -483,12 +483,12 @@
 			<GraphTools Enabled="[bool]True" Graph="[UIModel]386b8a59d3cf4dfeb7bca0f382172f9d" Height="[float]22" Id="9794dce0c45c4373a8a87f32853527b6" Left="[float]265" Top="[float]1443" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="b0e69032dc62480abbb126835d3ff5a6" LabelOwner="[UIModel]386b8a59d3cf4dfeb7bca0f382172f9d" Left="[float]260" Text="[string]filtered_signal" Top="[float]1120" Width="[float]74" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=d15e8df7264c48b68237927935f581a6}" DataSourceType="[Type]Wfm(Double)" Enabled="[bool]True" Height="[float]296" Id="4b0d22e2df314ad0958130def5583d1e" Label="[UIModel]78de5fb79c704d5ba71e48f8d5876b26" Left="[float]724" MetadataAlwaysOverridesPlotNames="[bool]True" PreferIndexData="[bool]True" SuppressScaleLayout="[bool]False" TabIndex="[int]21" Top="[float]1140" Width="[float]392" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="3ae1e4cf6e8145d8b061778127944ccd" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]160f85a4784c4540931ecf1760b8cb32" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 2.7, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="3ae1e4cf6e8145d8b061778127944ccd" IsInverted="[bool]False" Label="[string]Time" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]160f85a4784c4540931ecf1760b8cb32" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 0.5, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="160f85a4784c4540931ecf1760b8cb32">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="cafcc41bd421403f93a2c0dc381d38c9" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]7c0ef7b6051046ca81b9e7389fb51fc8" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 190000, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="cafcc41bd421403f93a2c0dc381d38c9" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]7c0ef7b6051046ca81b9e7389fb51fc8" Orientation="[SMOrientation]Vertical" Range="[IRange]-0, 190000, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="7c0ef7b6051046ca81b9e7389fb51fc8">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -654,8 +654,8 @@
 				</Members>
 			</Composite>
 		</p.TypeReference>
-		<p.TypeReference TypeId="cc6d9a97776e4b35b9ccec18395a4266">
-			<Attributed AttributedType="@de57542c241a47d197bbe6da645e454d">
+		<p.TypeReference TypeId="989e27d789654b57b355cbfe94a80a77">
+			<Attributed AttributedType="@797130439c744c99a5551ffdca1cf6d9">
 				<AttributeValues>
 					<AttributeValue Name="NI.ConnectorPaneHeight" Value="[int]40" />
 					<AttributeValue Name="NI.ConnectorPaneWidth" Value="[int]40" />
@@ -743,8 +743,8 @@
 				</Parameters>
 			</Function>
 		</p.TypeReference>
-		<p.TypeReference TypeId="de57542c241a47d197bbe6da645e454d">
-			<Function Id="1" IsStatic="True" IsConstructor="False" Name="FMDemodulator.gvi" ReturnType="Void" GenericTypeDefinition="Void">
+		<p.TypeReference TypeId="797130439c744c99a5551ffdca1cf6d9">
+			<Function Id="1" IsStatic="True" IsConstructor="False" Name="FMDemodulator_2.gvi" ReturnType="Void" GenericTypeDefinition="Void">
 				<Parameters>
 					<Attributed AttributedType="@607487c2668b41e49229fcd19d35fa17">
 						<AttributeValues>
@@ -867,7 +867,7 @@
 				</MergeItem>
 			</MergeScript>
 		</p.IconModel>
-		<p.IconModel Target="FMDemodulator.gvi">
+		<p.IconModel Target="FMDemodulator_2.gvi">
 			<MergeScript>
 				<MergeItem Path="." IsPrimary="True">
 					<Icon ListViewIconCrop="0 0 40 40">
@@ -875,7 +875,7 @@
 							<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]40">
 								<Rectangle Fill="[SMSolidColorBrush]#ff727272" IsHitTestVisible="[bool]False" Left="[float]0" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
 								<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
-								<FileNameText Attached="[bool]True" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]FMDemodulator" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden">
+								<FileNameText Attached="[bool]True" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]FMDemodulator_2" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden">
 									<FontSetting FontFamily="Segoe UI" FontSize="6" />
 								</FileNameText>
 							</IconTemplate>
