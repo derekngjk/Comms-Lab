@@ -265,6 +265,15 @@ Finally, we use the `Build Waveform` function to combine the modified `Y` array 
 
 ![Envelope Detection Block Diagram](images/lab2/[task1]am_env_det_full_block.png)
 
+
+Difference between Envelope Detection and Coherent Detection:
+
+| Envelope | Coherent    |
+| :---:   | :---: |
+| Envelope detection is used to extract the amplitude variations of a modulated signal | Coherent detection is used to extract both the amplitude and phase information of a modulated signal.   |
+| Involves rectifying the modulated signal to obtain the envelope of the signal, and then low-pass filtering the envelope to recover the original message signal.  | Involves multiplying the modulated signal with a local oscillator signal that is synchronized with the carrier frequency of the modulated signal. The resulting product is then passed through a low-pass filter to recover the original message signal.   |
+| Envelope detection is commonly used in applications where the carrier frequency is much higher than the message frequency, such as in amplitude modulation (AM) broadcasting. | Coherent detection is commonly used in applications where the carrier frequency and the message frequency are similar, such as in phase modulation (PM) and frequency modulation (FM) broadcasting.   |
+
 ## Exercise 2: AM Simulation
 
 Objective: to observe the entire process of AM modulation and demodulation
