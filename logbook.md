@@ -608,6 +608,32 @@ Running the VI, we obtain the following output:
 
 ![Output](images/lab3/[task5]find-radio-station-out.png)
 
-We see that the highest peak occurs at around 3085000, corresponding to a frequency of approximately 93MHz. This corresponds to `BBC Radio 3`. 
+We see that there are two large peaks, one occurring at 0 and another one occurring to the right of it. Zooming in:
 
-![Zoomed in](images/lab3/[task5]find-radio-station-zoomed.png)
+![Peak at 0](images/lab3/[task5]find-radio-station-zoomed-90.png)
+
+Indeed we see a peak at 0 corresponding to `90MHz - BBC Radio 2`. Similarly, zooming in to the other peak:
+
+![Other peak to the right](images/lab3/[task5]find-radio-station-zoomed-110.png)
+
+We see another peak at approximately just under 3.1MHz, corresponding to `93.1MHz - BBC Radio 4`.
+
+Now that we have identified peaks in the frequency spectrum, we want to tune in to those frequencies to listen to FM radio. As per the instructions, we set the carrier frequency to **98.8MHz - BBC Radio 1**. We also set the IQ rate to 400kHz. The circuit is the same as before, just with a new module to play the signal:
+
+![Radio circuit](images/lab3/[task5]radio-circuit.png)
+
+We see two new modules, `Simple Resample` as well as `Simple Sound`. `Simple Resample` is as follows:
+
+![simple resample circuit](images/lab3/[task5]simple-resample.png)
+
+The coerced IQ rate and sample rate are passed as `Decimation` and `Interpolation` respectively. `Decimation` refers to how much the received signal is downsampled before passing it to Labview. Likewise, `Interpolation` is how much the signal is upsampled before transmission. The reason for this is because Labview might have a certain IQ rate, but the actual USRP FPGA hardware might be running at a different sampling rate. Hence, rational resample basically uses `Interpolation / Decimation` as the resampling factor, to ensure proper synchronization between Labview and the actual hardware. Then, `simple sound` just has a sound output configure block which plays the signal.
+
+Additionally, we reduce the low cutoff frequency to 5kHz to reduce the amount of high frequency noise. By doing so, we are able to listen to the radio (albeit with some remaining static), and we see the following graph:
+
+![Output graph](images/lab3/[task5]radio-out.png)
+
+Additionally, we recorded an audio file of the music being played, which can be viewed at this link. The song being played on BBC Radio 1 at __5.38pm__ on __07/02/2025__ is `Rose's APT`. 
+
+TODO: explain why 400kHz
+
+TODO: add in link for audio recording

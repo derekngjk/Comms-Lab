@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="A92E7FA45560EA7148E2B775D56A83D144938BAD6707AFC9AF7755FF6A1CC40331EB9FC216465BCD04F0D4B1FEF1B77C5A732D88DD353F94E7BFFD42C12793D6" Timestamp="1DB79619BD3E2D2" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="B22F101F91786C9F21EA20720474F09C58C960E5B1120955CA10681318AB0CA7D6475F4F1C7E2F2E9AA2FA08FF3FCBA810F4001D74E5D1436CB8C03A7CAF2285" Timestamp="1DB79856CD0807A" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -358,13 +358,13 @@
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="157" LabelOwner="[UIModel]62" Left="[float]342" Text="[string]coerced frequency" Top="[float]284" Width="[float]98" xmlns="http://www.ni.com/PanelCommon" />
 			<NumericText BaseName="[string]Numeric" Enabled="[bool]True" Foreground="[SMColor]#ff2b3033" Height="[float]24" Id="56" Interval="[double]1" IsReadOnly="[bool]True" Label="[UIModel]158" Left="[float]342" Maximum="[double]Infinity" Minimum="[double]-Infinity" RadixVisibility="[SMVisibility]Collapsed" TabIndex="[int]8" Top="[float]357" Value="{DataItemBinding Id=53}" ValueFormatter="[string]LV:G6" ValueType="[Type]Double" Width="[float]54" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="158" LabelOwner="[UIModel]56" Left="[float]342" Text="[string]coerced gain" Top="[float]337" Width="[float]69" xmlns="http://www.ni.com/PanelCommon" />
-			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" DataSource="{DataItemBinding Id=162}" Enabled="[bool]True" Height="[float]403" Id="165" Label="[UIModel]175" Left="[float]579" PreferIndexData="[bool]False" RenderMode="[RenderMode]Hardware" SuppressScaleLayout="[bool]False" TabIndex="[int]9" Top="[float]188" Width="[float]700" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="166" IsInverted="[bool]False" Label="[string]Frequency" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]169" Orientation="[SMOrientation]Horizontal" Range="[IRange]2806872.5532840365, 3397618.5297955628, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=162}" Enabled="[bool]True" Height="[float]403" Id="165" Label="[UIModel]175" Left="[float]580" PreferIndexData="[bool]False" RenderMode="[RenderMode]Hardware" SuppressScaleLayout="[bool]False" TabIndex="[int]9" Top="[float]196" Width="[float]700" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="166" IsInverted="[bool]False" Label="[string]Frequency" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]169" Orientation="[SMOrientation]Horizontal" Range="[IRange]2346672.6518578343, 3900391.6601222968, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="169">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="167" IsInverted="[bool]False" Label="[string]Power" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]60725937de3b44d3b68f30af93863daf" Orientation="[SMOrientation]Vertical" Range="[IRange]-180, -80.591715976331358, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="167" IsInverted="[bool]False" Label="[string]Power" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]60725937de3b44d3b68f30af93863daf" Orientation="[SMOrientation]Vertical" Range="[IRange]-170, -90, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="60725937de3b44d3b68f30af93863daf">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -373,11 +373,11 @@
 					<PlotRenderer Id="b5edad2c92cb4f03b527dd13d09444d4" LineStroke="[SMSolidColorBrush]#ff7b161a" LineStyle="[LineStyle]Solid" LineThickness="[double]1" />
 				</Plot>
 			</Graph>
-			<ScaleLegend Enabled="[bool]True" Graph="[UIModel]165" Height="[float]54" Id="282" Left="[float]1279" MinHeight="[float]50" Top="[float]541" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
-			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="175" LabelOwner="[UIModel]165" Left="[float]579" Text="[string]Frequency Plot" Top="[float]168" Width="[float]79" xmlns="http://www.ni.com/PanelCommon" />
-			<PlotLegend Enabled="[bool]True" Graph="[UIModel]165" Height="[float]28" Id="170" Left="[float]1286" Top="[float]188" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
-			<CursorLegend DefaultCursorForeground="[SMSolidColorBrush]#ff000000" Enabled="[bool]True" Graph="[UIModel]165" Height="[float]102" Id="171" Left="[float]584" MinHeight="[float]80" NameColumnWidth="[double]80" Top="[float]620" Visible="[bool]False" Width="[float]251" XColumnWidth="[double]30" YColumnWidth="[double]30" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
-			<GraphTools Enabled="[bool]True" Graph="[UIModel]165" Height="[float]22" Id="172" Left="[float]584" Top="[float]598" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<ScaleLegend Enabled="[bool]True" Graph="[UIModel]165" Height="[float]54" Id="282" Left="[float]1280" MinHeight="[float]50" Top="[float]549" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="175" LabelOwner="[UIModel]165" Left="[float]580" Text="[string]Frequency Plot" Top="[float]176" Width="[float]79" xmlns="http://www.ni.com/PanelCommon" />
+			<PlotLegend Enabled="[bool]True" Graph="[UIModel]165" Height="[float]28" Id="170" Left="[float]1287" Top="[float]196" Visible="[bool]False" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<CursorLegend DefaultCursorForeground="[SMSolidColorBrush]#ff000000" Enabled="[bool]True" Graph="[UIModel]165" Height="[float]102" Id="171" Left="[float]585" MinHeight="[float]80" NameColumnWidth="[double]80" Top="[float]628" Visible="[bool]False" Width="[float]251" XColumnWidth="[double]30" YColumnWidth="[double]30" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<GraphTools Enabled="[bool]True" Graph="[UIModel]165" Height="[float]22" Id="172" Left="[float]585" Top="[float]606" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Text Foreground="[SMColor]#ff2b3033" Height="[float]43" Id="193" Left="[float]492" Text="[string]IQ Reciever" TextWrapping="[TextWrapping]Wrap" Top="[float]107" Width="[float]159" xmlns="http://www.ni.com/PlatformFramework">
 				<FontSetting FontSize="24" Id="281" />
 			</Text>

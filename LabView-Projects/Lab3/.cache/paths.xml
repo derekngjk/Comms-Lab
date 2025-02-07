@@ -975,4 +975,148 @@
 			<string>AAL Windows.slicache</string>
 		</value>
 	</item>
+	<item>
+		<key>
+			<string>NI.G Core.Sound_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gcompcache</string>
+		</key>
+		<value>
+			<string>NI.G Core.Sound.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Sound Output Reference_109_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>Sound Output Reference.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>AAL_Resampling_Base_d5df64325b4b47bf94856deb0e769b2a_b67c5b871954cc3b0ae59d5017a8153.gcompcache</string>
+		</key>
+		<value>
+			<string>AAL_Resampling_Base.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>AAL_Resampling_4077f2a19a5a4e599aafaaa9db601587_c06d6a176c9b44c6b5d992213466f1e5.gcompcache</string>
+		</key>
+		<value>
+			<string>AAL_Resampling.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Sampling Mode_104_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>Sampling Mode.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Sound Data Format_105_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>Sound Data Format.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>lvsound2_103_1145b51b2acc469db4c82bc44856a3d8_6a82dacb537c49cf937c401adcbd81f4.slicache</string>
+		</key>
+		<value>
+			<string>lvsound2.slicache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>data_e1ce65a362504acb8b8afcffb97e4790_61fdf042db79482db5e73a3abd6cd090_218537647a02437085562258ee2dee00.gtypecache</string>
+		</key>
+		<value>
+			<string>data.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>FIR Filter Specifications_60_d5df64325b4b47bf94856deb0e769b2a_b67c5b871954cc3b0ae59d5017a8153.gtypecache</string>
+		</key>
+		<value>
+			<string>FIR Filter Specifications.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Resampling Factor_99_4077f2a19a5a4e599aafaaa9db601587_c06d6a176c9b44c6b5d992213466f1e5.gtypecache</string>
+		</key>
+		<value>
+			<string>Resampling Factor.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>AAL Resampling_173_4077f2a19a5a4e599aafaaa9db601587_c06d6a176c9b44c6b5d992213466f1e5.slicache</string>
+		</key>
+		<value>
+			<string>AAL Resampling.slicache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>JSON (call chain)_f77d9d0b415c44a9914b0bbd84aa0d89_5410850e559a427b9db7aaa900d640c7_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>JSON (call chain).gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>error protocol_69e533219fcf4d3aaa9022ebe114363d_5410850e559a427b9db7aaa900d640c7_6a82dacb537c49cf937c401adcbd81f4.gtypecache</string>
+		</key>
+		<value>
+			<string>error protocol.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>AAL_Conditioning_Base_6d85d88b6cc1469f86cc469ada46317e_b67c5b871954cc3b0ae59d5017a8153.gcompcache</string>
+		</key>
+		<value>
+			<string>AAL_Conditioning_Base.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>AAL_Conditioning_d5d452b2d5f34b13bad8c108eab83cbc_c06d6a176c9b44c6b5d992213466f1e5.gcompcache</string>
+		</key>
+		<value>
+			<string>AAL_Conditioning.gcompcache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>Angle Units_191_ec6952757cfe41a0ac463e7ced9a2b0a_b67c5b871954cc3b0ae59d5017a8153.gtypecache</string>
+		</key>
+		<value>
+			<string>Angle Units.gtypecache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>AAL Conditioning Base_49_6d85d88b6cc1469f86cc469ada46317e_b67c5b871954cc3b0ae59d5017a8153.slicache</string>
+		</key>
+		<value>
+			<string>AAL Conditioning Base.slicache</string>
+		</value>
+	</item>
+	<item>
+		<key>
+			<string>sound format_522e3b7f70e746c78928419a6a41166d.gtypecache</string>
+		</key>
+		<value>
+			<string>sound format.gtypecache</string>
+		</value>
+	</item>
 </SerializableDictionary>

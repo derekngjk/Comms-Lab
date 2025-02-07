@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="EC65EA552448B5ED888FB4FC6F2C1A7CFC4BB0B78DBB7B75392BA6A87817F83A229C1CB7F92FB6BC248E67E3E195CE56F67C41DF2252DBF32D919DCC69135728" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="823CFEEDDEE6DBCB9F993805DFDF4FB637232211ECABC0859C0CA0599732EB24F885571615C2D04EE4EE1C955D5A60A9E697A85DF06BC0D27933EE4405AA8DE8" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="GComponentFeatureSet" Name="http://www.ni.com/GComponent.xsd" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -270,6 +270,7 @@
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="d86e5637432647c1846f34cb35fd14d2" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="ma_MultitoneParamsCheck.gvi" StoragePath="ma_MultitoneParamsCheck.gvi" />
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="3172cedf3e534385ab123b4a711853a2" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="Simple Resample.gvi" StoragePath="Simple Resample.gvi" />
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="2a85df6a479f47baa7644756841f3e7b" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="Simple Sound.gvi" StoragePath="Simple Sound.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.GType,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory,EnvoyManager" Id="522e3b7f70e746c78928419a6a41166d" ModelDefinitionType="NationalInstruments.MocCommon.Modeling.TypeDefinition" Name="sound format.gtype" StoragePath="sound format.gtype\sound format.gtype" />
 					</EmbeddedDefinitionReference>
 				</NameScopingEnvoy>
 			</NameScopingEnvoy>
