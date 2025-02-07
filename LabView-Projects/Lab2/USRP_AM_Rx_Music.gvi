@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="8652C56729CAC0477A74F613640453811F9F10EAF5F17F99311D4B40BCDFD4A9335462483D59C91D71D7259AC1DC858EF6423CFAD40F5B411C644D432A72798F" Timestamp="1DB73D48E261BAF" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="255E453A66C9D26CB718B1AF64DE1BAA55A6D4A18153A3FF13C3307B56F46E886F6F64A28EB8E070987C24A638329C95914B29C42AE5EF5F602039931F8D6FF6" Timestamp="1DB795BDC058AD5" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -483,7 +483,7 @@
 					</RangeLabeledDivisions>
 					<GridLines Id="177" />
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="135" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]175" MajorGridLines="[UIModel]176" Orientation="[SMOrientation]Vertical" Range="[IRange]-0.99702380952382574, 1.0109936831875439, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="135" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]175" MajorGridLines="[UIModel]176" Orientation="[SMOrientation]Vertical" Range="[IRange]-0.60000000000000009, 0.70000000000000007, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="175" />
 					<GridLines Id="176" />
 				</Axis>
@@ -497,13 +497,13 @@
 			<GraphTools Enabled="[bool]True" Graph="[UIModel]133" Height="[float]22" Id="140" Left="[float]94" Top="[float]903" Width="[float]148" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="141" LabelOwner="[UIModel]133" Left="[float]89" Text="[string]Demodulated signal" Top="[float]476" Width="[float]107" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" DataSource="{DataItemBinding Id=150}" Enabled="[bool]True" Height="[float]400" Id="152" Label="[UIModel]160" Left="[float]785" PreferIndexData="[bool]False" RenderMode="[RenderMode]Hardware" SuppressScaleLayout="[bool]False" TabIndex="[int]1" Top="[float]496" Width="[float]600" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]None" DisableMappingChanges="[bool]False" Id="153" IsInverted="[bool]False" Label="[string]frequency" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]156" MajorGridLines="[UIModel]180" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 7537.5733137829957, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]None" DisableMappingChanges="[bool]False" Id="153" IsInverted="[bool]False" Label="[string]frequency" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]156" MajorGridLines="[UIModel]180" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 6137.0744215690638, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="156">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 					<GridLines Id="180" />
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="154" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]178" MajorGridLines="[UIModel]179" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.0043303571428571427, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="154" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]178" MajorGridLines="[UIModel]179" Orientation="[SMOrientation]Vertical" Range="[IRange]0, 0.0012000000000000001, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="178" />
 					<GridLines Id="179" />
 				</Axis>

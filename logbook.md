@@ -443,9 +443,13 @@ Generally speaking, with a smaller peak-peak amplitude of the signal, the greate
 
 ## Exercise 4: Listening to AM Music
 
-We want to detect a piece of AM-modulated music using the `USRP_AM_Rx_Music.gvi`. There are two parameters, `gain` and `digital signal gain`. `gain` is the amplifying factor applied to the raw signal, including both the message and the noise. Whereas for the `digital signal gain`, it is the multiplicative factor applied after the lowpass filter, hence after the high frequency noise is removed.
+We want to detect a piece of AM-modulated music using the `USRP_AM_Rx_Music.gvi`. There are two parameters, `gain` and `digital signal gain`. `gain` is the amplifying factor applied to the raw signal, including both the message and the noise. Whereas for the `digital signal gain`, it is the multiplicative factor applied after the lowpass filter, hence after the high frequency noise is removed. Apart from this, the rest of the circuit is the same as `USRP_AM_Rx.gvi`. See above for the explanation for how it works.
 
-> As of 31/01/2025, the instructions from the GTAs is that they have problems setting up the music transmitter hence this task cannot be completed because there is no music.
+Tuning the gain to 40 and the digital signal gain to 10, we obtain the following output:
+
+![Output](images/lab2/[task4]output.png)
+
+We see peaks near 1kHz, 5kHz and around 100Hz. The music sounds a little like Fur Elise. However, it is hard to tell because there is a lot of noise due to interference. As all the students are all doing transmission during the lab sessions, all the transmissions are messing up with receiving the music, causing a lot of noise. Even running with constant parameters, the output will vary significantly, sometimes it will sound decent and sometimes it is just a lot of noise, depending on whether other students nearby are transmitting or not.
 
 # Lab 3
 
