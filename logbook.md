@@ -595,3 +595,19 @@ Finally with `kf = 30000`.
 In this case, `beta = delta_f / B = 30000/1000 = 30`. Hence, the number of significant sidebands is `beta + 1 = 30 + 1 = 31`. As expected, we see the center carrier, followed by 31 sidebands on each side. Thus, the total bandwidth is `2B (beta + 1) = 2 * 1000 * 31 = 62000 = 62kHz`, as can be seen on the graph, where the spectrum goes from -31k to 31k. Also, we see a few additional (32nd, 33rd, 34th) sideband, going up to around 34kHz, but again this is just an approximation since there are theoretically an infinite number of sidebands.
 
 TODO: go through Tx-Rx demodulation math again just to double confirm
+
+## Exercise 5: Listening to FM Radio
+
+First, we use `Find Radio Station.gvi` to obtain the PSD of frequencies around the carrier frequency. The circuit is as follows:
+
+![Circuit](images/lab3/[task5]find-radio-station-circuit.png)
+
+Basically, we set the carrier frequency and the IQ rate. This basically tunes the USRP receiver to receive all frequencies in a window centred at the carrier frequency. The bandwidth of this window is determined by the IQ rate. So for example, when we set carrier frequency to 90MHz and IQ rate to 20MHz, then the receiver will detect frequencies from 80MHz to 100MHz and filter out the rest. Essentially, the IQ rate sets the bandwidth around the carrier frequency.
+
+Running the VI, we obtain the following output:
+
+![Output](images/lab3/[task5]find-radio-station-out.png)
+
+We see that the highest peak occurs at around 3085000, corresponding to a frequency of approximately 93MHz. This corresponds to `BBC Radio 3`. 
+
+![Zoomed in](images/lab3/[task5]find-radio-station-zoomed.png)
