@@ -637,3 +637,56 @@ Additionally, we recorded an audio file of the music being played, which can be 
 TODO: explain why 400kHz
 
 TODO: add in link for audio recording
+
+# Lab 4
+
+## Exercise 1: BPSK Transmission
+
+BPSK is optimum among binary modulation schemes in achieving the lowest average power for a given bit error ratio (BER), which is the ratio of transmitted bits which are incorrectly decoded at the receiver due to noise / interference. This is because BPSK has a constant envelope unlike ASK, hence is more robust to additive noise. Additionally, BPK has the maximum distance between symbols in the signal space, because BPSK has only two symbols, represented by the phase 0 and pi. BFSK requires more energy to achieve the same BER because BFSK symbols are not maximally-spaced in the signal space.
+
+See below for a brief introduction to BPSK and pulse-shaping:
+
+![BPSK brief intro](images/lab4/[task1]bpsk-intro-theory.jpeg)
+
+An RRC pulse shape is used. The RRC filter has a roll-off factor `beta`, which controls how much bandwidth is used beyond the minimum Nyquist bandwdth. Additionally, the RRC filter minimises ISI because instead of completely preventing time-domain overlap (which requires a rectangular pulse), the RRC pulse ensures that when summed over multiple pulses, the interference at the sampling points `nT` cancel out. 
+
+According to the Nyquist ISI-free criterion, a pulse `p(t)` satisfies the Nyquist criterion if `p(nT) = 1 if n == 0 else 0`, which ensures that at sampling instants, only one symbol contributes, preventing ISI. The RC (raised cosine, not root-raised cosine) pulse satisfies the Nyquist criterion because its zero crossings align with adjacent symbol periods. However, instead of applying a full RC filter at one-end, an RRC filter can be used at both transmitter and receiver, because the convolution of two RRC filters results in an RC filter, ensuring ISI-free transmission. Note that a RCC filter at the receiver is also a matched filter which maximises SNR.
+
+To build the BPSK transmitter, we first need the `MT Generate Bits` function which generates a random sequence of bits. Next, we just need to map the symbols to convert all 0 to -1, and keep bit 1s as is. We do this using the `for loop` as usual:
+
+![Bit-symbol mapping](images/lab4/[task1]bit-symbol-mapping.png)
+
+Then, we use the `AddFrameHeader` subVI. It basically inserts a 26-bit sequence to the beginning of the array. This is so that when the receiver receives the data, it can recognise the start of the transmission. This is used in conjunction with the `FrameSync` subVI which will look for the frame header, and cut off all bits before the frame header and including the frame header itself. 
+
+Next, we need to upsample the symbols. We assume that the symbol rate is 10k and the IQ rate is 200k, giving an upsampling factor of 20. This means that the upsampler will add 19 zeros after each symbol, giving an IQ interval of T / 20 as required. It is necessary to sync the symbol rate to the USRP hardware's IQ rate in order to ensure proper digital-to-analog conversion. Note that a large upsampling factor of 20 is used (oversampling) so as to ensure that the Nyquist sampling criterion is met. 
+
+After upsampling, we need to generate the pulse shape. We use the `MT Generate Filter Coefficients` function passing in the following parameters:
+
+- Modulation type: PSK
+- Pulse shaping Samples Per Symbol: 20
+- Pulse shaping filter: Root raised cos
+
+This basically creates the coefficients needed for the RRC filter. Next, we simply need to perform the convolution to obtain the output `b[n]p[t - n]`. We also use the `Quick Scale 1D` function which basically divides each value in the array by the max absolute value, hence scaling the array to the range [-1, 1]. Then, since the USRP device takes in a complex array, we use the `Real and Imaginary to Complex` block to convert the real array to a complex array, passing in 0 for the imaginary parts. Then, we build the waveform and wire the connections as appropriate to view the baseband PSD. 
+
+Before transmission, we use the `Insert Pilots` function which prepends a specific sequence of symbols which is known to the receiver. Basically, USRP hardware may introduce frequency and phase offsets during transmission, and known pilot symbols helps the receiver to estimate and correct these offsets. These pilot symbols estimate the channel transfer function, so that on the receiver end, the `Channel Estimator` function can be used to adjust for the amplitude and phase error introduced by the channel. 
+
+After inserting the pilots, we also add in another frame header to indicate the start reference point of the transmission. Finally, we connect it to the `USRP Write TX Data` function which performs the transmission. Hence, the final circuit is as follows:
+
+![TX completed circuit](images/lab4/[task1]tx-circuit.png)
+
+When running, we get the following output:
+
+![TX Output](images/lab4/[task1]tx-out.png)
+
+For purposes of comparison, we also visualize the output when no filtering is performed, i.e. the pulse signals are rectangle functions instead of RRC functions:
+
+![TX Output with rectangle time pulses](/images/lab4/[task1]tx-out-rect-time.png)
+
+With rectangle functions, we see that in the time-domain, the signal is simply -1 and 1, i.e. a flat function with abrupt transitions. Whereas with RRC filtering, when we consider the time domain graphs, we can still see the distinct -1 and 1s, however the RRC performs smoothing such that there are no longer sharp transitions. Note that with RRC filtering, the pulses overlap, but due to the Nyquist property, they do not interfere at the sampling instants, hence still ensuring ISI-free transmission. 
+
+Apart from the differences in the time domain, we also see obvious differences in the frequency domain. With rectangle pulses, we see that in the frequency domain, the main lobe has a bandwidth of approximately 10kHz (counting only positive frequencies), which is the same as the symbol rate. Additionalluy, we also see that there are infinite side lobes. The reason for this is because rectangle pulses in the time domain correspond to sinc functions in the frequency domain, hence the frequency spectrum is sinc-shaped, and correspondingly we see multiple side bands and an infinite bandwidth, as explained at the beginning of this section.
+
+Whereas with RRC filtering, apart from seeing a much faster rolloff, we also see that the bandwidth of the main lobe is smaller, at around 7500-8000Hz. The bandwidth of the main lobe is `symbol_rate * (1 + beta)`, where beta is the roll-off factor controlling the rolloff of the frequency spectrum.
+
+TODO: explain why the bandwidth without RRC is 10k
+TODO: explain why the bandwidth of RRC is symbol_rate * (1 + beta)
