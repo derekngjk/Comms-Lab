@@ -689,4 +689,21 @@ Apart from the differences in the time domain, we also see obvious differences i
 Whereas with RRC filtering, apart from seeing a much faster rolloff, we also see that the bandwidth of the main lobe is smaller, at around 7500-8000Hz. The bandwidth of the main lobe is `symbol_rate * (1 + beta)`, where beta is the roll-off factor controlling the rolloff of the frequency spectrum.
 
 TODO: explain why the bandwidth without RRC is 10k
+
 TODO: explain why the bandwidth of RRC is symbol_rate * (1 + beta)
+
+## Exercise 2: BPSK Receiver
+
+TODO: add in all the explanation and block diagrams
+
+| TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_AVG |
+|--------------|--------------|-------|-------|-------|---------|
+| 0 | 0 | 0.001012 | 0 | 0.001012 | 0.0006747 |
+| -35 | -15 | 0.507151 | 0.475743 | 0.489254 | 0.49072 |
+| -37 | -15 | 0.481602 | 0.482581 | 0.5 | 0.488061 |
+| -40 | -15 | 0.477152 | 0.47606 | 0.473143 | 0.47545
+
+-35, -15: 0.059716, 0.018218, 0.066459
+-37, -15: 0.143004, 0.003083, 0.490816, 0.022199
+
+TODO: check why a lot of variation
