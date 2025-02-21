@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="1AE9FF6714BC19E8491B90DF7F4F4D8A7C0266AD31EC8AAC3963ACB7D9B2CE53EF86145CC2E3EFE773451E238156A78812C5639861757432273AF18F4A6287B3" Timestamp="1DB845DFF207342" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="A6AFACE4E83D625BD6159A0AB6579340024E80A0FC60C1DA5D7816D432EFB0DC30C001C40A5AD08ED80805CBEED5FB7C54866CD3BA555825DE208864ED176194" Timestamp="1DB847FF8497DFC" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -1079,7 +1079,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="2848" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]86542b060af547a880f5d9bc955d0728" Orientation="[SMOrientation]Vertical" Range="[IRange]-230, 10, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="2848" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]86542b060af547a880f5d9bc955d0728" Orientation="[SMOrientation]Vertical" Range="[IRange]-250, 10, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="86542b060af547a880f5d9bc955d0728">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>

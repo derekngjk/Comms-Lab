@@ -707,3 +707,19 @@ TODO: add in all the explanation and block diagrams
 -37, -15: 0.143004, 0.003083, 0.490816, 0.022199
 
 TODO: check why a lot of variation
+
+## Exercise 3: DPSK
+
+Suppose `a_n` are the source information symbols, and `b_n` are the encoded symbols. Refer to the following table:
+
+| n | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|----|---|---|---|---|---|---|---|---|
+| Information Symbols `a_n` | x | 1 | -1 | -1 | 1 | -1 | -1 | 1 | 1 |
+| Encoded sequence `b_n` | 1 | 1 | -1 | 1 | 1 | -1 | 1 | 1 | 1 |
+| LPF output (polarity) | x | + | - | - | + | - | - | + | + |
+
+The formula for `b_n` is `b_n = b_n-1 * a_n`. So basically, if `a_n`, the information symbol in the current timestep, is equal to the symbol in the previous timestep, `b_n-1`, then the current encoded symbol will be 1, i.e. if they are both -1 or both 1, then `b_n` will be 1. Whereas if one of them is -1 and one of them is 1, then `b_n` will be -1. Hence, basically `b_n` is 1 if there is **no change from the previous symbol**, else -1 indicates that there is a change. `b_n` starts from 1 which is a reference symbol, because we need something to compare to. 
+
+Then, the LPF outputs `+` if the symbol has the same sign as the previous symbol, i.e. `b_n = b_n-1`, else it outputs `-` if the current symbol `b_n` and the previous symbol `b_n-1` have opposite sign. 
+
+Finally, we need to use the LPF output to make the decision. From the equation `b_n = b_n-1 * a_n`, we can rearrange it to get `a_n = b_n / b_n-1`. Since the LPF outputs `+` if `b_n = b_n-1`, that means that if the LPF output is `+`, then `a_n = 1`. Whereas if `b_n != b_n-1`, then the LPF outputs `-`, and `a_n = -1`. Thus, the decision can be made directly by reading the LPF output. 

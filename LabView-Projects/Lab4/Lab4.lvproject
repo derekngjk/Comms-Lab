@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="6409AF7CC0255CF423D16D640E637B2C92DC9D971AB987BB94118533F03145191AF0AD93C0CC10BE2D4C0E5603297140A0AA6ECA57BC8B7F345F2256FAE0D480" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="F28BF8BDE0483BD6F3BB654ED10F64D6F82E8C6705E6D2E71260B71B059FC822048FED2529CCAC117D1B58CFBE3726F98D69B437E113292058C82C807B8C9220" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="GComponentFeatureSet" Name="http://www.ni.com/GComponent.xsd" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="Common language components" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -268,6 +268,8 @@
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="7c12aa49a13b4a20a9d96523473fd7fe" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="PulseAlign (Real).gvi" StoragePath="PulseAlign (Real).gvi" />
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="9331913207414482a4b763a0cf6f3933" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="Quick Scale 1D.gvi" StoragePath="Quick Scale 1D.gvi" />
 						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="dd09605610ab4825adf2d4b4dc0242ef" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="temp-test.gvi" StoragePath="temp-test.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="efd455782aab4192b749479073550c8f" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="DPSK_Tx_Rx_Template.gvi" StoragePath="DPSK_Tx_Rx_Template.gvi" />
+						<SourceFileReference Bindings="ContentKind_{http://www.ni.com/SystemDesigner/Vi}Process.Vi,{http://www.ni.com/SystemDesigner/EnvoyManagement}ProcessBackedEnvoyServiceMetaFactory" Id="2411d363ba324be8ae3c1e0d7831a0f8" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="temp-test-2.gvi" StoragePath="temp-test-2.gvi" />
 					</EmbeddedDefinitionReference>
 				</NameScopingEnvoy>
 			</NameScopingEnvoy>
