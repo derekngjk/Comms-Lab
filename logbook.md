@@ -723,3 +723,68 @@ The formula for `b_n` is `b_n = b_n-1 * a_n`. So basically, if `a_n`, the inform
 Then, the LPF outputs `+` if the symbol has the same sign as the previous symbol, i.e. `b_n = b_n-1`, else it outputs `-` if the current symbol `b_n` and the previous symbol `b_n-1` have opposite sign. 
 
 Finally, we need to use the LPF output to make the decision. From the equation `b_n = b_n-1 * a_n`, we can rearrange it to get `a_n = b_n / b_n-1`. Since the LPF outputs `+` if `b_n = b_n-1`, that means that if the LPF output is `+`, then `a_n = 1`. Whereas if `b_n != b_n-1`, then the LPF outputs `-`, and `a_n = -1`. Thus, the decision can be made directly by reading the LPF output. 
+
+TODO: add in all the explanations, circuits, graphs and all the other shit
+
+## Exercise 4: Forward Error Correction (FEC)
+
+We want to perform FEC by adding redundant information to the transmitted message. Basically, we send each bit 3 times, so e.g. for the original message `01`, the transmitted message becomes  `000111`. The decoder then decodes the bits 3 at a time. Since each original bit is now mapped to a group of 3 bits, and each of the 3 bits can potentially flip, the decoder can basically receive 8 possible triplets. It will decode them based on the majority bit, as follows:
+
+| Triplet Received | Decision |
+|------------------|----------|
+| 000 | 0 |
+| 001 | 0 |
+| 010 | 0 |
+| 011 | 1 |
+| 100 | 0 |
+| 101 | 1 |
+| 110 | 1 |
+| 111 | 1 |
+
+This method of FEC will correct for one bit flip. Suppose the original bit is 0, and we send 000, and one bit flips to become 1, e.g. 001 or 010 or 100, the decoder will still decode it as a 0. This method however will not work if two bit flips, e.g. 000 becomes 011.
+
+The first step to designing the FEC encoder is to triple each message bit from the `MT Generate Bits` block. We do this using the following simple sub-VI:
+
+![Circuit to triple input bits](images/lab4/[task4]triple-circuit.PNG)
+
+We just use a `For loop` to iterate the over the array. We set the input array to `auto index`, so that on each iteration, we access the values directly. Then, we use the `Build Array` function, and pass in the value 3 times, to create a subarray which is the bit duplicated 3 times. Then, we connect it to the output and set it to `Concatenate values`, so that all the subarrays will be concatenated together. This gives the following output, where `[0 1]` is converted to `[0 0 0 1 1 1 1 1 1]`.
+
+![Tripling output](images/lab4/[task4]triple-output.PNG)
+
+We then connect the sub-VI in the main circuit as follows:
+
+![Main circuit](images/lab4/[task4]triple-integration.png)
+
+We simply take the output of the `MT Generate Bits`, pass in through our sub-VI to get the duplicated array, then pass it into the `For loop` which maps them from bits (0 and 1) to symbols (-1 and 1). Note that we also pass the updated array size (which is triple of the original) into the `Array Subset` function at the receiver. 
+
+Next, at the receiver side, we need to design the decoder to decode the output of the `Array Subset` function using the majority-wins system as described above. We design the decoder as follows:
+
+![Decoder circuit](images/lab4/[task4]decoder-circuit.png)
+
+Basically, we pass the entire input-array (without auto-indexing) into a `For loop`. The `For loop` iterates over the length of the array, divided by 3. So for example, if the array has size 9 (corresponding to 3 groups of triplets), then the for loop will iterate 3 times, and the iteration number will be 0, 1, and 2.
+
+Then, on each iteration, we take the iteration number `i`, triple it, and index the input array at `3i`, `3i + 1` and `3i + 2`. So using the example of a size-9 array, this means that:
+
+- On the first iteration, `i = 0`, we index the array at `0, 1, 2`
+- On the second iteration, `i = 1`, we index the array at `3, 4, 5`
+- On the third iteration, `i = 2`, we index the array at `6, 7, 8`
+
+Hence, on each iteration, we basically index the corresponding triplet, and we use the `Build Array` function to convert the 3 bits into a subarray of size 3, then use the `Boolean array to number` function to convert it into a number from `0-7`. 
+
+Then, once we have the number `0-7`, we basically use it to index the truth table. We define an array `[0, 0, 0, 1, 0, 1, 1, 1]`, which is exactly the truth table described at the start of this section. Once we isolate the triplet, e.g. `011`, and convert it into a number `3`, we use this to index the truth array to get the decision. We then insert it into the shift register output.
+
+We verify that our decoder works correctly as follows:
+
+![Decoder testing](images/lab4/[task4]decoder-test.png)
+
+As we can see from above, each triplet maps to its correct output decision, as desired.
+
+Finally, we integrate the decoder into our circuit as follows:
+
+![Decoder integration](images/lab4/[task4]decoder-integration.png)
+
+We also implement our own BER calculator as follows for full transparency:
+
+![BER Circuit](images/lab4/[task4]ber-circuit.png)
+
+TODO: finish up
