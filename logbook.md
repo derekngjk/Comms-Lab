@@ -684,29 +684,64 @@ For purposes of comparison, we also visualize the output when no filtering is pe
 
 With rectangle functions, we see that in the time-domain, the signal is simply -1 and 1, i.e. a flat function with abrupt transitions. Whereas with RRC filtering, when we consider the time domain graphs, we can still see the distinct -1 and 1s, however the RRC performs smoothing such that there are no longer sharp transitions. Note that with RRC filtering, the pulses overlap, but due to the Nyquist property, they do not interfere at the sampling instants, hence still ensuring ISI-free transmission. 
 
-Apart from the differences in the time domain, we also see obvious differences in the frequency domain. With rectangle pulses, we see that in the frequency domain, the main lobe has a bandwidth of approximately 10kHz (counting only positive frequencies), which is the same as the symbol rate. Additionalluy, we also see that there are infinite side lobes. The reason for this is because rectangle pulses in the time domain correspond to sinc functions in the frequency domain, hence the frequency spectrum is sinc-shaped, and correspondingly we see multiple side bands and an infinite bandwidth, as explained at the beginning of this section.
+Apart from the differences in the time domain, we also see obvious differences in the frequency domain. With rectangle pulses, we see that in the frequency domain, the main lobe has a bandwidth of approximately 10kHz (counting only positive frequencies), which is the same as the symbol rate. This is because the spectrum follows a sinc function, and the first null occurs at 1/T, which is precisely the symbol rate, 10kHz. 
+Additionalluy, we also see that there are infinite side lobes. The reason for this is because rectangle pulses in the time domain correspond to sinc functions in the frequency domain, hence the frequency spectrum is sinc-shaped, and correspondingly we see multiple side bands and an infinite bandwidth, as explained at the beginning of this section.
 
-Whereas with RRC filtering, apart from seeing a much faster rolloff, we also see that the bandwidth of the main lobe is smaller, at around 7500-8000Hz. The bandwidth of the main lobe is `symbol_rate * (1 + beta)`, where beta is the roll-off factor controlling the rolloff of the frequency spectrum.
+This means that rectangle pulses result in distortion. Because there is an infinite number of side lobes, when the transmitted signal is passed through a band-limited filter, the sidelobes will be distorted / filtered, leading to interference between adjacent symbols in the time domain, and making it harder to accurate recover the transmitted bits.
 
-TODO: explain why the bandwidth without RRC is 10k
-
-TODO: explain why the bandwidth of RRC is symbol_rate * (1 + beta)
+Whereas with RRC filtering, apart from seeing a much faster rolloff, we also see that the bandwidth of the main lobe is smaller, at around 7500-8000Hz. This is because for an RRC filter, the bandwidth of the main lobe is approximately `symbol_rate * (1 + beta)`, where beta is the roll-off factor controlling the rolloff of the frequency spectrum. Hence, with RRC filtering, the sidebands are significantly attenuated, reducing inter-symbol interference and adjacent-channel interference.
 
 ## Exercise 2: BPSK Receiver
 
-TODO: add in all the explanation and block diagrams
+Recall that at the transmitter, the transmitted signal is `+-A * p(t) * cos(w_c t)`. At the receiving end, the received signal is `+-D * p(t) * cos(w_c t + phi)`, where D is a constant smaller than A, and phi is the phase difference between the local oscillators at the transmitter and receiver.
 
-| TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_AVG |
-|--------------|--------------|-------|-------|-------|---------|
-| 0 | 0 | 0.001012 | 0 | 0.001012 | 0.0006747 |
-| -35 | -15 | 0.507151 | 0.475743 | 0.489254 | 0.49072 |
+The USRP's receiver will internally multiply by a cosine to shift the signal from passband back to baseband, and output a train of output samples, `r[n] = +- D/2 p[n] e^jphi`. Note that given the `IQ Rate = 200k` and `Symbol rate = 10k`, this means that the `samples per symbol M = 20`.
+
+There are a few steps in the receiver process:
+
+1. Channel estimation: need to remove the phase difference caused by the channel itself, and the local oscillators. Previously, we have transmitted the pilots. Here, we need to make use of the pilots to correct the phase error. Hence, in the receiver, we first connect the output of `Fetch RX Data` and connect it into the `Frame Sync (complex)`, which identifies the header (start) of the transmission. Then, we use the `Channel Estimator` block which will read the received pilots and perform least-squares channel estimation to find the channel transfer function, and apply the inverse transfer function to the received signal to correct the phase error.
+2. Next, we extract only the real components, and use the `Convolution` block to apply another RRC filter which acts as the receiver's **matched filter**. We pass in the `Matched samples per symbol` to 20, as calculated above. This matched filter is the optimal linear filter the maximises SNR in the presence of additive noise. Note also that the convolution of two RRC filters forms an RC filter which minimises ISI.
+3. Next, we connect the output of the `Convolution` block to the input of `Pulse Align (Real)`, and similarly connect 20 samples per symbol. The reason for this is because the matched filter outputs an analog signal, and we need to sample it every `T` seconds, where `T` is the symbol interval, in order to re-extract the symbols. Because of filtering, propagation delays, and channel distortion, it is important to sample the signal at the correct timestamps, which coincide with the actual message bits. `Pulse Align` basically identifies which is the optimum **start index** to decimate from
+
+```
+How Pulse Align works is that, it will simply try all sampling possibilities to see which one gives the highest squared sums. So for example, suppose for illustration, the received signal has length 12, and samples per symbol M = 3. This means that in order to sample the bits, we either need to sample at indices [0, 3, 6, 9], [1, 4, 7, 10], or [2, 5, 8, 11]. What pulse align does is that it will use a for loop to try all 3 possibilities. For each sampling possibility, it will get the sum of squares of the elements. Then, it will take the one which has the highest squared sum. So e.g. if [2, 5, 8, 11] gives the highest squared sum, then Pulse Align will output the subarray starting from index 2, i.e. [2, 3, 4 ... 11]. Then, the output of Pulse Align is then passed into another Decimate block which performs the sampling to get [2, 5, 8, 11].
+```
+
+Once we have the real symbols, the next step is to add `Frame Sync (real)` to identify the start (header) of the real symbols. The receiver process is kind of like a reversal of the transmission process. Recall that for transmission, we added the frame header first, then performed upsampling. Here it is simply the reverse, to perform decimation (downsampling) first, followed by synchronizing with the frame header. 
+
+Once we have identified the symbols (1 and -1), we just need to convert them into bits, where -1 -> 0 and 1 -> 1. To do this, we simply use a `For loop` to iterate over the received symbols. For each symbol, we simply check if it is greater than 0, then convert the booleans into integers 0 and 1, such that -1s will be mapped to 0 and the 1s will remain as 1.
+
+Finally, we extract the subarray corresponding to the number of bits (message length), and calculate the BER. We can use the `MT Calculate BER`, or alternatively implement our own, as follows:
+
+![Custom BER calculator](images/lab4/[task4]ber-circuit.png)
+
+Basically, we pass in the two reference arrays (transmitted bits and received bits). We iterate over the values using a `For loop`. We initialise the number of bit errors to 0. Then, on each iteration, if the transmitted and received bit are not equal, that means there is a bit error, hence we increment the number of errors by 1. Finally, we divide it by the total number of bits to get the bit error ratio (proportion of bits wrongly decoded). We also compare it against a set threshold, such that the output `trigger` is high if the BER is below the input threshold.
+
+Connecting everything together, we get the following circuit:
+
+![BPSK Receiver](images/lab4/[task2]bpsk-receiver.png)
+
+Running the transmission several times with different values of TX and RX gain, we get the following results. Some of the screenshots are shown:
+
+![0 0 Output](images/lab4/[task2]0db-rx-2.png)
+
+![-35 -15 1](images/lab4/[task2]-35_-15_1.png)
+
+![-35 -15 2](images/lab4/[task2]-35_-15_2.png)
+
+
+
+| TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_3 | BER_4 | BER_AVG |
+|--------------|--------------|-------|-------|-------|-------|-------|---------|
+| 0 | 0 | 0 | 0 | 0 | 0 |
+| -35 | -15 | 0.012109 | 0.038345 | 0 | 0.025227 |
 | -37 | -15 | 0.481602 | 0.482581 | 0.5 | 0.488061 |
-| -40 | -15 | 0.477152 | 0.47606 | 0.473143 | 0.47545
+| -40 | -15 | 0.515 | 0.086 | 0.473143 | 0.47545
 
 -35, -15: 0.059716, 0.018218, 0.066459
 -37, -15: 0.143004, 0.003083, 0.490816, 0.022199
 
-TODO: check why a lot of variation
+TODO: check why a lot of variation, fill in the rest
 
 ## Exercise 3: DPSK
 
@@ -787,4 +822,11 @@ We also implement our own BER calculator as follows for full transparency:
 
 ![BER Circuit](images/lab4/[task4]ber-circuit.png)
 
-TODO: finish up
+Re-testing with the gain values used in task 2, we obtain the following results:
+
+| TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_3 | BER_4 | BER_AVG |
+|--------------|--------------|-------|-------|-------|-------|-------|---------|
+| 0 | 0 |
+| -35 | -15 |
+| -37 | -15 |
+| -40 | -15 | 0.244 | 0.165 | 0.124 | 0.1008 | 0.0838
