@@ -721,27 +721,26 @@ Connecting everything together, we get the following circuit:
 
 ![BPSK Receiver](images/lab4/[task2]bpsk-receiver.png)
 
-Running the transmission several times with different values of TX and RX gain, we get the following results. Some of the screenshots are shown:
-
-![0 0 Output](images/lab4/[task2]0db-rx-2.png)
-
-![-35 -15 1](images/lab4/[task2]-35_-15_1.png)
-
-![-35 -15 2](images/lab4/[task2]-35_-15_2.png)
-
+Running the transmission several times with different values of TX and RX gain, we get the following results:
 
 
 | TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_3 | BER_4 | BER_AVG |
 |--------------|--------------|-------|-------|-------|-------|-------|---------|
-| 0 | 0 | 0 | 0 | 0 | 0 |
-| -35 | -15 | 0.012109 | 0.038345 | 0 | 0.025227 |
-| -37 | -15 | 0.481602 | 0.482581 | 0.5 | 0.488061 |
-| -40 | -15 | 0.515 | 0.086 | 0.473143 | 0.47545
+| 0 | 0 | 0 | 0 | 0 | 0.484 | 0 | 0.097 |
+| -35 | -15 | 0.489 | 0.497 | 0.490 | 0 | 0.484 | 0.392 |
+| -37 | -15 | 0.484 | 0.484 | 0.477 | 0.479  | 0.469 | 0.478 | 
+| -40 | -15 | 0.497 | 0.014 | 0.487 | 0.467 | 0.0531 | 0.304 | 
 
--35, -15: 0.059716, 0.018218, 0.066459
--37, -15: 0.143004, 0.003083, 0.490816, 0.022199
+Some of the screenshots are as follows:
 
-TODO: check why a lot of variation, fill in the rest
+![BER_1 with -35dB and -15dB](images/lab4/[task2]-35_-15_2.png)
+
+![BER_2 with -35dB and -15dB](images/lab4/[task2]-35_-15_1.png)
+
+![BER_1 with -40dB and -15dB](images/lab4/[task2]-40_-15_2.png)
+
+In general, with lower gain, the transmitted sgnal is more sensitive to noise, hence we expect the BER to increase. Although, this is also dependent on interference from the surroundings, as many people are performing USRP transmission at the same time.
+
 
 ## Exercise 3: DPSK
 
