@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="93DDEE788C8EF021FF86D546D11CB0270EEE294616A12FA4E994F6D7C38F6F5041E47B934D572587A581DE5A3635B974053AF4AA2B477236C15AAF510D05582B" Timestamp="1DB848B90CCD1DC" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="F2B7BC17C6C20E7F8F2C6DA5289CD5BC571F500820A33534246B01F1B69A52233A062663008B4497E5A26855C1268D63E922FF1500CA8C1F01D980D3835B2320" Timestamp="1DB8DF40D9C9099" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -477,7 +477,7 @@
 					<ArrayBehavior ElementType="ComplexDouble" IndexEditorWidth="42">
 						<p.DefaultElementValue>0x0;0x0</p.DefaultElementValue>
 					</ArrayBehavior>
-					<Literal Bounds="47 5 75 15" DataType="ComplexDouble" Id="2842">
+					<Literal Bounds="48 2 75 15" DataType="ComplexDouble" Id="2842">
 						<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
 					</Literal>
 				</ArrayLiteral>
@@ -561,7 +561,7 @@
 				<LoopCount Bounds="1 1 15 15" Docking="Left" Id="47b42478bd6a4159b4c0535a0916c57e" Terminals="674423864ecb41fa8e3474b2c618fcf8=2c5deb81aa6541c8a3f7436c7ebde844, d52148cb3883480d92eb555c9345af4d" />
 				<LoopTunnel AutoIndex="True" Bounds="-5 22 13 10" Docking="Left" Id="4ec95754f6064444aacc83e2c7946850" Terminals="o0=1c233f4d970499da29ec1a548b3308c, i0=d236aefb1c384bda9d0b3cfe91aa8de4" TunnelMode="0" />
 				<RightShiftRegister Bounds="291 92 13 10" Docking="Right" Id="344d46c96f92479a85b8b73260c5ef76" Terminals="674423864ecb41fa8e3474b2c618fcf8=3fbff5bc92aa405ca4e5d090027b7366, d52148cb3883480d92eb555c9345af4d=a45bb79e8ffa4e449bf14a0305eea030" />
-				<LeftShiftRegister Bounds="-5 92 13 10" Docking="Left" Id="d0a2f04311dc4f04acc61bc08c0bc1b2" RightRegister="344d46c96f92479a85b8b73260c5ef76" Terminals="o0, i0=6e7ec930e6af4fc1b8fe0c3e8729a9a2" />
+				<LeftShiftRegister Bounds="-5 92 13 10" Docking="Left" Id="d0a2f04311dc4f04acc61bc08c0bc1b2" RightRegister="344d46c96f92479a85b8b73260c5ef76" Terminals="o0=571c0ed3902c473db26d684e300efe5f, i0=6e7ec930e6af4fc1b8fe0c3e8729a9a2" />
 			</ForLoop>
 			<ArraySize Bounds="-2475 520 40 20" Id="80e7b2447361407a86a5d62761106559" />
 			<Wire Id="1c233f4d970499da29ec1a548b3308c" Joints="N(3a5b48f966e3448abd1a810f7b8460f1:R0)|(-2505,525) h(25) B(1) N(80e7b2447361407a86a5d62761106559:array)|(-2475,525) B(1) v(30) N(4ec95754f6064444aacc83e2c7946850:o0)|(-2427,555)" xmlns="http://www.ni.com/PlatformFramework" />
@@ -896,7 +896,7 @@
 				<LoopCount Bounds="1 1 15 15" Docking="Left" Id="b0de28ed43da4ebcb9d125b8a60020cb" Terminals="a1d8139810054da98fe33810ffa5fa41=ff6c17bc250d44f799be13f23a11d3f2, 9579563129644fcdadd0e8236c0658c5" />
 				<LoopTunnel AutoIndex="True" Bounds="-5 32 13 10" Docking="Left" Id="b3a0392cbb84490c9154cefdb8ec2203" Terminals="o0=3035b9ba60fd4da78e429244c9532667, i0=721ae20743734577ae0cd53696800325" TunnelMode="0" />
 				<RightShiftRegister Bounds="186 57 13 10" Docking="Right" Id="53190086bb6d4d7398b10c13d68ad180" Terminals="a1d8139810054da98fe33810ffa5fa41=6d26d2be7eb442979a15e5a4d3b2ef8a, 9579563129644fcdadd0e8236c0658c5=87ef2c861ded4da0816b11cc22dd1181" />
-				<LeftShiftRegister Bounds="-5 57 13 10" Docking="Left" Id="e49747929b7c43ca8b7df2d2d1ab2984" RightRegister="53190086bb6d4d7398b10c13d68ad180" Terminals="o0, i0=377b862063f84b86ae91a53aa5d41340" />
+				<LeftShiftRegister Bounds="-5 57 13 10" Docking="Left" Id="e49747929b7c43ca8b7df2d2d1ab2984" RightRegister="53190086bb6d4d7398b10c13d68ad180" Terminals="o0=bfbbb22310e244c78e8cf866bad1d8a6, i0=377b862063f84b86ae91a53aa5d41340" />
 			</ForLoop>
 			<ArraySize Bounds="-75 235 40 20" Id="5fd599fde4064694abcad6d0b2f6ab1f" />
 			<Wire Id="ff6c17bc250d44f799be13f23a11d3f2" Joints="N(5fd599fde4064694abcad6d0b2f6ab1f:size(s\))|(-35,250) N(b0de28ed43da4ebcb9d125b8a60020cb:a1d8139810054da98fe33810ffa5fa41)|(-16,250)" xmlns="http://www.ni.com/PlatformFramework" />
@@ -931,7 +931,7 @@
 				<LoopCount Bounds="1 1 15 15" Docking="Left" Id="6f4d7d085b3c4f0394e74a13de16ca58" Terminals="d0850375a6d44128649f8db463f6d42=36f1967435e54ab08550b3450f9e7889, 7298686541fe4b868207afe0e4940de3" />
 				<LoopTunnel AutoIndex="True" Bounds="-5 22 13 10" Docking="Left" Id="968fdd7e70be44d29d5aea1e055787df" Terminals="o0=8508770536c473cb324675a31e1c5a4, i0=7841ff22dada4d29a0f509774fd1b295" TunnelMode="0" />
 				<RightShiftRegister Bounds="321 102 13 10" Docking="Right" Id="8964aa76fab846a9aef0f850c54b26f0" Terminals="d0850375a6d44128649f8db463f6d42=2688b1907d5a4050b98b4ecc0b6c204e, 7298686541fe4b868207afe0e4940de3=16583fba659b4fe89935c18677415d5a" />
-				<LeftShiftRegister Bounds="-5 102 13 10" Docking="Left" Id="3500fa90a0a34c2ea359343a7c94c67a" RightRegister="8964aa76fab846a9aef0f850c54b26f0" Terminals="o0, i0=55f17aef997b46c8836d65f82425a2ce" />
+				<LeftShiftRegister Bounds="-5 102 13 10" Docking="Left" Id="3500fa90a0a34c2ea359343a7c94c67a" RightRegister="8964aa76fab846a9aef0f850c54b26f0" Terminals="o0=802f29234fff4bea9a585a09f34ed282, i0=55f17aef997b46c8836d65f82425a2ce" />
 			</ForLoop>
 			<ArraySize Bounds="-1965 600 40 20" Id="c3c5f32d296b4953b6a72259572e0485" />
 			<Wire Id="8508770536c473cb324675a31e1c5a4" Joints="N(61a7f66e22ce439dbb257ee19b354eb1:R0)|(-1990,625) h(15) B(1) h(68) v(-60) N(968fdd7e70be44d29d5aea1e055787df:o0)|(-1897,565) B(1) v(-20) N(c3c5f32d296b4953b6a72259572e0485:array)|(-1965,605)" xmlns="http://www.ni.com/PlatformFramework" />
@@ -997,7 +997,7 @@
 				<LoopCount Bounds="1 1 15 15" Docking="Left" Id="653cc8c1a2ac4fc6bcf3bbd9aed0a87e" Terminals="bdf21a1c8417477097d39f048aa1ad22=1fc62bc56fd041fb806f5591a7e124d7, 14697ab3912f4464b4a2cc7b19bc37c4" />
 				<LoopTunnel Bounds="-5 57 13 10" Docking="Left" Id="52720880b2bc44a79e10263a22d11e1b" Terminals="o0=a6f7177325184b869cb353ca1e0d35f8, i0=7ae04043cbf6485baa56ece519988ffa" />
 				<RightShiftRegister Bounds="316 37 13 10" Docking="Right" Id="44ff86e8e09b4e5485dcf7ed2b074c6b" Terminals="bdf21a1c8417477097d39f048aa1ad22=5b43427f03e04a8fad018839bddbca46, 14697ab3912f4464b4a2cc7b19bc37c4=48a1a0e41eef42e9ae22a36f730e8077" />
-				<LeftShiftRegister Bounds="-5 37 13 10" Docking="Left" Id="25a8c8907d88457fbe3b5b5bf689191d" RightRegister="44ff86e8e09b4e5485dcf7ed2b074c6b" Terminals="o0, i0=c8c43fc16993454e9559dfe90802f990" />
+				<LeftShiftRegister Bounds="-5 37 13 10" Docking="Left" Id="25a8c8907d88457fbe3b5b5bf689191d" RightRegister="44ff86e8e09b4e5485dcf7ed2b074c6b" Terminals="o0=232808dd51dd44a88352295944b781f6, i0=c8c43fc16993454e9559dfe90802f990" />
 			</ForLoop>
 			<Wire Id="a6f7177325184b869cb353ca1e0d35f8" Joints="N(ed31fd11d7494ee8a7e3525f5e7082d7:R0)|(-690,280) h(20) v(-55) B(2) N(52720880b2bc44a79e10263a22d11e1b:o0)|(-567,225) B(2) v(-55) N(b7a8196925ed45b49837131c26719a64:array)|(-655,170)" xmlns="http://www.ni.com/PlatformFramework" />
 			<ArraySize Bounds="-655 165 40 20" Id="b7a8196925ed45b49837131c26719a64" />
@@ -1029,6 +1029,46 @@
 				<Terminal DataType="Error" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
 			</MethodCall>
 			<Wire Id="cfe43a190519482f9895d36e916a5f5d" Joints="N(d2a9dfa7140840c4addcd1bc47a85d6b:x)|(-175,195) h(20) v(90) N(72f7d91d7d9d412f9557ad6b8ea454d7:L1)|(-140,285)" xmlns="http://www.ni.com/PlatformFramework" />
+			<ArrayLiteral Bounds="-2009 680 94 25" DataType="Double[]" Id="736dd50a45b646bdad70d2a554309d8d" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>null</p.Data>
+				<ArrayBehavior ElementType="Double" IndexEditorWidth="42">
+					<p.DefaultElementValue>0x0</p.DefaultElementValue>
+				</ArrayBehavior>
+				<Literal Bounds="48 2 40 15" DataType="Double" Id="3d21d3c25a3e4d16823604831c851d86">
+					<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+				</Literal>
+			</ArrayLiteral>
+			<Wire Id="802f29234fff4bea9a585a09f34ed282" Joints="N(736dd50a45b646bdad70d2a554309d8d:Out)|(-1915,685) h(10) v(-40) N(3500fa90a0a34c2ea359343a7c94c67a:o0)|(-1897,645)" xmlns="http://www.ni.com/PlatformFramework" />
+			<ArrayLiteral Bounds="-799 200 94 25" DataType="ComplexDouble[]" Id="abf4779fe48b4bc186b23de7b7a6d3ad" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>null</p.Data>
+				<ArrayBehavior ElementType="ComplexDouble" IndexEditorWidth="42">
+					<p.DefaultElementValue>0x0;0x0</p.DefaultElementValue>
+				</ArrayBehavior>
+				<Literal Bounds="48 2.5 40 15" DataType="ComplexDouble" Id="a124da4a92d340cdbb1f2fd851e2a04a">
+					<NumericBehavior Interpretation="Exact" ValueFormatter="LV:G6" />
+				</Literal>
+			</ArrayLiteral>
+			<Wire Id="232808dd51dd44a88352295944b781f6" Joints="N(abf4779fe48b4bc186b23de7b7a6d3ad:Out)|(-705,205) N(25a8c8907d88457fbe3b5b5bf689191d:o0)|(-567,205)" xmlns="http://www.ni.com/PlatformFramework" />
+			<ArrayLiteral Bounds="-109 315 69 25" DataType="Boolean[]" Id="ba736500c60542c2a07747db1c7938e2" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>null</p.Data>
+				<ArrayBehavior ElementType="Boolean" IndexEditorWidth="42">
+					<p.DefaultElementValue>False</p.DefaultElementValue>
+				</ArrayBehavior>
+				<Literal Bounds="48 2 15 15" DataType="Boolean" Id="ada51e5e47284f09a1fdbe4480229cff">
+					<BooleanBehavior />
+				</Literal>
+			</ArrayLiteral>
+			<Wire Id="bfbbb22310e244c78e8cf866bad1d8a6" Joints="N(ba736500c60542c2a07747db1c7938e2:Out)|(-40,320) h(5) v(-15) N(e49747929b7c43ca8b7df2d2d1ab2984:o0)|(-22,305)" xmlns="http://www.ni.com/PlatformFramework" />
+			<ArrayLiteral Bounds="-2549 620 94 25" DataType="Int8[]" Id="89bdf5e5f98c4f0e8b5661049fb7998c" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>null</p.Data>
+				<ArrayBehavior ElementType="Int8" IndexEditorWidth="42">
+					<p.DefaultElementValue>0</p.DefaultElementValue>
+				</ArrayBehavior>
+				<Literal Bounds="48 2 40 15" DataType="Int8" Id="dcc6c699d0a47abb60cf20032132abd">
+					<NumericBehavior Interpretation="Exact" ValueFormatter="LV:0" />
+				</Literal>
+			</ArrayLiteral>
+			<Wire Id="571c0ed3902c473db26d684e300efe5f" Joints="N(89bdf5e5f98c4f0e8b5661049fb7998c:Out)|(-2455,625) N(d0a2f04311dc4f04acc61bc08c0bc1b2:o0)|(-2427,625)" xmlns="http://www.ni.com/PlatformFramework" />
 		</BlockDiagram>
 		<NativeFrontPanel AllowMaximize="[bool]False" Background="[SMSolidColorBrush]#ffffffff" EnforceMaximumSize="[bool]True" Height="[float]1600" Id="13" Left="[float]0" MaxHeight="[float]1600" MaxWidth="[float]2000" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000" WindowTitleOption="[WindowTitleOption]None">
 			<NumericText BaseName="[string]Numeric" Enabled="[bool]True" Foreground="[SMColor]#ff2b3033" Height="[float]24" Id="169" Interval="[double]1" Label="[UIModel]170" Left="[float]6" Maximum="[double]Infinity" Minimum="[double]-Infinity" RadixVisibility="[SMVisibility]Collapsed" TabIndex="[int]0" Top="[float]31" Value="{DataItemBinding Id=154}" ValueFormatter="[string]LVSI:G6" ValueType="[Type]Double" Width="[float]90" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
@@ -1059,7 +1099,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="213" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]b5cb048ce7164bcbbb357de5dd850d72" Orientation="[SMOrientation]Vertical" Range="[IRange]-160, -30, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="213" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]b5cb048ce7164bcbbb357de5dd850d72" Orientation="[SMOrientation]Vertical" Range="[IRange]-170, -30, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="b5cb048ce7164bcbbb357de5dd850d72">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -1101,7 +1141,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="2848" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]86542b060af547a880f5d9bc955d0728" Orientation="[SMOrientation]Vertical" Range="[IRange]-190, 30, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="2848" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]86542b060af547a880f5d9bc955d0728" Orientation="[SMOrientation]Vertical" Range="[IRange]-250, -70, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="86542b060af547a880f5d9bc955d0728">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>

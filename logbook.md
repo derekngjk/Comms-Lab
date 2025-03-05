@@ -726,12 +726,14 @@ Running the transmission several times with different values of TX and RX gain, 
 
 | TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_3 | BER_4 | BER_AVG |
 |--------------|--------------|-------|-------|-------|-------|-------|---------|
-| 0 | 0 | 0 | 0 | 0 | 0.484 | 0 | 0.097 |
+| 0 | 0 | 0.001 | 0.001 | 0 | 0 | 0 | 0.0004 | 
 | -35 | -15 | 0.489 | 0.497 | 0.490 | 0 | 0.484 | 0.392 |
 | -37 | -15 | 0.484 | 0.484 | 0.477 | 0.479  | 0.469 | 0.478 | 
 | -40 | -15 | 0.497 | 0.014 | 0.487 | 0.467 | 0.0531 | 0.304 | 
 
 Some of the screenshots are as follows:
+
+![BPSK with 0dB 0dB](images/lab4/[task2]0_0_1.png)
 
 ![BER_1 with -35dB and -15dB](images/lab4/[task2]-35_-15_2.png)
 
@@ -758,7 +760,59 @@ Then, the LPF outputs `+` if the symbol has the same sign as the previous symbol
 
 Finally, we need to use the LPF output to make the decision. From the equation `b_n = b_n-1 * a_n`, we can rearrange it to get `a_n = b_n / b_n-1`. Since the LPF outputs `+` if `b_n = b_n-1`, that means that if the LPF output is `+`, then `a_n = 1`. Whereas if `b_n != b_n-1`, then the LPF outputs `-`, and `a_n = -1`. Thus, the decision can be made directly by reading the LPF output. 
 
-TODO: add in all the explanations, circuits, graphs and all the other shit
+We first design a differential encoder which is added after adding the frame header (so that the frame header also gets differentially encoded). The differential encoder is designed as follows:
+
+![DPSK encoder](images/lab4/[task3]diff-encoder.png)
+
+How it works: we have a shift register which we initialize to zeros, and we also pass in the information symbols `a_n`, set to auto-index. On the first iteration of the loop (i = 0), the `Select` block outputs 1. Hence, we simply take `1 * a_0 = a_0`, and we insert `a_0` into the shift register. This shift register then **stores the b_n symbols**. So on the second iteration onwards, we index the shift register at `i - 1`, hence we get `b_i-1`. We then multiply it with `a_i`, and we store it into the shift register. Hence, in summary, on every iteration `i` of the loop, we insert `a_i * b_i-1`, which is exactly the same equation as above. On iteration 0, we simply insert `a_0`. This is because the initial reference symbol, `b_-1` is 1, hence by default, `b_0 = a_0 * b_-1 = a_0 * 1 = a_0`. After the for loop, we insert the reference symbol 1 into position 0.
+
+Before integrating, we test the encoder block in isolation as follows:
+
+![DPSK Output](images/lab4/[task3]dpsk-out.png)
+
+These are exactly the values shown in the table above, showing that the DPSK module works correctly.
+
+Next, we remove the `Insert Pilots` and `AddFrameHeader (Complex)` modules. The reason why we don't need them for DPSK is because BPSK requires **coherent detection**, meaning the receiver must correctly recover the carrier phase. Hence, the pilots are used to help estimate the phase error introduced by the channel so that the phase error can be corrected. However, DPSK does not require carrier phase recovery because it decodes data based on phase differences between consecutive symbols rather than absolute phase values. Hence, it does not require the pilots and the complex frame header. Similarly, on the receiver, we do not need the frame sync and channel estimation blocks.
+
+We then design a decoder on the receiving end as follows:
+
+![DPSK Decoder](images/lab4/[task3]dpsk-decoder.png)
+
+Recall from the equation `b_n = b_n-1 * a_n`, which gives `a_n = b_n / b_n-1`. However, instead of doing division by a complex number which is computationally expensive, we can multiply `b_n` by the complex conjugate of `b_n-1`, which achieves the same effect of extracting the phase difference between symbols without requiring explicit division. 
+
+This is because suppose `z = x / y`. Note that `1/y = y* / |y|^2`, hence when we compute `x / y`, it is the same as computing `x y* / |y|^2`. Hence, when we multply `x` with the conjugate of y, `y*`, we get `x / y` scaled by the magnitude of y. However, in DPSK decoding, the magnitude of `x / y`, doesn't matter, only the sign. Hence, the sign of `xy*` and `x/y` is the same. Hence we can decode by multiplying the current sample with the complex conjugate of the previous sample.
+
+How the decoder circuit works is that on each iteration of the loop, we take `b[i]`, and take its complex conjugate. Then, we also extract `b[i+1]` and multiply it together with the complex conjugate of `b[i]`, hence we get `b[i+1] b[i]*`, which is exactly the product of each sample with the complex conjugate of the previous sample. We then insert all of these products into the shift register, and extract only the real part. The rest of the receiver is as before.
+
+We now re-run the measurements for DPSK:
+
+| TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_3 | BER_4 | BER_AVG |
+|--------------|--------------|-------|-------|-------|-------|-------|---------|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| -35 | -15 | 0.479 | 0.483 | 0.152 | 0.491 | 0.480 | 0.417 | 
+| -37 | -15 | 0.477 | 0.485 | 0.473 | 0.494 | 0.484 | 0.483 |
+| -40 | -15 | 0.493 | 0.490 | 0.508 | 0.497 | 0.494 | 0.496 | 
+
+Again, we observe that the smaller the gain, the higher the BER since the signal power is smaller. 
+
+Comparing with BPSK:
+
+| BPSK | DPSK |
+|------|------|
+| Lower BER, requires 3dB less SNR than DPSK for the same BER | Higher BER |
+| More power efficient (since less power required to achieve the same BER) | Requires more power |
+| Requires coherent detection, usually requires phase-locked loop to recover carrier phase | Simpler receiver design, no need for carrier phase recovery | 
+
+Some screenshots are as follows:
+
+![DPSK with 0dB 0dB](images/lab4/[task3]0_0_1.png)
+
+![DPSK with -35dB -15dB](images/lab4/[task3]-35_-15_2.png)
+
+![DPSK with -37dB -15dB](images/lab4/[task3]-37_-15_1.png)
+
+![DPSK with -40dB -15dB](images/lab4/[task3]-40_-15_1.png)
+
 
 ## Exercise 4: Forward Error Correction (FEC)
 
@@ -825,7 +879,21 @@ Re-testing with the gain values used in task 2, we obtain the following results:
 
 | TX Gain (dB) | RX Gain (dB) | BER_0 | BER_1 | BER_2 | BER_3 | BER_4 | BER_AVG |
 |--------------|--------------|-------|-------|-------|-------|-------|---------|
-| 0 | 0 |
-| -35 | -15 |
-| -37 | -15 |
-| -40 | -15 | 0.244 | 0.165 | 0.124 | 0.1008 | 0.0838
+| 0 | 0 | 0.013 | 0.009 | 0.011 | 0.008 | 0.013 | 0.011 |
+| -35 | -15 | 0.495 | 0.488 | 0.497 | 0.461 | 0.431 | 0.474 |
+| -37 | -15 | 0.402 | 0.469 | 0.001 | 0.478 | 0.479 | 0.366 |
+| -40 | -15 | 0.468 | 0.251 | 0.456 | 0.079 | 0.494 | 0.350 |
+
+Some screenshots are as follows:
+
+![FEC with 0dB 0dB](images/lab4/[task4]0_0_1.png)
+
+![FEC with -35dB -15dB](images/lab4/[task4]-35_-15_1.png)
+
+![FEC with -37dB -15dB](images/lab4/[task4]-37_-15_2.png)
+
+![FEC with -40dB -15dB](images/lab4/[task4]-40_-15_2.png)
+
+As can be seen from the results, FEC helps to achieve slightly better performance than DPSK and BPSK, especially with lower gains.
+
+Add in advantages and disadvantages

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="6D05830FE0B23275D9F79B5CF226479A93AE80966510E60FA0EED7F390291B9AFC7A5E9231C8677CEE48F29FF779B5025647A6943FE8935FB8CEB7B5F6439EE0" Timestamp="1DB89DC7981DBE7" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="516509C21B095905D49958DCBC57830039C9A6958F6EAB9E8472D0F015BA6F48AE6CF2AB85B6598927AC7FFBDB6393EA8F9954B50560739FB5EE136983B9843D" Timestamp="1DB8DF8535785A3" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="8.1.0.50414" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="8.1.0.49152" Version="8.1.0.49152" />
@@ -980,7 +980,7 @@
 				<ArrayBehavior ElementType="Int8" IndexEditorWidth="42">
 					<p.DefaultElementValue>0</p.DefaultElementValue>
 				</ArrayBehavior>
-				<Literal Bounds="47.75 2.25 40 15" DataType="Int8" Id="35c99889276403e8077f7d50241e281">
+				<Literal Bounds="48 2 40 15" DataType="Int8" Id="35c99889276403e8077f7d50241e281">
 					<NumericBehavior Interpretation="Exact" ValueFormatter="LV:0" />
 				</Literal>
 			</ArrayLiteral>
@@ -998,7 +998,7 @@
 				<ArrayBehavior ElementType="Boolean" IndexEditorWidth="42">
 					<p.DefaultElementValue>False</p.DefaultElementValue>
 				</ArrayBehavior>
-				<Literal Bounds="48.25 2.5 15 15" DataType="Boolean" Id="379a95920bb44bda913c8bd147dfd301">
+				<Literal Bounds="48 2 15 15" DataType="Boolean" Id="379a95920bb44bda913c8bd147dfd301">
 					<BooleanBehavior />
 				</Literal>
 			</ArrayLiteral>
@@ -1048,12 +1048,12 @@
 			<NumericText BaseName="[string]Numeric" Enabled="[bool]True" Foreground="[SMColor]#ff2b3033" Height="[float]24" Id="169" Interval="[double]1" Label="[UIModel]170" Left="[float]6" Maximum="[double]Infinity" Minimum="[double]-Infinity" RadixVisibility="[SMVisibility]Collapsed" TabIndex="[int]0" Top="[float]31" Value="{DataItemBinding Id=154}" ValueFormatter="[string]LVSI:G6" ValueType="[Type]Double" Width="[float]90" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 			<Label Foreground="[SMColor]#ff2b3033" Height="[float]16" Id="170" LabelOwner="[UIModel]169" Left="[float]6" Text="[string]IQ rate" Top="[float]11" Width="[float]37" xmlns="http://www.ni.com/PanelCommon" />
 			<Graph BaseName="[string]Graph" BorderThickness="[SMThickness]1,1,1,1" ControlResizeMode="[ControlResizeMode]Fixed" DataSource="{DataItemBinding Id=167}" DataSourceType="[Type]Wfm(ComplexDouble)" Enabled="[bool]True" Height="[float]312" Id="202" Label="[UIModel]210" Left="[float]522" PreferIndexData="[bool]False" RenderMode="[RenderMode]Hardware" SuppressScaleLayout="[bool]False" TabIndex="[int]1" Top="[float]230" Width="[float]472" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
-				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="203" IsInverted="[bool]False" Label="[string]Time [seconds]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]206" Orientation="[SMOrientation]Horizontal" Range="[IRange]0.097855507096284849, 0.10360043467479615, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitLoosely" DisableMappingChanges="[bool]False" Id="203" IsInverted="[bool]False" Label="[string]Time [seconds]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]206" Orientation="[SMOrientation]Horizontal" Range="[IRange]0, 0.11, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="206">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0.######" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="204" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]c1ab0fa475934281a9ef6b9c9f43c929" Orientation="[SMOrientation]Vertical" Range="[IRange]-1, 0.96770968217803932, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="204" IsInverted="[bool]False" Label="[string]Amplitude" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]c1ab0fa475934281a9ef6b9c9f43c929" Orientation="[SMOrientation]Vertical" Range="[IRange]-1, 1, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="c1ab0fa475934281a9ef6b9c9f43c929">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
@@ -1115,7 +1115,7 @@
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="0" />
 					</RangeLabeledDivisions>
 				</Axis>
-				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="2848" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]86542b060af547a880f5d9bc955d0728" Orientation="[SMOrientation]Vertical" Range="[IRange]-190, 30, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
+				<Axis Adjuster="[RangeAdjuster]FitVisibleLoosely" DisableMappingChanges="[bool]False" Id="2848" IsInverted="[bool]False" Label="[string]Amplitude [dB]" LabelVisibility="[SMVisibility]Visible" MajorDivisions="[UIModel]86542b060af547a880f5d9bc955d0728" Orientation="[SMOrientation]Vertical" Range="[IRange]-190, 20, System.Double" ScaleKind="[RangeScaleKind]Linear" ValueType="[Type]Double" Visibility="[SMVisibility]Visible">
 					<RangeLabeledDivisions Id="86542b060af547a880f5d9bc955d0728">
 						<p.LabelPresenter Kind="LVRelativeSeconds" Format="G6" ShortFormat="0.000E+0" />
 					</RangeLabeledDivisions>
