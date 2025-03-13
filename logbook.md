@@ -896,4 +896,46 @@ Some screenshots are as follows:
 
 As can be seen from the results, FEC helps to achieve slightly better performance than DPSK and BPSK, especially with lower gains.
 
-Add in advantages and disadvantages
+Advantages:
+- Improves bit error ratio, correcting for single-bit errors
+- Encoder and decoder simple to implement
+
+Disadvantages:
+- Increases power consumption and increases bandwidth by 3x
+- Inefficient and unsuitable for high data-rate applications
+- Does not correct burst errors (e.g. where all 3 bits in a triplet are flipped)
+- Less efficient than more sophisticated methods like convolutional coding (e.g. Viterbi decoder)
+
+## Additional Exercise: Amplitude Shift Keying (ASK)
+
+As a proof of concept, there was an attempt to implement ASK using the USRP device. 4-ASK is implemented which sends 2 bits of information at a time, encoded in the amplitude, doubling the bit rate.
+
+Basically, given a stream of input bits, we group them into pairs. For each pair:
+- If the pair is (0, 0), map it to amplitude 0
+- If the pair is (0, 1), map it to amplitude 0.33
+- If the pair is (1, 0), map it to amplitude 0.67
+- If the pair is (1, 1), map it to amplitude 1
+
+We implement this grouping into pairs and mapping of amplitude using the following circuit:
+
+![ASK Circuit](images/lab4/[ask]circuit.png)
+
+This gives the following output waveform, where the amplitude is in the set `{0, 0.33, 0.67, 1}`.
+
+![ASK Output](images/lab4/[ask]wave.png)
+
+Similarly, on the decoder, we map the amplitude value back into the bit pairs using the following circuit:
+
+![ASK Decoder](images/lab4/[ask]decoder.png)
+
+Even using no gain (0dB and 0dB TX and RX), we obtain poorer results compared to BPSK:
+
+| BER_0 | BER_1 | BER_2 | BER_3 | BER_4 |
+|-------|-------|-------|-------|-------|
+| 0.228 | 0.214 | 0.185 | 0.197 | 0.288 |
+
+This corresponds to the theory where BPSK achieves the best BER among digital modulation schemes. ASK is particularly vulnerable to additive noise since additive noise directly affects the amplitude, which is used for the decoding.
+
+The summary of the theoretical BER for different digital modulation schemes, assuming an AWGN channel, is as follows:
+
+![Summary table](images/lab4/summary.png)
