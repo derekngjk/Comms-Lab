@@ -239,7 +239,7 @@ This method involves a half-wave rectifier followed by an RC filter. In practice
 
 The half-wave rectification using a diode scales the input signal by a factor of 1/pi. The reason for this is as follows:
 
-![Envelope detection theory explanation](images/lab2/[task1]half-wave-rect-loss-explain.jpeg)
+![Envelope detection theory explanation](images/lab2/image0.jpeg)
 
 The above explains why half-wave rectification introduces a scaling of 1/pi. Hence, before we do anything, we need to first multiply the signal by pi to account for this loss.
 
